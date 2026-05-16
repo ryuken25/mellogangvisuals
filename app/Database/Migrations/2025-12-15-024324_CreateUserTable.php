@@ -49,11 +49,7 @@ class CreateUserTable extends Migration
         $this->forge->addKey('id_user', true);
         $this->forge->addUniqueKey('email');
 
-        $this->forge->createTable('user', true, [
-            'ENGINE'  => 'InnoDB',
-            'DEFAULT CHARSET' => 'utf8mb4',
-            'COLLATE' => 'utf8mb4_unicode_ci',
-        ]);
+        $this->forge->createTable('user', true);
     }
 
     public function down()

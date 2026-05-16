@@ -1,0 +1,69 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mellogangvisuals/app:dev
+    container_name: mellogang-app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      CI_ENVIRONMENT: development
+      app.baseURL: "http://localhost:8080/"
+      database.default.hostname: db
+      database.default.port: "3306"
+      database.default.database: mellogang
+      database.default.username: mellogang
+      database.default.password: mellogang
+      database.default.DBDriver: MySQLi
+    volumes:
+      - ./:/var/www/html
+      - app-writable:/var/www/html/writable
+    ports:
+      - "8080:80"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  db:
+    image: mariadb:11
+    container_name: mellogang-db
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: mellogang
+      MARIADB_USER: mellogang
+      MARIADB_PASSWORD: mellogang
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  phpmyadmin:
+    image: phpmyadmin:5
+    container_name: mellogang-pma
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      UPLOAD_LIMIT: 256M
+    ports:
+      - "8081:80"
+    profiles: ["tools"]
+
+volumes:
+  db-data:
+  app-writable:

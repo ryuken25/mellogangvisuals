@@ -29,20 +29,21 @@ class PembayaranSeeder extends Seeder
         foreach ($orders as $idx => $o) {
             $total = (int) ($o['total_biaya'] ?? 0);
             if ($total <= 0) {
-                // fallback cari harga paket
+                // Fall back to the package price when the order has no total.
                 $pk = $this->db->table('pemesanan pm')
                     ->select('pk.harga')
                     ->join('paket pk', 'pk.id_paket = pm.id_paket', 'left')
-                    ->where('pm.id_pemesanan', (int)$o['id_pemesanan'])
+                    ->where('pm.id_pemesanan', (int) $o['id_pemesanan'])
                     ->get()->getRowArray();
                 $total = (int) ($pk['harga'] ?? 1000000);
             }
 
-            $jenis = ($idx < 3) ? 'DP' : 'Pelunasan';
+            $jenis  = ($idx < 3) ? 'DP' : 'Pelunasan';
             $jumlah = ($jenis === 'DP') ? $this->round250k((int) round($total * 0.3)) : $total;
 
-            // pastikan tidak null
-            if ($jumlah <= 0) $jumlah = 250000;
+            if ($jumlah <= 0) {
+                $jumlah = 250000;
+            }
 
             $statusVerif = ['Menunggu', 'valid', 'valid', 'ditolak', 'valid', 'Menunggu'][$idx] ?? 'Menunggu';
 

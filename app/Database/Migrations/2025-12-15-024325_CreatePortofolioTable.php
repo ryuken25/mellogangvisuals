@@ -53,11 +53,7 @@ class CreatePortofolioTable extends Migration
         $this->forge->addKey('id_portfolio', true);
         $this->forge->addKey('id_paket');
 
-        $this->forge->createTable('portofolio', true, [
-            'ENGINE'  => 'InnoDB',
-            'DEFAULT CHARSET' => 'utf8mb4',
-            'COLLATE' => 'utf8mb4_unicode_ci',
-        ]);
+        $this->forge->createTable('portofolio', true);
     }
 
     public function down()

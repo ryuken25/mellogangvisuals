@@ -66,11 +66,7 @@ class CreatePemesananTable extends Migration
         $this->forge->addKey('id_user');
         $this->forge->addKey('id_paket');
 
-        $this->forge->createTable('pemesanan', true, [
-            'ENGINE'  => 'InnoDB',
-            'DEFAULT CHARSET' => 'utf8mb4',
-            'COLLATE' => 'utf8mb4_unicode_ci',
-        ]);
+        $this->forge->createTable('pemesanan', true);
     }
 
     public function down()

@@ -8,7 +8,7 @@ class CreatePengeluaranOperasionalTable extends Migration
 {
     public function up()
     {
-        // ✅ FIX: kalau tabel sudah ada (mis. hasil import SQL / dibuat manual), stop di sini
+        // Skip if the table was created out of band (e.g. via raw SQL import).
         if ($this->db->tableExists('pengeluaran_operasional')) {
             return;
         }
@@ -24,7 +24,7 @@ class CreatePengeluaranOperasionalTable extends Migration
                 'type'       => 'INT',
                 'constraint' => 11,
                 'unsigned'   => true,
-                'null'       => true, // boleh kosong untuk pengeluaran umum
+                'null'       => true, // nullable for general (non-order) expenses
             ],
             'nama_pengeluaran' => [
                 'type'       => 'VARCHAR',
@@ -49,8 +49,12 @@ class CreatePengeluaranOperasionalTable extends Migration
         ]);
 
         $this->forge->addKey('id_pengeluaran', true);
+        $this->forge->addKey('id_pemesanan');
+        $this->forge->addKey('tanggal_pengeluaran');
 
-        // FK optional ke pemesanan
+        // Optional FK to pemesanan: ON UPDATE SET NULL keeps the row when the
+        // referenced order is renumbered; ON DELETE CASCADE removes the
+        // expense when its order is deleted.
         $this->forge->addForeignKey(
             'id_pemesanan',
             'pemesanan',
@@ -59,12 +63,11 @@ class CreatePengeluaranOperasionalTable extends Migration
             'CASCADE'
         );
 
-        $this->forge->createTable('pengeluaran_operasional', true); // true = IF NOT EXISTS (driver support)
+        $this->forge->createTable('pengeluaran_operasional', true);
     }
 
     public function down()
     {
-        // ✅ aman juga
         if ($this->db->tableExists('pengeluaran_operasional')) {
             $this->forge->dropTable('pengeluaran_operasional', true);
         }

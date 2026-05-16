@@ -60,11 +60,7 @@ class CreateJadwalProduksiTable extends Migration
         $this->forge->addKey('id_pemesanan');
         $this->forge->addKey('id_editor');
 
-        $this->forge->createTable('jadwal_produksi', true, [
-            'ENGINE'  => 'InnoDB',
-            'DEFAULT CHARSET' => 'utf8mb4',
-            'COLLATE' => 'utf8mb4_unicode_ci',
-        ]);
+        $this->forge->createTable('jadwal_produksi', true);
     }
 
     public function down()

@@ -22,7 +22,7 @@ class PemesananModel extends Model
         'catatan_admin',
     ];
 
-    // tabel pemesanan di rancangan kamu tidak punya created_at/updated_at
+    // The pemesanan table does not have created_at/updated_at columns.
     protected $useTimestamps = false;
 
     protected $returnType = 'array';

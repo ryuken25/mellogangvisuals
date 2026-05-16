@@ -62,7 +62,8 @@ class PemesananSeeder extends Seeder
                 'catatan_admin'     => null,
             ];
 
-            // DB lama kadang punya jam_mulai_acara
+            // Legacy schemas may carry a `jam_mulai_acara` column; populate
+            // it only when present so the seeder works against both shapes.
             $this->addIfExists($row, $fields, 'jam_mulai_acara', date('H:i:s', strtotime('09:00:00 +' . $i . ' hours')));
 
             $this->db->table($table)->insert($row);

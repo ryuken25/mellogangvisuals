@@ -8,10 +8,9 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        // Matikan FK checks biar truncate aman
-        $this->db->query('SET FOREIGN_KEY_CHECKS=0');
-
-        foreach ([
+        // Tables in reverse dependency order — child tables first so the
+        // truncate works whether or not foreign-key checks are honoured.
+        $tables = [
             'pengeluaran_operasional',
             'jadwal_produksi',
             'pembayaran',
@@ -20,13 +19,25 @@ class DatabaseSeeder extends Seeder
             'portofolio',
             'paket',
             'user',
-        ] as $t) {
-            if ($this->db->tableExists($t)) {
-                $this->db->table($t)->truncate();
-            }
+        ];
+
+        $isMysql = $this->isMysqlDriver();
+
+        if ($isMysql) {
+            $this->db->query('SET FOREIGN_KEY_CHECKS = 0');
         }
 
-        $this->db->query('SET FOREIGN_KEY_CHECKS=1');
+        try {
+            foreach ($tables as $t) {
+                if ($this->db->tableExists($t)) {
+                    $this->db->table($t)->truncate();
+                }
+            }
+        } finally {
+            if ($isMysql) {
+                $this->db->query('SET FOREIGN_KEY_CHECKS = 1');
+            }
+        }
 
         $this->call('UserSeeder');
         $this->call('PaketSeeder');
@@ -38,5 +49,12 @@ class DatabaseSeeder extends Seeder
         if ($this->db->tableExists('pengeluaran_operasional')) {
             $this->call('PengeluaranOperasionalSeeder');
         }
+    }
+
+    private function isMysqlDriver(): bool
+    {
+        $driver = strtolower((string) ($this->db->DBDriver ?? ''));
+
+        return in_array($driver, ['mysqli', 'mysql', 'mariadb', 'pdo_mysql'], true);
     }
 }

@@ -52,11 +52,7 @@ class CreatePaketTable extends Migration
 
         $this->forge->addKey('id_paket', true);
 
-        $this->forge->createTable('paket', true, [
-            'ENGINE'  => 'InnoDB',
-            'DEFAULT CHARSET' => 'utf8mb4',
-            'COLLATE' => 'utf8mb4_unicode_ci',
-        ]);
+        $this->forge->createTable('paket', true);
     }
 
     public function down()

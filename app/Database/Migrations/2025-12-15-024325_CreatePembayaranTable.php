@@ -56,11 +56,7 @@ class CreatePembayaranTable extends Migration
         $this->forge->addKey('id_pembayaran', true);
         $this->forge->addKey('id_pemesanan');
 
-        $this->forge->createTable('pembayaran', true, [
-            'ENGINE'  => 'InnoDB',
-            'DEFAULT CHARSET' => 'utf8mb4',
-            'COLLATE' => 'utf8mb4_unicode_ci',
-        ]);
+        $this->forge->createTable('pembayaran', true);
     }
 
     public function down()
