@@ -1,0 +1,114 @@
+[
+    {
+        "slug": "wedding-premium-full-day",
+        "kategori": "wedding",
+        "seed": "mello-wedding-1",
+        "filename": "wedding-premium-full-day.jpg",
+        "path": "C:\\Project\\Ngoding\\Python\\BOTS\\Solo coding\\skripshit\\mellogangvisuals/public/uploads/portofolio/wedding-premium-full-day.jpg",
+        "size": 68880
+    },
+    {
+        "slug": "wedding-highlight-teaser",
+        "kategori": "wedding",
+        "seed": "mello-wedding-2",
+        "filename": "wedding-highlight-teaser.jpg",
+        "path": "C:\\Project\\Ngoding\\Python\\BOTS\\Solo coding\\skripshit\\mellogangvisuals/public/uploads/portofolio/wedding-highlight-teaser.jpg",
+        "size": 97093
+    },
+    {
+        "slug": "wedding-cinematic-bali",
+        "kategori": "wedding",
+        "seed": "mello-wedding-3",
+        "filename": "wedding-cinematic-bali.jpg",
+        "path": "C:\\Project\\Ngoding\\Python\\BOTS\\Solo coding\\skripshit\\mellogangvisuals/public/uploads/portofolio/wedding-cinematic-bali.jpg",
+        "size": 67168
+    },
+    {
+        "slug": "wedding-prewedding-jogja",
+        "kategori": "wedding",
+        "seed": "mello-wedding-4",
+        "filename": "wedding-prewedding-jogja.jpg",
+        "path": "C:\\Project\\Ngoding\\Python\\BOTS\\Solo coding\\skripshit\\mellogangvisuals/public/uploads/portofolio/wedding-prewedding-jogja.jpg",
+        "size": 134794
+    },
+    {
+        "slug": "corporate-mini-profile",
+        "kategori": "corporate",
+        "seed": "mello-corp-1",
+        "filename": "corporate-mini-profile.jpg",
+        "path": "C:\\Project\\Ngoding\\Python\\BOTS\\Solo coding\\skripshit\\mellogangvisuals/public/uploads/portofolio/corporate-mini-profile.jpg",
+        "size": 177418
+    },
+    {
+        "slug": "corporate-launching",
+        "kategori": "corporate",
+        "seed": "mello-corp-2",
+        "filename": "corporate-launching.jpg",
+        "path": "C:\\Project\\Ngoding\\Python\\BOTS\\Solo coding\\skripshit\\mellogangvisuals/public/uploads/portofolio/corporate-launching.jpg",
+        "size": 163712
+    },
+    {
+        "slug": "corporate-interview",
+        "kategori": "corporate",
+        "seed": "mello-corp-3",
+        "filename": "corporate-interview.jpg",
+        "path": "C:\\Project\\Ngoding\\Python\\BOTS\\Solo coding\\skripshit\\mellogangvisuals/public/uploads/portofolio/corporate-interview.jpg",
+        "size": 59391
+    },
+    {
+        "slug": "product-cinematic-showcase",
+        "kategori": "product",
+        "seed": "mello-product-1",
+        "filename": "product-cinematic-showcase.jpg",
+        "path": "C:\\Project\\Ngoding\\Python\\BOTS\\Solo coding\\skripshit\\mellogangvisuals/public/uploads/portofolio/product-cinematic-showcase.jpg",
+        "size": 168006
+    },
+    {
+        "slug": "product-food-beverage",
+        "kategori": "product",
+        "seed": "mello-product-2",
+        "filename": "product-food-beverage.jpg",
+        "path": "C:\\Project\\Ngoding\\Python\\BOTS\\Solo coding\\skripshit\\mellogangvisuals/public/uploads/portofolio/product-food-beverage.jpg",
+        "size": 91246
+    },
+    {
+        "slug": "product-fashion-lookbook",
+        "kategori": "product",
+        "seed": "mello-product-3",
+        "filename": "product-fashion-lookbook.jpg",
+        "path": "C:\\Project\\Ngoding\\Python\\BOTS\\Solo coding\\skripshit\\mellogangvisuals/public/uploads/portofolio/product-fashion-lookbook.jpg",
+        "size": 42259
+    },
+    {
+        "slug": "event-reels-highlight-01",
+        "kategori": "event",
+        "seed": "mello-event-1",
+        "filename": "event-reels-highlight-01.jpg",
+        "path": "C:\\Project\\Ngoding\\Python\\BOTS\\Solo coding\\skripshit\\mellogangvisuals/public/uploads/portofolio/event-reels-highlight-01.jpg",
+        "size": 202931
+    },
+    {
+        "slug": "event-highlight-02",
+        "kategori": "event",
+        "seed": "mello-event-2",
+        "filename": "event-highlight-02.jpg",
+        "path": "C:\\Project\\Ngoding\\Python\\BOTS\\Solo coding\\skripshit\\mellogangvisuals/public/uploads/portofolio/event-highlight-02.jpg",
+        "size": 174626
+    },
+    {
+        "slug": "event-concert-stage",
+        "kategori": "event",
+        "seed": "mello-event-3",
+        "filename": "event-concert-stage.jpg",
+        "path": "C:\\Project\\Ngoding\\Python\\BOTS\\Solo coding\\skripshit\\mellogangvisuals/public/uploads/portofolio/event-concert-stage.jpg",
+        "size": 206077
+    },
+    {
+        "slug": "event-sport-motocross",
+        "kategori": "event",
+        "seed": "mello-event-4",
+        "filename": "event-sport-motocross.jpg",
+        "path": "C:\\Project\\Ngoding\\Python\\BOTS\\Solo coding\\skripshit\\mellogangvisuals/public/uploads/portofolio/event-sport-motocross.jpg",
+        "size": 38095
+    }
+]

@@ -80,7 +80,8 @@ $routes->get('invoice/(:segment)', 'Public\\InvoiceController::show/$1');
  * --------------------------------------------------------------------
  */
 $routes->group('pelanggan', ['filter' => 'role:pelanggan'], function ($routes) {
-    $routes->get('/', 'Public\\HomeController::index');
+    $routes->get('/', 'Pelanggan\\DashboardController::index');
+    $routes->get('dashboard', 'Pelanggan\\DashboardController::index');
 
     $routes->get('pemesanan/buat', 'Pelanggan\\PemesananController::create');
     $routes->get('pemesanan/buat/(:num)', 'Pelanggan\\PemesananController::create/$1', ['as' => 'pelanggan-pesan']);
