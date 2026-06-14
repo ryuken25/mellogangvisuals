@@ -1,0 +1,7 @@
+{
+  "name": "mellogang-screenshots",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Capture Playwright screenshots of every page in every role state.",
+  "main": "capture.js"
+}
