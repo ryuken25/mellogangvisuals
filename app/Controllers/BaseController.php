@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Support\I18n;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -28,10 +29,29 @@ abstract class BaseController extends Controller
     // protected $session;
 
     /**
+     * Switch language (route handler).
+     * GET /lang/en atau /lang/id
+     */
+    public function setLanguage(string $lang)
+    {
+        I18n::setCookie($lang);
+        I18n::set($lang);
+        $back = (string) ($_SERVER['HTTP_REFERER'] ?? '/');
+        // Hindari open-redirect ke host lain
+        if (! preg_match('~^/[^/]~', $back)) {
+            $back = '/';
+        }
+        return redirect()->to($back);
+    }
+
+    /**
      * @return void
      */
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
+        // Inisialisasi i18n SEBELUM parent / view lain.
+        I18n::init();
+
         // Load here all helpers you want to be available in your controllers that extend BaseController.
         // Caution: Do not put the this below the parent::initController() call below.
         // $this->helpers = ['form', 'url'];

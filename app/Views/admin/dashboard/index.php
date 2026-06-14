@@ -2,42 +2,87 @@
 
 <?= $this->section('adminContent') ?>
 
-<h2 class="section__title">Dashboard Admin</h2>
-<p class="auth-sub">Ringkasan data & aktivitas terbaru.</p>
-
-<div class="adminCards">
-  <div class="adminCard"><div class="adminCard__label">Total Paket</div><div class="adminCard__value"><?= (int)($countPaket ?? 0) ?></div></div>
-  <div class="adminCard"><div class="adminCard__label">Total Portofolio</div><div class="adminCard__value"><?= (int)($countPorto ?? 0) ?></div></div>
-  <div class="adminCard"><div class="adminCard__label">Total Pemesanan</div><div class="adminCard__value"><?= (int)($countOrder ?? 0) ?></div></div>
-  <div class="adminCard"><div class="adminCard__label">Pembayaran Menunggu</div><div class="adminCard__value"><?= (int)($pendingPay ?? 0) ?></div></div>
+<div class="admin-hero">
+  <div>
+    <div class="admin-hero__chip"><?= \App\Support\I18n::isEn() ? 'Operations' : 'Operasional' ?></div>
+    <h1 class="admin-hero__title"><?= esc(t('dashboard.admin.title')) ?></h1>
+    <p class="admin-hero__sub"><?= esc(t('dashboard.admin.subtitle')) ?></p>
+  </div>
+  <div class="admin-hero__art">⚙️</div>
 </div>
 
-<div class="panel" style="margin-top:16px;">
-  <h3 class="section__title" style="margin-bottom:10px;">Pemesanan Terbaru</h3>
+<div class="admin-kpis">
+  <a class="admin-kpi" href="<?= site_url('admin/paket') ?>" style="text-decoration:none;color:inherit;">
+    <div class="admin-kpi__label"><?= esc(t('dashboard.admin.kpi.packages')) ?></div>
+    <div class="admin-kpi__value"><?= (int)($countPaket ?? 0) ?></div>
+    <div class="admin-kpi__sub">→</div>
+  </a>
+  <a class="admin-kpi" href="<?= site_url('admin/portofolio') ?>" style="text-decoration:none;color:inherit;">
+    <div class="admin-kpi__label"><?= esc(t('dashboard.admin.kpi.portfolio')) ?></div>
+    <div class="admin-kpi__value"><?= (int)($countPorto ?? 0) ?></div>
+    <div class="admin-kpi__sub">→</div>
+  </a>
+  <a class="admin-kpi" href="<?= site_url('admin/pemesanan') ?>" style="text-decoration:none;color:inherit;">
+    <div class="admin-kpi__label"><?= esc(t('dashboard.admin.kpi.orders')) ?></div>
+    <div class="admin-kpi__value"><?= (int)($countOrder ?? 0) ?></div>
+    <div class="admin-kpi__sub">→</div>
+  </a>
+  <a class="admin-kpi" href="<?= site_url('admin/pembayaran') ?>" style="text-decoration:none;color:inherit;">
+    <div class="admin-kpi__label"><?= esc(t('dashboard.admin.kpi.pending')) ?></div>
+    <div class="admin-kpi__value" style="color:<?= ($pendingPay ?? 0) > 0 ? 'var(--warn)' : 'var(--text)' ?>;">
+      <?= (int)($pendingPay ?? 0) ?>
+    </div>
+    <div class="admin-kpi__sub">→</div>
+  </a>
+</div>
+
+<?php if (! empty($portos)): ?>
+<section class="panel">
+  <h3 class="section__title" style="margin:0 0 12px 0;"><?= \App\Support\I18n::isEn() ? 'Latest portfolio' : 'Portofolio terbaru' ?></h3>
+  <div class="porto-strip">
+    <?php foreach ($portos as $p): ?>
+      <a class="porto-strip__item" href="<?= site_url('admin/portofolio') ?>" style="background-image:url('<?= esc($p['thumb'] ?? '') ?>');" aria-label="<?= esc($p['judul'] ?? '') ?>">
+        <div class="porto-strip__overlay">
+          <div class="porto-strip__title"><?= esc($p['judul'] ?? '') ?></div>
+        </div>
+      </a>
+    <?php endforeach; ?>
+  </div>
+</section>
+<?php endif; ?>
+
+<section class="panel">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+    <h3 class="section__title" style="margin:0;"><?= esc(t('dashboard.admin.recentOrders')) ?></h3>
+    <a class="link" href="<?= site_url('admin/pemesanan') ?>"><?= esc(t('dashboard.admin.viewAll')) ?></a>
+  </div>
 
   <?php if (empty($orders)): ?>
-    <div class="alert ok">Belum ada pemesanan.</div>
+    <div class="empty-state">
+      <div class="empty-state__art">📦</div>
+      <div class="empty-state__title"><?= esc(t('dashboard.admin.noOrders')) ?></div>
+    </div>
   <?php else: ?>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Kode</th><th>Pelanggan</th><th>Paket</th><th>Status</th><th>Tanggal</th><th>Aksi</th>
-        </tr>
-      </thead>
-      <tbody>
-      <?php foreach ($orders as $o): ?>
-        <tr>
-          <td><?= esc($o['kode_pemesanan']) ?></td>
-          <td><?= esc($o['nama_lengkap'] ?? '-') ?></td>
-          <td><?= esc($o['nama_paket'] ?? '-') ?></td>
-          <td><span class="pill"><?= esc($o['status_pemesanan'] ?? '-') ?></span></td>
-          <td><?= esc($o['tanggal_pemesanan'] ?? '-') ?></td>
-          <td><a class="link" href="<?= site_url('admin/pemesanan/'.$o['id_pemesanan']) ?>">Detail</a></td>
-        </tr>
+    <div class="order-grid">
+      <?php foreach ($orders as $o):
+        $st = (string)($o['status_pemesanan'] ?? '');
+      ?>
+        <a class="order-card" href="<?= site_url('admin/pemesanan/'.$o['id_pemesanan']) ?>">
+          <div class="order-card__head">
+            <span class="order-card__code"><?= esc($o['kode_pemesanan']) ?></span>
+            <span class="pill status-<?= esc($o['status_color'] ?? 'muted') ?>"><?= esc($o['status_label'] ?? $st) ?></span>
+          </div>
+          <div class="order-card__pkg"><?= esc($o['nama_paket'] ?? '-') ?></div>
+          <div class="order-card__meta">
+            <span>👤 <?= esc($o['nama_lengkap'] ?? '-') ?></span>
+            <span>📅 <?= esc($o['tanggal_pemesanan'] ?? '-') ?></span>
+            <span>💰 Rp <?= number_format((int)($o['total_biaya'] ?? 0), 0, ',', '.') ?></span>
+          </div>
+          <div class="order-card__cta"><?= \App\Support\I18n::isEn() ? 'Open details →' : 'Buka detail →' ?></div>
+        </a>
       <?php endforeach; ?>
-      </tbody>
-    </table>
+    </div>
   <?php endif; ?>
-</div>
+</section>
 
 <?= $this->endSection() ?>

@@ -1,4 +1,6 @@
 <?php
+use App\Support\I18n;
+
 $uri = service('uri');
 $path = $uri->getPath();
 $loggedIn = (bool) session()->get('logged_in');
@@ -15,19 +17,22 @@ $avatarUrl  = site_url('profile/avatar');
 
 $navItems = [];
 if ($role !== 'editor') {
-  $navItems[] = ['label' => 'Beranda',       'url' => site_url('/'),                'match' => $path === ''];
-  $navItems[] = ['label' => 'Paket',         'url' => site_url('/katalog'),         'match' => str_starts_with($path, 'katalog')];
-  $navItems[] = ['label' => 'Portofolio',    'url' => site_url('/portofolio'),      'match' => str_starts_with($path, 'portofolio')];
-  $navItems[] = ['label' => 'Status Pesanan','url' => site_url('/status-pesanan'),  'match' => str_starts_with($path, 'status-pesanan')];
-  $navItems[] = ['label' => 'Kontak',        'url' => site_url('/kontak'),          'match' => str_starts_with($path, 'kontak')];
+  $navItems[] = ['label' => t('nav.home'),        'url' => site_url('/'),                'match' => $path === ''];
+  $navItems[] = ['label' => t('nav.packages'),    'url' => site_url('/katalog'),         'match' => str_starts_with($path, 'katalog')];
+  $navItems[] = ['label' => t('nav.portfolio'),   'url' => site_url('/portofolio'),      'match' => str_starts_with($path, 'portofolio')];
+  $navItems[] = ['label' => t('nav.status'),      'url' => site_url('/status-pesanan'),  'match' => str_starts_with($path, 'status-pesanan')];
+  $navItems[] = ['label' => t('nav.contact'),     'url' => site_url('/kontak'),          'match' => str_starts_with($path, 'kontak')];
 }
 if ($loggedIn && ($role === 'admin' || $role === 'editor')) {
   $navItems[] = [
-    'label' => 'Dashboard',
+    'label' => t('nav.dashboard'),
     'url'   => site_url($dashboardUrl),
     'match' => str_starts_with($path, trim($dashboardUrl, '/')),
   ];
 }
+
+$langOther = I18n::isEn() ? 'id' : 'en';
+$langOtherLabel = $langOther === 'en' ? 'EN' : 'ID';
 ?>
 <header class="topbar">
   <div class="topbar__inner">
@@ -44,23 +49,29 @@ if ($loggedIn && ($role === 'admin' || $role === 'editor')) {
         <a class="<?= ! empty($item['match']) ? 'active' : '' ?>" href="<?= $item['url'] ?>"><?= esc($item['label']) ?></a>
       <?php endforeach; ?>
 
+      <!-- Language switcher -->
+      <a class="langSwitch" href="<?= site_url('lang/' . $langOther) ?>" rel="nofollow" aria-label="<?= esc(t('global.language')) ?>">
+        <svg class="langSwitch__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        <span><?= $langOtherLabel ?></span>
+      </a>
+
       <?php if ($loggedIn): ?>
         <div class="profileMenu" id="profileMenu">
-          <button type="button" class="profileBtn" id="profileBtn" aria-haspopup="true" aria-expanded="false" aria-label="Menu profil">
+          <button type="button" class="profileBtn" id="profileBtn" aria-haspopup="true" aria-expanded="false" aria-label="<?= esc(t('global.profile')) ?>">
             <img class="profileAvatar" src="<?= esc($avatarUrl) ?>" alt="Profil">
           </button>
           <div class="profileDropdown" id="profileDropdown" role="menu">
-            <a class="profileItem" href="<?= esc($profileUrl) ?>" role="menuitem">Profil</a>
-            <a class="profileItem" href="<?= site_url('/logout') ?>" role="menuitem">Logout</a>
+            <a class="profileItem" href="<?= esc($profileUrl) ?>" role="menuitem"><?= esc(t('global.profile')) ?></a>
+            <a class="profileItem" href="<?= site_url('/logout') ?>" role="menuitem"><?= esc(t('global.logout')) ?></a>
           </div>
         </div>
       <?php else: ?>
-        <a class="navLogin" href="<?= site_url('/login') ?>">Login</a>
+        <a class="navLogin" href="<?= site_url('/login') ?>"><?= esc(t('global.login')) ?></a>
       <?php endif; ?>
     </nav>
 
     <!-- Mobile toggle -->
-    <button type="button" class="navToggle" id="navToggle" aria-label="Buka menu" aria-controls="navMobile" aria-expanded="false">
+    <button type="button" class="navToggle" id="navToggle" aria-label="<?= esc(t('global.openMenu')) ?>" aria-controls="navMobile" aria-expanded="false">
       <span class="navToggle__bar"></span>
       <span class="navToggle__bar"></span>
       <span class="navToggle__bar"></span>
@@ -69,10 +80,10 @@ if ($loggedIn && ($role === 'admin' || $role === 'editor')) {
 
   <!-- Mobile drawer -->
   <div class="navBackdrop" id="navBackdrop" hidden></div>
-  <aside class="navDrawer" id="navMobile" aria-label="Menu mobile" aria-hidden="true">
+  <aside class="navDrawer" id="navMobile" aria-label="<?= esc(t('global.menu')) ?>" aria-hidden="true">
     <div class="navDrawer__head">
-      <span class="navDrawer__title">Menu</span>
-      <button type="button" class="navDrawer__close" id="navClose" aria-label="Tutup menu">&times;</button>
+      <span class="navDrawer__title"><?= esc(t('global.menu')) ?></span>
+      <button type="button" class="navDrawer__close" id="navClose" aria-label="<?= esc(t('global.closeMenu')) ?>">&times;</button>
     </div>
 
     <nav class="navDrawer__list">
@@ -82,11 +93,15 @@ if ($loggedIn && ($role === 'admin' || $role === 'editor')) {
     </nav>
 
     <div class="navDrawer__foot">
+      <a class="langSwitch langSwitch--block" href="<?= site_url('lang/' . $langOther) ?>" rel="nofollow">
+        <svg class="langSwitch__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        <span>Switch to <?= $langOtherLabel ?></span>
+      </a>
       <?php if ($loggedIn): ?>
-        <a class="navDrawer__link" href="<?= esc($profileUrl) ?>">Profil</a>
-        <a class="navDrawer__link navDrawer__link--danger" href="<?= site_url('/logout') ?>">Logout</a>
+        <a class="navDrawer__link" href="<?= esc($profileUrl) ?>"><?= esc(t('global.profile')) ?></a>
+        <a class="navDrawer__link navDrawer__link--danger" href="<?= site_url('/logout') ?>"><?= esc(t('global.logout')) ?></a>
       <?php else: ?>
-        <a class="navDrawer__link navDrawer__link--primary" href="<?= site_url('/login') ?>">Login</a>
+        <a class="navDrawer__link navDrawer__link--primary" href="<?= site_url('/login') ?>"><?= esc(t('global.login')) ?></a>
       <?php endif; ?>
     </div>
   </aside>
@@ -124,12 +139,10 @@ if ($loggedIn && ($role === 'admin' || $role === 'editor')) {
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && drawer.classList.contains('is-open')) shut();
   });
-  // tutup saat klik link di dalam drawer
   drawer.querySelectorAll('a').forEach(function (a) {
     a.addEventListener('click', shut);
   });
 
-  // profile dropdown (desktop)
   const profileBtn = document.getElementById('profileBtn');
   const profileDd  = document.getElementById('profileDropdown');
   const profileMenu = document.getElementById('profileMenu');

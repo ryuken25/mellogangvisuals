@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="id">
+<html lang="<?= esc(\App\Support\I18n::htmlLang()) ?>">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,7 +30,6 @@
     (function() {
       var show = <?= json_encode((bool) session()->getFlashdata('show_tugas_popup')) ?>;
       if (!show) return;
-      // Tunggu sampai Bootstrap dimuat (kalau ada) — fallback manual kalau belum
       function fire(){
         var el = document.getElementById('tugasModal');
         if (!el) return;

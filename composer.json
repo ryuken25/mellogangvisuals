@@ -26,6 +26,9 @@
             "App\\": "app/",
             "Config\\": "app/Config/"
         },
+        "files": [
+            "app/Helpers/i18n_helper.php"
+        ],
         "exclude-from-classmap": [
             "**/Database/Migrations/**"
         ]

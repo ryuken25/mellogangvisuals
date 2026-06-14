@@ -3,6 +3,9 @@
 namespace App\Controllers\Pelanggan;
 
 use App\Controllers\BaseController;
+use App\Libraries\GoogleAuth;
+use App\Models\PortofolioModel;
+use App\Support\Status;
 
 class DashboardController extends BaseController
 {
@@ -26,9 +29,38 @@ class DashboardController extends BaseController
             ->orderBy('p.id_pemesanan', 'DESC')
             ->get()->getResultArray();
 
+        // Decorate orders
+        foreach ($orders as &$o) {
+            $st = (string) ($o['status_pemesanan'] ?? '');
+            $o['status_label'] = Status::orderLabel($st);
+            $o['status_color'] = Status::orderColor($st);
+        }
+        unset($o);
+
+        // Preview portofolio untuk customer (max 6)
+        $portoModel = new PortofolioModel();
+        $portoRaw = $portoModel->orderBy('id_portfolio', 'DESC')->limit(6)->find();
+        $portoMap = [];
+        foreach ($portoRaw as &$po) {
+            $thumb = base_url('assets/images/porto_placeholder.png');
+            $tn = (string)($po['thumbnail'] ?? '');
+            if ($tn !== '') $thumb = base_url('uploads/portofolio/' . $tn);
+            $po['thumb'] = $thumb;
+        }
+        unset($po);
+
+        // Cek apakah Google login diaktifkan (untuk tombol cepat)
+        $googleOn = false;
+        try { $googleOn = (new GoogleAuth())->isConfigured(); } catch (\Throwable $e) {}
+
+        $nama = (string) session()->get('nama_lengkap') ?: 'there';
+
         return view('pelanggan/dashboard/index', [
-            'title' => 'Dashboard Pelanggan',
+            'title'  => 'Dashboard',
             'orders' => $orders,
+            'porto'  => $portoRaw,
+            'googleOn' => $googleOn,
+            'nama'   => $nama,
         ]);
     }
 }

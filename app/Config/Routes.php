@@ -39,6 +39,9 @@ $routes->get('register', 'AuthController::registerForm');
 $routes->post('register', 'AuthController::register');
 $routes->get('logout', 'AuthController::logout');
 
+// Language switcher (set cookie + redirect back)
+$routes->get('lang/(:segment)', 'BaseController::setLanguage/$1');
+
 // Verifikasi OTP (post-register)
 $routes->get('auth/verify', 'AuthController::verifyForm');
 $routes->post('auth/verify', 'AuthController::verify');
