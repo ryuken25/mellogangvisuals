@@ -17,4 +17,41 @@ function reveal(){const els=$$('.reveal');if(!('IntersectionObserver'in window))
 function gsapMotion(){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||!window.gsap)return;const gsap=window.gsap;gsap.registerPlugin(window.ScrollTrigger);gsap.utils.toArray('.hero-image img').forEach(img=>gsap.to(img,{yPercent:7,scale:1.08,ease:'none',scrollTrigger:{trigger:img,start:'top bottom',end:'bottom top',scrub:1}}));gsap.utils.toArray('.section-dark,.works-grid,.about-strip,.book-layout').forEach(el=>gsap.from(el,{y:28,opacity:0,duration:.8,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 82%',once:true}}));}
 function detail(){const node=$('[data-project]');if(!node)return;const project=PROJECTS[node.dataset.project];if(!project)return;const title=$('[data-detail-title]');if(title)title.textContent=project.title;const category=$('[data-detail-category]');if(category)category.textContent=project.category;const year=$('[data-detail-year]');if(year)year.textContent=project.year;const description=$('[data-detail-description]');if(description)description.textContent=project.description;const cover=$('[data-detail-cover]');if(cover){cover.src=project.cover;cover.alt=project.title}const frame=$('[data-detail-video]');if(frame&&project.video)frame.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${project.video}?rel=0&modestbranding=1" title="${project.title}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;else if(frame)frame.innerHTML='<div class="video-empty">Video preview is available through the project source.</div>';const gallery=$('[data-detail-gallery]');if(gallery)gallery.innerHTML=project.gallery.map((src,i)=>`<img src="${src}" alt="${project.title} — frame ${i+1}" loading="lazy">`).join('');const source=$('[data-detail-source]');if(source){source.href=project.source;source.textContent=project.source.includes('youtube')?'Watch on YouTube ↗':'View on Instagram ↗'}document.title=`${project.title} — MellogangVisuals`}
 function booking(){const form=$('#bookForm');if(!form)return;const select=$('#bookPackage'),name=$('#bookName'),date=$('#bookDate'),notes=$('#bookNotes'),location=$('#bookLocation');const update=()=>{const label=select.options[select.selectedIndex]?.text||'photo/video production';const d=date.value?new Intl.DateTimeFormat('id-ID',{day:'numeric',month:'long',year:'numeric'}).format(new Date(`${date.value}T00:00:00`)):'[tanggal acara]';const text=`Hi MellogangVisuals, saya ${name.value.trim()||'[nama]'}. Saya ingin menanyakan ketersediaan untuk ${label} pada tanggal ${d}. Lokasi: ${location.value.trim()||'[lokasi]'}.${notes.value.trim()?` Catatan: ${notes.value.trim()}`:''} Mohon info detail dan langkah selanjutnya ya.`;const link=`https://wa.me/6282236004917?text=${encodeURIComponent(text)}`;const output=$('#waLink');if(output)output.href=link};[select,name,date,notes,location].forEach(e=>e?.addEventListener('input',update));form.addEventListener('submit',e=>{e.preventDefault();update();window.open($('#waLink').href,'_blank','noopener,noreferrer')});update()}
-document.addEventListener('DOMContentLoaded',()=>{theme();menu();reveal();gsapMotion();detail();booking()});
+const I18N={
+  id:{
+    'nav.home':'Beranda','nav.portfolio':'Portofolio','nav.about':'Tentang Kami','nav.book':'Pesan',
+    'btn.book':'Pesan Sekarang','btn.book.small':'Pesan',
+    'hero.title':'Visual<br><span class="gradient">dengan tujuan.</span>',
+    'hero.copy':'Produksi foto dan video untuk pernikahan, brand, acara, dan destinasi. Kami bekerja dengan brief yang jelas, proses yang tertata, dan sudut pandang visual yang jujur.',
+    'hero.cta1':'Pesan project ↗','hero.cta2':'Lihat portofolio',
+    'hero.meta1':'Bali, Indonesia','hero.meta2':'Foto & video','hero.meta3':'Tersedia untuk tanggal terpilih',
+    'works.eyebrow':'Portofolio','works.title':'Karya pilihan.',
+    'works.note':'Sebagian project prewedding, destinasi, corporate, dan event dari arsip MellogangVisuals.',
+    'works.viewall':'Lihat semua project →',
+    'about.eyebrow':'Tentang kami','about.title':'Kerja rapi.<br>Tim yang enak diajak kerja.',
+    'about.copy':'MellogangVisuals adalah tim foto dan video yang berbasis di Bali. Kami bantu klien mengubah brief, lokasi, atau momen penting menjadi karya yang terasa pas dan selesai.',
+    'about.link':'Selengkapnya tentang studio →',
+    'cta.eyebrow':'Punya rencana project?','cta.title':'Ngobrolin tanggal.','cta.copy':'Ceritain apa yang mau kamu garap, nanti kami balas dengan langkah berikutnya.','cta.btn':'Pesan sekarang ↗',
+    'footer.tagline':'Produksi foto dan video untuk pernikahan, brand, acara, dan destinasi.',
+    'footer.nav':'Navigasi','footer.contact':'Kontak','footer.whatsapp':'WhatsApp studio'
+  },
+  en:{
+    'nav.home':'Home','nav.portfolio':'Portofolio','nav.about':'About Us','nav.book':'Book Now',
+    'btn.book':'Book Now','btn.book.small':'Book Now',
+    'hero.title':'Visuals<br><span class="gradient">with purpose.</span>',
+    'hero.copy':'Photo and video production for weddings, brands, events and destinations. We work with a clear brief, a considered process and an honest visual point of view.',
+    'hero.cta1':'Book a project ↗','hero.cta2':'View portofolio',
+    'hero.meta1':'Bali, Indonesia','hero.meta2':'Photo & video','hero.meta3':'Available for selected dates',
+    'works.eyebrow':'Portofolio','works.title':'Selected works.',
+    'works.note':'A selection of prewedding, destination, corporate and event projects from the MellogangVisuals archive.',
+    'works.viewall':'View all projects →',
+    'about.eyebrow':'About us','about.title':'Clear work.<br>Good people.',
+    'about.copy':'MellogangVisuals is a Bali-based photo and video team. We help clients turn a brief, a place or a milestone into work that feels direct and well made.',
+    'about.link':'More about the studio →',
+    'cta.eyebrow':'Have a project in mind?','cta.title':'Let’s talk dates.','cta.copy':'Tell us what you are planning and we will reply with the next practical step.','cta.btn':'Book now ↗',
+    'footer.tagline':'Photo and video production for weddings, events, brands and destinations.',
+    'footer.nav':'Navigate','footer.contact':'Contact','footer.whatsapp':'WhatsApp the studio'
+  }
+};
+function lang(){const store='mellogang-lang';let cur=localStorage.getItem(store)||'id';const apply=l=>{document.documentElement.lang=l;$$('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(I18N[l]&&I18N[l][k]!=null)el.innerHTML=I18N[l][k]});$$('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===l))};$$('.lang-btn').forEach(b=>b.addEventListener('click',()=>{cur=b.dataset.lang;localStorage.setItem(store,cur);apply(cur)}));apply(cur)}
+document.addEventListener('DOMContentLoaded',()=>{theme();lang();menu();reveal();gsapMotion();detail();booking()});
