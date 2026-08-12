@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 225" role="img" aria-labelledby="title desc">
   <title id="title">MellogangVisuals monogram</title>
-  <desc id="desc">A handwritten M monogram with a V in the centre.</desc>
+  <desc id="desc">A handwritten M monogram with a V dipping below the baseline.</desc>
   <defs>
     <linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#f6efe3"/>
@@ -8,5 +8,5 @@
       <stop offset="1" stop-color="#ffffff"/>
     </linearGradient>
   </defs>
-  <path d="M44 168 V50 L100 122 L156 50 V168" fill="none" stroke="url(#mg)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M42 165 V45 L100 210 L158 45 V165" fill="none" stroke="url(#mg)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
