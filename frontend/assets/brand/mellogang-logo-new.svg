@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="melloGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f4c875;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ffd3ba;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffc7d8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="melloGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#b8f3e6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8ee7d2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d9ccff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="melloGrad3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d9ccff;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#ffc7d8;stop-opacity:0.6" />
+    </linearGradient>
+    <clipPath id="filmClip">
+      <rect x="20" y="20" width="160" height="160" rx="24" />
+    </clipPath>
+  </defs>
+
+  <!-- Film frame outer border -->
+  <rect x="16" y="16" width="168" height="168" rx="28" fill="none" stroke="url(#melloGrad1)" stroke-width="3" opacity="0.7"/>
+
+  <!-- Film frame inner -->
+  <rect x="24" y="24" width="152" height="152" rx="22" fill="#101417" opacity="0.9"/>
+
+  <!-- Film perforations top -->
+  <rect x="38" y="28" width="12" height="8" rx="2" fill="url(#melloGrad2)" opacity="0.5"/>
+  <rect x="62" y="28" width="12" height="8" rx="2" fill="url(#melloGrad2)" opacity="0.5"/>
+  <rect x="86" y="28" width="12" height="8" rx="2" fill="url(#melloGrad2)" opacity="0.5"/>
+  <rect x="110" y="28" width="12" height="8" rx="2" fill="url(#melloGrad2)" opacity="0.5"/>
+  <rect x="134" y="28" width="12" height="8" rx="2" fill="url(#melloGrad2)" opacity="0.5"/>
+
+  <!-- Film perforations bottom -->
+  <rect x="38" y="164" width="12" height="8" rx="2" fill="url(#melloGrad2)" opacity="0.5"/>
+  <rect x="62" y="164" width="12" height="8" rx="2" fill="url(#melloGrad2)" opacity="0.5"/>
+  <rect x="86" y="164" width="12" height="8" rx="2" fill="url(#melloGrad2)" opacity="0.5"/>
+  <rect x="110" y="164" width="12" height="8" rx="2" fill="url(#melloGrad2)" opacity="0.5"/>
+  <rect x="134" y="164" width="12" height="8" rx="2" fill="url(#melloGrad2)" opacity="0.5"/>
+
+  <!-- Lens circle (outer) -->
+  <circle cx="100" cy="92" r="52" fill="none" stroke="url(#melloGrad1)" stroke-width="2.5" opacity="0.6"/>
+
+  <!-- Lens circle (inner) -->
+  <circle cx="100" cy="92" r="38" fill="none" stroke="url(#melloGrad2)" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Lens center dot -->
+  <circle cx="100" cy="92" r="6" fill="url(#melloGrad1)" opacity="0.8"/>
+
+  <!-- M letter -->
+  <text x="100" y="108" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="58" fill="url(#melloGrad1)" opacity="0.95">M</text>
+
+  <!-- Accent line under M -->
+  <line x1="64" y1="120" x2="136" y2="120" stroke="url(#melloGrad2)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Brand name -->
+  <text x="100" y="148" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="14" fill="url(#melloGrad3)" letter-spacing="4">MELLOGANG</text>
+
+  <!-- Subtle glow -->
+  <circle cx="100" cy="92" r="52" fill="url(#melloGrad1)" opacity="0.04"/>
+</svg>

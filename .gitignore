@@ -148,3 +148,5 @@ _modules/*
 
 /results/
 /phpunit*.xml
+.vercel
+.env*
