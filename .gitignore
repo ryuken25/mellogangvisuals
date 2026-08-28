@@ -150,3 +150,10 @@ _modules/*
 /phpunit*.xml
 .vercel
 .env*
+
+#-------------------------
+# Production credentials (never commit)
+#-------------------------
+creds.txt
+*.creds.txt
+creds/
