@@ -1,0 +1,44 @@
+<!-- DIHASILKAN OLEH site/build.mjs — jangan sunting file ini. Sunting site/data/ atau site/templates/, lalu jalankan: node site/build.mjs -->
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Halaman tidak ada — MellogangVisuals</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f6efe3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f0d0b" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/brand/mellogang-logo.png">
+<link rel="stylesheet" href="/styles.css">
+<script>try{var t=localStorage.getItem('mellogang-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script>
+// Halaman 404 tunggal melayani kedua bahasa. Vercel menyajikan file ini untuk
+// setiap path tak dikenal, termasuk di bawah /en/, jadi bahasanya dipilih dari
+// pathname sebelum paint.
+(function(){try{var en=location.pathname.indexOf('/en/')===0||location.pathname==='/en';
+document.documentElement.lang=en?'en':'id';
+document.addEventListener('DOMContentLoaded',function(){
+var blocks=document.querySelectorAll('[data-nf-lang]');
+for(var i=0;i<blocks.length;i++){var m=blocks[i].getAttribute('data-nf-lang')===(en?'en':'id');
+if(m)blocks[i].removeAttribute('hidden');else blocks[i].setAttribute('hidden','');}});}catch(e){}})();
+</script>
+</head>
+<body>
+<div class="site-shell">
+<main id="main" class="container page-hero notfound"><div class="nf-block" data-nf-lang="id"><h1 class="display">Halaman ini tidak ada</h1>
+<p>Coba buka portofolio, atau kembali ke beranda.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="/portfolio/">Buka portofolio</a>
+<a class="btn btn-outline" href="/">Ke beranda</a>
+</div>
+</div><div class="nf-block" data-nf-lang="en" hidden><h1 class="display">This page does not exist</h1>
+<p>Try the portfolio, or go back to the home page.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="/en/portfolio/">Open the portfolio</a>
+<a class="btn btn-outline" href="/en/">Go to the home page</a>
+</div>
+</div></main>
+<footer class="site-footer"><div class="container footer-bottom"><span>© 2026 MellogangVisuals</span></div></footer>
+</div>
+</body>
+</html>

@@ -1,57 +1,185 @@
-const PROJECTS={
-  'indra-suci':{title:'Indra & Suci',category:'Prewedding',year:'2024',cover:'/assets/video/frames/indra-suci-88.jpg',video:'7RwTWRgLmHY',description:'Prewedding film of a couple in traditional Balinese attire, shot across tropical outdoor locations.',gallery:['/assets/video/frames/indra-suci-12.jpg','/assets/video/frames/indra-suci-38.jpg','/assets/video/frames/indra-suci-62.jpg','/assets/video/frames/indra-suci-88.jpg'],source:'https://www.youtube.com/watch?v=7RwTWRgLmHY'},
-  'eka-nanda':{title:'Eka & Nanda',category:'Prewedding',year:'2024',cover:'/assets/video/eka-nanda.jpg',video:'8kSnL2fBCTU',description:'Prewedding film of a couple in traditional attire holding lanterns at dusk.',gallery:['/assets/brand/instagram/ig-05.jpg','/assets/brand/instagram/ig-01.jpg'],source:'https://www.youtube.com/watch?v=8kSnL2fBCTU'},
-  'bukit-lestari':{title:'Puncak Bukit Lestari',category:'Destination / Villa',year:'2023',cover:'/assets/video/frames/bukit-lestari-12.jpg',video:'t4hcCZhzOdo',description:'Promotional film for Puncak Lestari Camp in Bedugul, combining landscape, lodging and lifestyle footage.',gallery:['/assets/video/frames/bukit-lestari-12.jpg','/assets/video/frames/bukit-lestari-38.jpg','/assets/video/frames/bukit-lestari-62.jpg','/assets/video/frames/bukit-lestari-88.jpg'],source:'https://www.youtube.com/watch?v=t4hcCZhzOdo'},
-  'pohen-camp':{title:'Pohen Hill Camp',category:'Destination / Glamping',year:'2023',cover:'/assets/video/frames/pohen-camp-20.jpg',video:'4WgJEnnQvHM',description:'Promotional film for Pohen Hill Camp in Bedugul, featuring the grounds, glamping tents and the experience.',gallery:['/assets/video/frames/pohen-camp-20.jpg','/assets/video/frames/pohen-camp-50.jpg','/assets/video/frames/pohen-camp-80.jpg'],source:'https://www.youtube.com/watch?v=4WgJEnnQvHM'},
-  'blooms-short':{title:'The Blooms Garden — Best Scenes',category:'Destination / Teaser',year:'2023',cover:'/assets/video/frames/blooms-short-62.jpg',video:'bIOMXfEdCEc',description:'Vertical short-form teaser for The Blooms Garden, highlighting the outdoor space and evening atmosphere.',gallery:['/assets/video/frames/blooms-short-12.jpg','/assets/video/frames/blooms-short-38.jpg','/assets/video/frames/blooms-short-62.jpg','/assets/video/frames/blooms-short-88.jpg'],source:'https://www.youtube.com/watch?v=bIOMXfEdCEc'},
-  'blooms-promo':{title:'The Blooms Garden — Promo',category:'Destination / Commercial',year:'2023',cover:'/assets/video/frames/blooms-promo-12.jpg',video:'h6Q0_5upkk4',description:'Promotional video for The Blooms Garden, covering the grounds, dining and outdoor activities.',gallery:['/assets/video/frames/blooms-promo-12.jpg','/assets/video/frames/blooms-promo-38.jpg','/assets/video/frames/blooms-promo-62.jpg','/assets/video/frames/blooms-promo-88.jpg'],source:'https://www.youtube.com/watch?v=h6Q0_5upkk4'},
-  'mandiri-taspen':{title:'PT Bank Mandiri Taspen',category:'Corporate',year:'2023',cover:'/assets/video/frames/mandiri-taspen-38.jpg',video:'Gi4BH7nQQXo',description:'Corporate facility film for Mantap Learning Center, covering the training rooms, amenities and lobby.',gallery:['/assets/video/frames/mandiri-taspen-12.jpg','/assets/video/frames/mandiri-taspen-38.jpg','/assets/video/frames/mandiri-taspen-62.jpg','/assets/video/frames/mandiri-taspen-88.jpg'],source:'https://www.youtube.com/watch?v=Gi4BH7nQQXo'},
-  'coinvest-asia':{title:'CoinFest Asia 2022',category:'Event',year:'2022',cover:'/assets/video/frames/coinvest-asia-20.jpg',video:'MakxWe9ev0w',description:'Event coverage of CoinFest Asia 2022, capturing talks, booths and the crowd.',gallery:['/assets/video/frames/coinvest-asia-20.jpg','/assets/video/frames/coinvest-asia-50.jpg','/assets/video/frames/coinvest-asia-80.jpg'],source:'https://www.youtube.com/watch?v=MakxWe9ev0w'},
-  'wedding-ceremony':{title:'Wedding Ceremony',category:'Wedding',year:'Portfolio',cover:'/assets/brand/instagram/ig-05.jpg',video:'',description:'Ceremony coverage with a documentary approach to people, details and atmosphere.',gallery:['/assets/brand/instagram/ig-01.jpg'],source:'https://www.instagram.com/mellogangvisuals/'},
-  'cultural-event':{title:'Cultural Event',category:'Event',year:'Portfolio',cover:'/assets/brand/instagram/ig-02.jpg',video:'',description:'Environmental and documentary coverage for cultural events and public celebrations.',gallery:['/assets/brand/instagram/ig-06.jpg'],source:'https://www.instagram.com/mellogangvisuals/'}
-};
-const $=(s,c=document)=>c.querySelector(s);const $$=(s,c=document)=>[...c.querySelectorAll(s)];
-function theme(){const root=document.documentElement;const stored=localStorage.getItem('mellogang-theme');if(stored)root.dataset.theme=stored;const buttons=[$('#themeToggle'),$('#mobileThemeToggle')].filter(Boolean);if(!buttons.length)return;const update=()=>{const dark=root.dataset.theme==='dark';buttons.forEach(button=>{button.setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme');if(button.id==='themeToggle')button.innerHTML=dark?'☼':'☾';else button.textContent=dark?'Light theme':'Dark theme'})};update();buttons.forEach(button=>button.addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem('mellogang-theme',root.dataset.theme);update()}))}
-function menu(){const b=$('#menuButton'),m=$('#mobileMenu');if(!b||!m)return;const close=()=>{m.setAttribute('hidden','');b.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open');document.body.style.overflow=''};b.addEventListener('click',()=>{const open=m.hasAttribute('hidden');if(open){m.removeAttribute('hidden');b.setAttribute('aria-expanded','true');document.body.classList.add('menu-open');document.body.style.overflow='hidden'}else close()});m.querySelectorAll('a').forEach(link=>link.addEventListener('click',close));document.addEventListener('keydown',event=>{if(event.key==='Escape')close()})}
-function reveal(){const els=$$('.reveal');if(!('IntersectionObserver'in window)){els.forEach(e=>e.classList.add('ready'));return}const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('ready');io.unobserve(e.target)}}),{threshold:.1});els.forEach(e=>io.observe(e))}
-function gsapMotion(){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||!window.gsap)return;const gsap=window.gsap;gsap.registerPlugin(window.ScrollTrigger);gsap.utils.toArray('.hero-image img').forEach(img=>gsap.to(img,{yPercent:7,scale:1.08,ease:'none',scrollTrigger:{trigger:img,start:'top bottom',end:'bottom top',scrub:1}}));gsap.utils.toArray('.section-dark,.works-grid,.about-strip,.book-layout').forEach(el=>gsap.from(el,{y:28,opacity:0,duration:.8,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 82%',once:true}}));}
-function detail(){const node=$('[data-project]');if(!node)return;const project=PROJECTS[node.dataset.project];if(!project)return;const title=$('[data-detail-title]');if(title)title.textContent=project.title;const category=$('[data-detail-category]');if(category)category.textContent=project.category;const year=$('[data-detail-year]');if(year)year.textContent=project.year;const description=$('[data-detail-description]');if(description)description.textContent=project.description;const cover=$('[data-detail-cover]');if(cover){cover.src=project.cover;cover.alt=project.title}const frame=$('[data-detail-video]');if(frame&&project.video)frame.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${project.video}?rel=0&modestbranding=1" title="${project.title}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;else if(frame)frame.innerHTML='<div class="video-empty">Video preview is available through the project source.</div>';const gallery=$('[data-detail-gallery]');if(gallery)gallery.innerHTML=project.gallery.map((src,i)=>`<img src="${src}" alt="${project.title} — frame ${i+1}" loading="lazy">`).join('');const source=$('[data-detail-source]');if(source){source.href=project.source;source.textContent=project.source.includes('youtube')?'Watch on YouTube ↗':'View on Instagram ↗'}document.title=`${project.title} — MellogangVisuals`}
-function booking(){const form=$('#bookForm');if(!form)return;const select=$('#bookPackage'),name=$('#bookName'),date=$('#bookDate'),notes=$('#bookNotes'),location=$('#bookLocation');const update=()=>{const label=select.options[select.selectedIndex]?.text||'photo/video production';const d=date.value?new Intl.DateTimeFormat('id-ID',{day:'numeric',month:'long',year:'numeric'}).format(new Date(`${date.value}T00:00:00`)):'[tanggal acara]';const text=`Hi MellogangVisuals, saya ${name.value.trim()||'[nama]'}. Saya ingin menanyakan ketersediaan untuk ${label} pada tanggal ${d}. Lokasi: ${location.value.trim()||'[lokasi]'}.${notes.value.trim()?` Catatan: ${notes.value.trim()}`:''} Mohon info detail dan langkah selanjutnya ya.`;const link=`https://wa.me/6282236004917?text=${encodeURIComponent(text)}`;const output=$('#waLink');if(output)output.href=link};[select,name,date,notes,location].forEach(e=>e?.addEventListener('input',update));form.addEventListener('submit',e=>{e.preventDefault();update();window.open($('#waLink').href,'_blank','noopener,noreferrer')});update()}
-const I18N={
-  id:{
-    'nav.home':'Beranda','nav.portfolio':'Portofolio','nav.about':'Tentang Kami','nav.book':'Pesan',
-    'btn.book':'Pesan Sekarang','btn.book.small':'Pesan',
-    'hero.title':'Visual<br><span class="gradient">dengan tujuan.</span>',
-    'hero.copy':'Produksi foto dan video untuk pernikahan, brand, acara, dan destinasi. Kami bekerja dengan brief yang jelas, proses yang tertata, dan sudut pandang visual yang jujur.',
-    'hero.cta1':'Pesan project ↗','hero.cta2':'Lihat portofolio',
-    'hero.meta1':'Bali, Indonesia','hero.meta2':'Foto & video','hero.meta3':'Tersedia untuk tanggal terpilih',
-    'works.eyebrow':'Portofolio','works.title':'Karya pilihan.',
-    'works.note':'Sebagian project prewedding, destinasi, corporate, dan event dari arsip MellogangVisuals.',
-    'works.viewall':'Lihat semua project →',
-    'about.eyebrow':'Tentang kami','about.title':'Kerja rapi.<br>Tim yang enak diajak kerja.',
-    'about.copy':'MellogangVisuals adalah tim foto dan video yang berbasis di Bali. Kami bantu klien mengubah brief, lokasi, atau momen penting menjadi karya yang terasa pas dan selesai.',
-    'about.link':'Selengkapnya tentang studio →',
-    'cta.eyebrow':'Punya rencana project?','cta.title':'Ngobrolin tanggal.','cta.copy':'Ceritain apa yang mau kamu garap, nanti kami balas dengan langkah berikutnya.','cta.btn':'Pesan sekarang ↗',
-    'footer.tagline':'Produksi foto dan video untuk pernikahan, brand, acara, dan destinasi.',
-    'footer.nav':'Navigasi','footer.contact':'Kontak','footer.whatsapp':'WhatsApp studio'
-  },
-  en:{
-    'nav.home':'Home','nav.portfolio':'Portofolio','nav.about':'About Us','nav.book':'Book Now',
-    'btn.book':'Book Now','btn.book.small':'Book Now',
-    'hero.title':'Visuals<br><span class="gradient">with purpose.</span>',
-    'hero.copy':'Photo and video production for weddings, brands, events and destinations. We work with a clear brief, a considered process and an honest visual point of view.',
-    'hero.cta1':'Book a project ↗','hero.cta2':'View portofolio',
-    'hero.meta1':'Bali, Indonesia','hero.meta2':'Photo & video','hero.meta3':'Available for selected dates',
-    'works.eyebrow':'Portofolio','works.title':'Selected works.',
-    'works.note':'A selection of prewedding, destination, corporate and event projects from the MellogangVisuals archive.',
-    'works.viewall':'View all projects →',
-    'about.eyebrow':'About us','about.title':'Clear work.<br>Good people.',
-    'about.copy':'MellogangVisuals is a Bali-based photo and video team. We help clients turn a brief, a place or a milestone into work that feels direct and well made.',
-    'about.link':'More about the studio →',
-    'cta.eyebrow':'Have a project in mind?','cta.title':'Let’s talk dates.','cta.copy':'Tell us what you are planning and we will reply with the next practical step.','cta.btn':'Book now ↗',
-    'footer.tagline':'Photo and video production for weddings, events, brands and destinations.',
-    'footer.nav':'Navigate','footer.contact':'Contact','footer.whatsapp':'WhatsApp the studio'
+// Situs statis MellogangVisuals.
+//
+// Bahasa TIDAK ditangani di sini. Setiap bahasa punya URL sendiri (ID di /,
+// EN di /en/) dan halamannya dirender penuh oleh site/build.mjs, jadi tidak ada
+// swap DOM dan tidak ada flash bahasa. Yang tersisa di klien hanya hal-hal yang
+// memang milik pengunjung: tema, menu, animasi masuk, filter, dan form booking.
+
+const $ = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+
+// Tema. Nilai awal sudah dipasang oleh inline script di <head> supaya tidak ada
+// flash; di sini kita cuma menyinkronkan tombol dan menangani klik.
+function theme() {
+  const root = document.documentElement;
+  const buttons = $$('.theme-toggle');
+  if (!buttons.length) return;
+
+  const sync = () => {
+    const dark = root.dataset.theme === 'dark';
+    for (const b of buttons) {
+      b.setAttribute('aria-pressed', String(dark));
+      b.setAttribute('aria-label', dark ? b.dataset.labelLight : b.dataset.labelDark);
+      const icon = $('[data-theme-icon]', b);
+      if (icon) icon.textContent = dark ? '☼' : '☾';
+    }
+  };
+
+  for (const b of buttons) {
+    b.addEventListener('click', () => {
+      const dark = root.dataset.theme === 'dark';
+      root.dataset.theme = dark ? 'light' : 'dark';
+      try {
+        localStorage.setItem('mellogang-theme', root.dataset.theme);
+      } catch (e) {
+        /* penyimpanan diblokir; tema tetap berlaku untuk sesi ini */
+      }
+      sync();
+    });
   }
-};
-function lang(){const store='mellogang-lang';let cur=localStorage.getItem(store)||'id';const apply=l=>{document.documentElement.lang=l;$$('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(I18N[l]&&I18N[l][k]!=null)el.innerHTML=I18N[l][k]});$$('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===l))};$$('.lang-btn').forEach(b=>b.addEventListener('click',()=>{cur=b.dataset.lang;localStorage.setItem(store,cur);apply(cur)}));apply(cur)}
-document.addEventListener('DOMContentLoaded',()=>{theme();lang();menu();reveal();gsapMotion();detail();booking()});
+  sync();
+}
+
+function menu() {
+  const button = $('#menuButton');
+  const nav = $('#mobileMenu');
+  if (!button || !nav) return;
+
+  const close = () => {
+    nav.setAttribute('hidden', '');
+    button.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+  };
+
+  button.addEventListener('click', () => {
+    const closed = nav.hasAttribute('hidden');
+    if (closed) {
+      nav.removeAttribute('hidden');
+      button.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('menu-open');
+    } else {
+      close();
+    }
+  });
+
+  nav.addEventListener('click', (e) => {
+    if (e.target.closest('a')) close();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !nav.hasAttribute('hidden')) {
+      close();
+      button.focus();
+    }
+  });
+}
+
+function reveal() {
+  const els = $$('.reveal');
+  if (!els.length) return;
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    for (const e of els) e.classList.add('ready');
+    return;
+  }
+  const io = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('ready');
+          io.unobserve(entry.target);
+        }
+      }),
+    { threshold: 0.1 }
+  );
+  for (const e of els) io.observe(e);
+}
+
+// Filter portofolio. Sebelumnya chip-nya <span> tanpa handler sama sekali —
+// kontrol yang tidak melakukan apa-apa. Sekarang <button> dengan aria-pressed.
+function filters() {
+  const chips = $$('.filter');
+  const grid = $('#worksGrid');
+  if (!chips.length || !grid) return;
+  const cards = $$('.work-card', grid);
+  const empty = $('#worksEmpty');
+
+  const apply = (tag) => {
+    let shown = 0;
+    for (const card of cards) {
+      const tags = (card.dataset.tags || '').split(' ');
+      const match = tag === 'all' || tags.includes(tag);
+      card.hidden = !match;
+      if (match) shown++;
+    }
+    if (empty) empty.hidden = shown > 0;
+  };
+
+  for (const chip of chips) {
+    chip.addEventListener('click', () => {
+      for (const other of chips) {
+        const active = other === chip;
+        other.classList.toggle('active', active);
+        other.setAttribute('aria-pressed', String(active));
+      }
+      apply(chip.dataset.filter);
+    });
+  }
+}
+
+// Form booking. Template pesan dan seluruh placeholder datang dari
+// data-attribute yang dirender per bahasa, jadi pesan WhatsApp keluar dalam
+// bahasa halaman yang sedang dibuka.
+function booking() {
+  const form = $('#bookForm');
+  if (!form) return;
+
+  const type = $('#bookPackage');
+  const name = $('#bookName');
+  const date = $('#bookDate');
+  const location = $('#bookLocation');
+  const notes = $('#bookNotes');
+  const link = $('#waLink');
+
+  const formatDate = (value) => {
+    if (!value) return form.dataset.waDate;
+    const parsed = new Date(`${value}T00:00:00`);
+    if (Number.isNaN(parsed.getTime())) return form.dataset.waDate;
+    return new Intl.DateTimeFormat(form.dataset.dateLocale, {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    }).format(parsed);
+  };
+
+  const build = () => {
+    const note = notes.value.trim();
+    const message = form.dataset.waTemplate
+      .replace('{name}', name.value.trim() || form.dataset.waName)
+      .replace('{type}', type.options[type.selectedIndex]?.text || '')
+      .replace('{date}', formatDate(date.value))
+      .replace('{location}', location.value.trim() || form.dataset.waLocation)
+      .replace('{notes}', note ? form.dataset.waNotes.replace('{notes}', note) : '');
+    const url = `https://wa.me/${form.dataset.waNumber}?text=${encodeURIComponent(message)}`;
+    if (link) link.href = url;
+    return url;
+  };
+
+  for (const field of [type, name, date, location, notes]) {
+    field?.addEventListener('input', build);
+    field?.addEventListener('change', build);
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    window.open(build(), '_blank', 'noopener,noreferrer');
+  });
+
+  build();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  theme();
+  menu();
+  reveal();
+  filters();
+  booking();
+});

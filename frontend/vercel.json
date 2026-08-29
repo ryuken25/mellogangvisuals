@@ -1,5 +1,133 @@
 {
   "cleanUrls": true,
   "trailingSlash": true,
-  "headers": [{"source":"/(.*)","headers":[{"key":"X-Content-Type-Options","value":"nosniff"},{"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"}]}]
+  "redirects": [
+    {
+      "source": "/packages/:path*",
+      "destination": "/book/",
+      "permanent": true
+    },
+    {
+      "source": "/workflow/:path*",
+      "destination": "/book/",
+      "permanent": true
+    },
+    {
+      "source": "/contact/:path*",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/indra-suci/:path*",
+      "destination": "/portfolio/indra-suci-2024/",
+      "permanent": true
+    },
+    {
+      "source": "/en/portfolio/indra-suci/:path*",
+      "destination": "/en/portfolio/indra-suci-2024/",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/eka-nanda/:path*",
+      "destination": "/portfolio/eka-nanda-2024/",
+      "permanent": true
+    },
+    {
+      "source": "/en/portfolio/eka-nanda/:path*",
+      "destination": "/en/portfolio/eka-nanda-2024/",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/bukit-lestari/:path*",
+      "destination": "/portfolio/puncak-bukit-lestari-2023/",
+      "permanent": true
+    },
+    {
+      "source": "/en/portfolio/bukit-lestari/:path*",
+      "destination": "/en/portfolio/puncak-bukit-lestari-2023/",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/pohen-camp/:path*",
+      "destination": "/portfolio/pohen-hill-camp-2023/",
+      "permanent": true
+    },
+    {
+      "source": "/en/portfolio/pohen-camp/:path*",
+      "destination": "/en/portfolio/pohen-hill-camp-2023/",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/blooms-promo/:path*",
+      "destination": "/portfolio/blooms-garden-2023-promo/",
+      "permanent": true
+    },
+    {
+      "source": "/en/portfolio/blooms-promo/:path*",
+      "destination": "/en/portfolio/blooms-garden-2023-promo/",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/blooms-short/:path*",
+      "destination": "/portfolio/blooms-garden-2023-teaser/",
+      "permanent": true
+    },
+    {
+      "source": "/en/portfolio/blooms-short/:path*",
+      "destination": "/en/portfolio/blooms-garden-2023-teaser/",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/mandiri-taspen/:path*",
+      "destination": "/portfolio/bank-mandiri-taspen-2023/",
+      "permanent": true
+    },
+    {
+      "source": "/en/portfolio/mandiri-taspen/:path*",
+      "destination": "/en/portfolio/bank-mandiri-taspen-2023/",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/coinvest-asia/:path*",
+      "destination": "/portfolio/coinfest-asia-2022/",
+      "permanent": true
+    },
+    {
+      "source": "/en/portfolio/coinvest-asia/:path*",
+      "destination": "/en/portfolio/coinfest-asia-2022/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
 }
