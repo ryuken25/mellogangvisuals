@@ -425,16 +425,20 @@ for (const locale of LOCALES) for (const page of PAGES) buildPage(locale, page);
 }
 
 // vercel.json — dihasilkan supaya redirect slug tidak mungkin melenceng dari data.
+// Pola sumbernya `/(.*)`, bukan `/:path*`. Dengan trailingSlash:true Vercel
+// menormalkan lebih dulu (/packages -> 308 -> /packages/), dan `:path*` dengan nol
+// segmen cocoknya `/packages` TANPA slash, sehingga bentuk berslash jatuh ke 404.
+// `(.*)` boleh cocok string kosong, jadi ia menangkap kedua bentuk.
 {
   const redirects = [];
   for (const [from, to] of Object.entries(CONFIG.legacyRedirects)) {
-    redirects.push({ source: `${from}/:path*`, destination: to, permanent: true });
+    redirects.push({ source: `${from}/(.*)`, destination: to, permanent: true });
   }
   for (const p of PROJECTS) {
     if (!p.oldSlug) continue;
     for (const loc of LOCALES) {
       redirects.push({
-        source: `${urlOf(loc, `portfolio/${p.oldSlug}`)}/:path*`,
+        source: `${urlOf(loc, `portfolio/${p.oldSlug}`)}/(.*)`,
         destination: urlOf(loc, `portfolio/${p.slug}/`),
         permanent: true,
       });

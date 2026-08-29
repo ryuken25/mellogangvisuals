@@ -245,7 +245,7 @@ test('setiap slug lama punya redirect, dan tujuannya benar-benar ada', () => {
     if (!p.oldSlug) continue;
     for (const loc of LOCALES) {
       const prefix = loc === 'id' ? '' : '/en';
-      if (!sources.has(`${prefix}/portfolio/${p.oldSlug}/:path*`)) missing.push(`${loc}: ${p.oldSlug}`);
+      if (!sources.has(`${prefix}/portfolio/${p.oldSlug}/(.*)`)) missing.push(`${loc}: ${p.oldSlug}`);
     }
   }
   assert.deepEqual(missing, []);
@@ -295,5 +295,22 @@ test('section tim: kalau fotonya ada maka dirender, kalau tidak maka disembunyik
     for (const m of TEAM) assert.ok(about.includes(m.photo), `foto ${m.key} tidak dirujuk`);
   } else {
     assert.ok(!about.includes('class="person__photo"'), 'foto tim belum ada tapi kartu tetap dirender');
+  }
+});
+
+test('pola sumber redirect menangkap bentuk berslash', () => {
+  // trailingSlash:true menormalkan /packages menjadi /packages/ SEBELUM redirect
+  // dicocokkan. `:path*` dengan nol segmen cocoknya /packages tanpa slash, jadi
+  // bentuk berslash jatuh ke 404 — persis bug yang pernah tayang.
+  const vercel = JSON.parse(read(join(OUT, 'vercel.json')));
+  const bad = vercel.redirects.filter((r) => !r.source.endsWith('/(.*)')).map((r) => r.source);
+  assert.deepEqual(bad, [], `pola sumber tidak menangkap bentuk berslash: ${bad.join(', ')}`);
+
+  // dan buktikan dengan regex, bukan cuma dengan bentuk string
+  for (const r of vercel.redirects) {
+    const re = new RegExp('^' + r.source.replace('/(.*)', '/(.*)$'));
+    const base = r.source.slice(0, -'/(.*)'.length);
+    assert.ok(re.test(base + '/'), `${r.source} tidak cocok dengan ${base}/`);
+    assert.ok(re.test(base + '/lanjutan'), `${r.source} tidak cocok dengan ${base}/lanjutan`);
   }
 });

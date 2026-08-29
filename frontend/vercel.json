@@ -3,97 +3,97 @@
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/packages/:path*",
+      "source": "/packages/(.*)",
       "destination": "/book/",
       "permanent": true
     },
     {
-      "source": "/workflow/:path*",
+      "source": "/workflow/(.*)",
       "destination": "/book/",
       "permanent": true
     },
     {
-      "source": "/contact/:path*",
+      "source": "/contact/(.*)",
       "destination": "/about/",
       "permanent": true
     },
     {
-      "source": "/portfolio/indra-suci/:path*",
+      "source": "/portfolio/indra-suci/(.*)",
       "destination": "/portfolio/indra-suci-2024/",
       "permanent": true
     },
     {
-      "source": "/en/portfolio/indra-suci/:path*",
+      "source": "/en/portfolio/indra-suci/(.*)",
       "destination": "/en/portfolio/indra-suci-2024/",
       "permanent": true
     },
     {
-      "source": "/portfolio/bukit-lestari/:path*",
+      "source": "/portfolio/bukit-lestari/(.*)",
       "destination": "/portfolio/puncak-bukit-lestari-2023/",
       "permanent": true
     },
     {
-      "source": "/en/portfolio/bukit-lestari/:path*",
+      "source": "/en/portfolio/bukit-lestari/(.*)",
       "destination": "/en/portfolio/puncak-bukit-lestari-2023/",
       "permanent": true
     },
     {
-      "source": "/portfolio/mandiri-taspen/:path*",
+      "source": "/portfolio/mandiri-taspen/(.*)",
       "destination": "/portfolio/bank-mandiri-taspen-2023/",
       "permanent": true
     },
     {
-      "source": "/en/portfolio/mandiri-taspen/:path*",
+      "source": "/en/portfolio/mandiri-taspen/(.*)",
       "destination": "/en/portfolio/bank-mandiri-taspen-2023/",
       "permanent": true
     },
     {
-      "source": "/portfolio/eka-nanda/:path*",
+      "source": "/portfolio/eka-nanda/(.*)",
       "destination": "/portfolio/eka-nanda-2024/",
       "permanent": true
     },
     {
-      "source": "/en/portfolio/eka-nanda/:path*",
+      "source": "/en/portfolio/eka-nanda/(.*)",
       "destination": "/en/portfolio/eka-nanda-2024/",
       "permanent": true
     },
     {
-      "source": "/portfolio/blooms-short/:path*",
+      "source": "/portfolio/blooms-short/(.*)",
       "destination": "/portfolio/blooms-garden-2023-teaser/",
       "permanent": true
     },
     {
-      "source": "/en/portfolio/blooms-short/:path*",
+      "source": "/en/portfolio/blooms-short/(.*)",
       "destination": "/en/portfolio/blooms-garden-2023-teaser/",
       "permanent": true
     },
     {
-      "source": "/portfolio/blooms-promo/:path*",
+      "source": "/portfolio/blooms-promo/(.*)",
       "destination": "/portfolio/blooms-garden-2023-promo/",
       "permanent": true
     },
     {
-      "source": "/en/portfolio/blooms-promo/:path*",
+      "source": "/en/portfolio/blooms-promo/(.*)",
       "destination": "/en/portfolio/blooms-garden-2023-promo/",
       "permanent": true
     },
     {
-      "source": "/portfolio/pohen-camp/:path*",
+      "source": "/portfolio/pohen-camp/(.*)",
       "destination": "/portfolio/pohen-hill-camp-2023/",
       "permanent": true
     },
     {
-      "source": "/en/portfolio/pohen-camp/:path*",
+      "source": "/en/portfolio/pohen-camp/(.*)",
       "destination": "/en/portfolio/pohen-hill-camp-2023/",
       "permanent": true
     },
     {
-      "source": "/portfolio/coinvest-asia/:path*",
+      "source": "/portfolio/coinvest-asia/(.*)",
       "destination": "/portfolio/coinfest-asia-2022/",
       "permanent": true
     },
     {
-      "source": "/en/portfolio/coinvest-asia/:path*",
+      "source": "/en/portfolio/coinvest-asia/(.*)",
       "destination": "/en/portfolio/coinfest-asia-2022/",
       "permanent": true
     }
