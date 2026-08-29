@@ -1,0 +1,180 @@
+/* MellogangVisuals — design tokens
+   Roles, not colours. Light = warm paper stock (the cream the client wants),
+   held greyer than a default cream so photos stay honest.
+   Dark = grading suite, warmed to match. Both pass WCAG AA everywhere.
+   Every value in the built pages resolves from this file. */
+
+:root,
+[data-theme="light"] {
+  /* ---- surfaces ---- */
+  --surface-page: #EDE7DA;      /* warm paper: cream with grey in it, so it reads as stock not tint */
+  --surface-raised: #F6F2E9;    /* one step up: forms, closing band, image surrounds */
+  --surface-sunken: #14120F;    /* the monitor with the lights off: work section, footer */
+  --surface-field: #E4DDCE;     /* inputs, one step under the page */
+
+  /* ---- ink ---- */
+  --ink: #1A1712;               /* warm near-black, 13.9:1 on page */
+  --ink-muted: #4A443A;         /* 8.0:1 on page — safe for 13px */
+  --ink-on-sunken: #EFE9DD;
+  --ink-on-sunken-muted: #A39C8E;
+  --ink-on-signal: #ffffff;
+
+  /* ---- the one chromatic colour ---- */
+  --signal: #8C1D48;            /* out-of-gamut magenta off a video scope; deep berry on cream, 8.8:1 */
+  --signal-quiet: rgba(140, 29, 72, .10);
+  --signal-on-sunken: #FF6FA5;  /* same hue, lifted for the dark sections — 10.1:1 on --surface-sunken */
+
+  /* ---- lines ---- */
+  --hairline: rgba(26, 23, 18, .20);
+  --hairline-strong: rgba(26, 23, 18, .38);
+  --hairline-on-sunken: rgba(239, 233, 221, .20);
+  --focus-ring: var(--signal);
+
+  /* social marks sit on the sunken footer in both themes, so one value serves both */
+  --icon-tone: brightness(0) invert(1) opacity(.68);
+  --icon-tone-hover: brightness(0) invert(1) opacity(1);
+}
+
+[data-theme="dark"] {
+  --surface-page: #1A1815;
+  --surface-raised: #24211C;
+  --surface-sunken: #100E0C;
+  --surface-field: #201D19;
+
+  --ink: #EFE9DD;               /* 13.2:1 on page */
+  --ink-muted: #A8A093;         /* 6.8:1 on page */
+  --ink-on-sunken: #EFE9DD;
+  --ink-on-sunken-muted: #A39C8E;
+  --ink-on-signal: #1A1815;
+
+  --signal: #FF6FA5;            /* 7.1:1 on page */
+  --signal-quiet: rgba(255, 111, 165, .14);
+  --signal-on-sunken: #FF6FA5;
+
+  --hairline: rgba(239, 233, 221, .16);
+  --hairline-strong: rgba(239, 233, 221, .34);
+  --hairline-on-sunken: rgba(239, 233, 221, .16);
+  --focus-ring: var(--signal);
+}
+
+:root {
+  /* ---- type ---- */
+  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;  /* variable width axis, served at wdth 125 */
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --font-utility: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --fs-slate: 12px;   /* mono meta, slates, form labels */
+  --fs-fine: 13px;    /* helper text, footer */
+  --fs-small: 15px;   /* dense body */
+  --fs-body: 17px;    /* long-read body */
+  --fs-lead: 21px;    /* intro paragraph */
+  --fs-card: 27px;    /* project title */
+  --fs-h3: 36px;
+  --fs-h2: clamp(28px, 3.4vw, 48px);
+  --fs-h1: clamp(30px, 4.6vw, 58px);   /* 30px at 375px, 58px from 1261px up */
+
+  --lh-display: 1.06;
+  --lh-body: 1.62;
+  --tr-display: -0.015em;
+  --tr-utility: 0.1em;
+
+  /* ---- rhythm ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+  --space-9: 112px;
+
+  --measure: 62ch;
+  --page-max: 1240px;
+  --page-gutter: 28px;
+  --nav-h: 64px;
+
+  /* ---- frame ---- */
+  --radius-frame: 2px;   /* a monitor bezel, not an app card */
+  --radius-control: 2px;
+  --frame-pad: 8px;      /* the surround around every image */
+  --safe-inset: 12px;    /* safe-area tick inset */
+}
+
+/* ---- layout, as tokens ----
+   Responsiveness lives here so no page needs a stylesheet of its own:
+   the grids read a custom property and the breakpoints only reassign it.
+   Every @media below is a closed, top-level sibling — never nested. */
+:root {
+  --cols-hero: 1fr;
+  --cols-split: 1fr;          /* copy beside an image */
+  --cols-work-a: 1fr;         /* first work row */
+  --cols-work-b: 1fr 1fr;     /* remaining work rows */
+  --cols-detail: 1fr;         /* film + aside */
+  --cols-book: 1fr;
+  --cols-footer: 1fr;
+  --cols-deliver: 1fr;
+  --cols-gallery: 1fr 1fr;
+  --cols-person: 1fr;         /* member detail: portrait beside the name block */
+  --cols-person-b: 1fr;       /* member detail: jobdesk beside the studio portrait */
+  --cols-team: 1fr;           /* the two team portraits */
+  --show-desktop-nav: none;
+  --show-mobile-nav: flex;
+  --sticky-aside: static;
+  --show-wordmark: none;      /* the mark alone on the narrowest screens */
+  --show-wa-label: none;      /* floating WhatsApp is icon-only on small screens */
+  --lens-r: 80px;             /* reveal lens on the team portraits */
+  --lens-d: 160px;
+}
+
+@media (max-width: 680px) {
+  :root {
+    --page-gutter: 18px;
+    --nav-h: 58px;
+  }
+}
+
+@media (min-width: 420px) {
+  :root {
+    --show-wordmark: inline;
+  }
+}
+
+@media (min-width: 560px) {
+  :root {
+    --show-wa-label: inline;
+    --cols-team: 1fr 1fr;
+  }
+}
+
+@media (min-width: 640px) {
+  :root {
+    --cols-person: minmax(0, 1fr) minmax(0, 1fr);
+    --cols-person-b: minmax(0, 1fr) 320px;
+  }
+}
+
+@media (min-width: 720px) {
+  :root {
+    --cols-footer: 1fr 1fr;
+    --cols-deliver: 1fr 1fr 1fr;
+    --cols-gallery: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 980px) {
+  :root {
+    --cols-hero: 5fr 7fr;
+    --cols-split: 1fr 1fr;
+    --cols-work-a: 7fr 5fr;
+    --cols-work-b: 1fr 1fr 1fr;
+    --cols-detail: minmax(0, 1.15fr) minmax(260px, .55fr);
+    --cols-book: .85fr 1.15fr;
+    --cols-footer: 1.3fr .7fr .9fr;
+    --show-desktop-nav: flex;
+    --show-mobile-nav: none;
+    --sticky-aside: sticky;
+    --lens-r: 106px;
+    --lens-d: 212px;
+  }
+}
