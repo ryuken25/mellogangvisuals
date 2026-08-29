@@ -166,7 +166,7 @@ class LaporanController extends BaseController
                     u.nama_lengkap,
                     COUNT(p.id_pembayaran) AS total_payment,
                     COALESCE(SUM(CASE WHEN p.status_verifikasi = "valid" THEN p.jumlah_bayar ELSE 0 END),0) AS total_valid,
-                    MAX(CASE WHEN LOWER(p.status_verifikasi) = "menunggu" THEN 1 ELSE 0 END) AS has_menunggu
+                    MAX(CASE WHEN p.status_verifikasi = "menunggu" THEN 1 ELSE 0 END) AS has_menunggu
                 ', false)
                 ->join('user u', 'u.id_user = o.id_user', 'left')
                 ->join('pembayaran p', 'p.id_pemesanan = o.id_pemesanan', 'left')
@@ -236,7 +236,7 @@ class LaporanController extends BaseController
                 o.total_biaya,
                 u.nama_lengkap,
                 COALESCE(SUM(CASE WHEN p.status_verifikasi = "valid" THEN p.jumlah_bayar ELSE 0 END),0) AS total_valid,
-                MAX(CASE WHEN LOWER(p.status_verifikasi) = "menunggu" THEN 1 ELSE 0 END) AS has_menunggu,
+                MAX(CASE WHEN p.status_verifikasi = "menunggu" THEN 1 ELSE 0 END) AS has_menunggu,
                 COUNT(p.id_pembayaran) AS total_payment
             ', false)
             ->join('user u', 'u.id_user = o.id_user', 'left')

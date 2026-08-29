@@ -26,8 +26,8 @@ class PembayaranController extends BaseController
 
         if ($status && strtolower($status) !== 'all') {
             $st = strtolower($status);
-            // aman untuk case "Menunggu" / "menunggu"
-            $q->where("LOWER(p.status_verifikasi) = '{$st}'", null, false);
+            // status_verifikasi sudah kanonik lowercase -> banding langsung (bound, index-friendly)
+            $q->where('p.status_verifikasi', $st);
         }
 
         $rows = $q->get()->getResultArray();

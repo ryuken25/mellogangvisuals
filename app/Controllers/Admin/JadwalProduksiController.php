@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use App\Support\Status;
 
 class JadwalProduksiController extends BaseController
 {
@@ -23,9 +24,10 @@ class JadwalProduksiController extends BaseController
         // dan belum punya jadwal_produksi
         return $db->table('pemesanan p')
             ->select('p.id_pemesanan, p.kode_pemesanan, p.tanggal_acara, p.jam_mulai_acara, pk.durasi_jam')
-            ->join('pembayaran py', 'py.id_pemesanan = p.id_pemesanan AND LOWER(py.status_verifikasi) = "valid"', 'inner')
+            ->join('pembayaran py', 'py.id_pemesanan = p.id_pemesanan', 'inner')
             ->join('jadwal_produksi j', 'j.id_pemesanan = p.id_pemesanan', 'left')
             ->join('paket pk', 'pk.id_paket = p.id_paket', 'left')
+            ->where('py.status_verifikasi', Status::VERIF_VALID)
             ->where('j.id_pemesanan', null)
             ->groupBy('p.id_pemesanan')
             ->orderBy('p.id_pemesanan', 'DESC')

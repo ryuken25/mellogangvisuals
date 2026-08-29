@@ -3,6 +3,7 @@
 namespace App\Controllers\Editor;
 
 use App\Controllers\BaseController;
+use App\Support\Status;
 
 class DashboardController extends BaseController
 {
@@ -14,10 +15,10 @@ class DashboardController extends BaseController
 
     private function countByStatus($db, int $idEditor, string $status): int
     {
-        // pakai LOWER biar aman beda kapital
+        // status_produksi sudah kanonik snake_case -> banding langsung (bound, index-friendly)
         return (int) $db->table('jadwal_produksi')
             ->where('id_editor', $idEditor)
-            ->where("LOWER(status_produksi) = " . $db->escape(strtolower($status)), null, false)
+            ->where('status_produksi', $status)
             ->countAllResults();
     }
 
@@ -29,11 +30,11 @@ class DashboardController extends BaseController
         $idEditor = (int) session()->get('id_user');
 
         // A/B/C/D
-        $countA = $this->countByStatus($db, $idEditor, 'cut-to-cut');
-        $countB = $this->countByStatus($db, $idEditor, 'finishing');
-        $countC = $this->countByStatus($db, $idEditor, 'revisi');
-        $countD_done   = $this->countByStatus($db, $idEditor, 'done');
-        $countD_revisi = $this->countByStatus($db, $idEditor, 'revisi selesai');
+        $countA = $this->countByStatus($db, $idEditor, Status::PROD_CUT_TO_CUT);
+        $countB = $this->countByStatus($db, $idEditor, Status::PROD_FINISHING);
+        $countC = $this->countByStatus($db, $idEditor, Status::PROD_REVISI);
+        $countD_done   = $this->countByStatus($db, $idEditor, Status::PROD_DONE);
+        $countD_revisi = $this->countByStatus($db, $idEditor, Status::PROD_REVISI_SELESAI);
         $countD = $countD_done + $countD_revisi;
 
         $totalTugas = (int) $db->table('jadwal_produksi')
@@ -74,7 +75,7 @@ class DashboardController extends BaseController
             ->join('paket pk', 'pk.id_paket = pm.id_paket', 'left')
             ->join('user u', 'u.id_user = pm.id_user', 'left')
             ->where('j.id_editor', $idEditor)
-            ->where("LOWER(j.status_produksi) NOT IN ('done', 'revisi selesai')", null, false)
+            ->whereNotIn('j.status_produksi', [Status::PROD_DONE, Status::PROD_REVISI_SELESAI])
             ->where('j.tanggal_mulai_editing <=', $today)
             ->orderBy('j.tanggal_selesai_editing', 'ASC')  // deadline terdekat (paling telat) di atas
             ->get()->getResultArray();
@@ -93,7 +94,7 @@ class DashboardController extends BaseController
             ->join('paket pk', 'pk.id_paket = pm.id_paket', 'left')
             ->join('user u', 'u.id_user = pm.id_user', 'left')
             ->where('j.id_editor', $idEditor)
-            ->where("LOWER(j.status_produksi) NOT IN ('done', 'revisi selesai')", null, false)
+            ->whereNotIn('j.status_produksi', [Status::PROD_DONE, Status::PROD_REVISI_SELESAI])
             ->groupStart()
                 ->where('j.tanggal_mulai_editing >', $today)
                 ->orWhere('j.tanggal_mulai_editing', null)

@@ -3,6 +3,7 @@
 namespace App\Controllers\Public;
 
 use App\Controllers\BaseController;
+use App\Support\Status;
 
 class StatusController extends BaseController
 {
@@ -433,7 +434,7 @@ class StatusController extends BaseController
         $payRows = $db->table('pembayaran')
             ->selectSum('jumlah_bayar', 'total_valid')
             ->where('id_pemesanan', (int)$job['id_pemesanan'])
-            ->where('LOWER(status_verifikasi)', 'valid')
+            ->where('status_verifikasi', Status::VERIF_VALID)
             ->get()->getRowArray();
 
         $totalValid = (int)($payRows['total_valid'] ?? 0);

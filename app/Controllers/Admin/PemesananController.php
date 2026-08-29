@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use App\Support\Status;
 
 class PemesananController extends BaseController
 {
@@ -103,7 +104,7 @@ class PemesananController extends BaseController
 
         $paymentsValid = $db->table('pembayaran')
             ->where('id_pemesanan', (int)$id)
-            ->where('LOWER(status_verifikasi)', 'valid')
+            ->where('status_verifikasi', Status::VERIF_VALID)
             ->orderBy('id_pembayaran', 'ASC')
             ->get()->getResultArray();
 
