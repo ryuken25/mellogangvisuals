@@ -348,3 +348,96 @@ jadi redirect 308 ke host kanonik supaya keduanya tidak bersaing di indeks.
 
 `creds.txt` berisi kredensial hidup dan ditambahkan ke `.gitignore`. File itu
 belum pernah ter-commit, jadi tidak ada riwayat yang perlu di-purge.
+
+---
+
+# Restyle ke design Claude + Work dari scrape (2026-08-29)
+
+## 24. Copy deck desain menang atas copy sebelumnya
+
+Copy yang ditulis pagi ini (§ commit `588a595`) diganti copy deck dari project
+Claude Design `e7b4942f`. Bukan karena yang lama buruk, tapi karena deck itu
+memang ditulis untuk desain ini dan sebagian jelas lebih baik.
+
+Contoh yang paling menunjukkan bedanya, alt text proyek Indra & Suci:
+
+- lama: "Pasangan berbusana adat Bali di lokasi terbuka"
+- deck: "Pasangan berbusana adat Bali berjalan bergandengan di atas rumput menuju
+  pantai berpohon kelapa"
+
+Deck juga membawa konten yang sebelumnya tidak ada: tiga poin pengiriman (foto 3
+minggu, film 6 minggu, Google Drive, satu putaran revisi), section tim, dan slate
+rasio di bawah setiap gambar.
+
+Skema key dan generator tetap milik repo; yang diambil isinya.
+
+## 25. Font di-self-host, walau desain memakai CDN
+
+File desain memuat Archivo dan IBM Plex dari `fonts.googleapis.com`. CLAUDE.md
+repo ini melarangnya ("No CDN fonts — woff2 self-hosted"), dan aturan repo menang.
+
+Delapan woff2 diunduh ke `frontend/assets/fonts/` (~310 KB total), subset dibatasi
+`latin` + `latin-ext` saja. Archivo ternyata font variabel dua sumbu (`wght`
+100–900, `wdth` 62–125), jadi satu file melayani seluruh bobot display. Sumbu
+lebar dipanggil lewat `font-stretch: 125%`, bukan `font-variation-settings`,
+supaya cocok dengan rentang yang dideklarasikan di `@font-face`.
+
+Blok `@font-face` hidup di antara penanda `@font-face-start` / `@font-face-end` di
+`frontend/styles.css`. Regenerasi: jalankan ulang pengambilannya, lalu tempel isi
+`site/data/fontface.css` di antara kedua penanda itu.
+
+## 26. Toggle bahasa desain tidak disalin
+
+Desain menaruh kedua bahasa di DOM sekaligus dan menyembunyikan salah satunya
+dengan `display` (`{{ iEn }}` / `{{ iId }}`). Itu keharusan artboard kanvas: satu
+artboard harus bisa memperagakan dua bahasa.
+
+Situs tetap memakai URL per bahasa (§18). Menyalin pendekatan kanvas berarti
+menggandakan seluruh teks di setiap halaman, mengembalikan flash bahasa yang baru
+saja dihapus, dan membuat `hreflang` tidak ada artinya.
+
+## 27. Work diambil dari kanal YouTube, bukan daftar yang ditulis tangan
+
+`tools/scrape-youtube.mjs` membungkus `yt-dlp --flat-playlist -J` atas
+`youtube.com/@mellogangvisuals/videos` dan menulis `site/data/youtube.json`.
+Kanalnya berisi 21 video; situs sebelumnya hanya menampilkan 8 di antaranya.
+
+Skrip ini sengaja terpisah dari `tools/social-fetcher/worker.js`. Worker itu milik
+aplikasi CodeIgniter: ia butuh `--job=<id>`, melapor ke API PHP, dan menulis ke
+tabel `social_post`. Situs statis butuh JSON di disk, bukan baris database.
+
+Thumbnail diambil dari `i.ytimg.com/vi/<id>/maxresdefault.jpg` dengan fallback
+`hqdefault.jpg`, disimpan sebagai `frontend/assets/video/frames/yt-<id>.jpg`.
+
+**Alt text untuk video baru ditulis setelah gambarnya benar-benar dilihat**, bukan
+diturunkan dari judul. Judul YouTube tidak memberi tahu apa yang ada di frame, dan
+alt yang ditebak dari judul adalah alt yang berbohong.
+
+## 28. Instagram belum bisa di-scrape
+
+Extractor Instagram di yt-dlp ditandai *broken* dan gagal. Endpoint publik
+`web_profile_info` mengembalikan `null` tanpa sesi login. Halaman profil membalas
+200 tapi isinya dinding login.
+
+Repo ini sudah mengantisipasinya: `worker.js` membaca `IG_STORAGE_STATE` dari
+`writable/secure/ig_state.json`, yang dihasilkan `tools/social-fetcher/login-ig.js`.
+Direktori itu tidak ada, jadi tidak ada sesi.
+
+Scrape IG butuh login, dan memasukkan kredensial bukan sesuatu yang dikerjakan
+agen. Pemilik repo menjalankan sendiri sekali:
+
+    node tools/social-fetcher/login-ig.js
+
+Sampai itu ada, entri foto memakai gambar IG yang sudah tersimpan di
+`frontend/assets/brand/instagram/`.
+
+## 29. Foto tim belum bisa ditarik dari project desain
+
+`DesignSync get_file` memotong isi di 256 KiB. Keempat PNG potret tim melewati
+batas itu, dan hasil unduhannya tidak utuh (tidak ada penanda `IEND`).
+
+Daripada memasang gambar orang yang salah atau menggagalkan build, `site/build.mjs`
+memeriksa keberadaan file dan **melewati section tim** selama belum ada, sambil
+mencetak peringatan. Datanya (`site/data/team.json`), markup, dan efek lensanya
+sudah siap; section muncul sendiri begitu keempat file diletakkan di
+`frontend/assets/team/`.

@@ -1,0 +1,674 @@
+{
+  "a11y.brand.home": {
+    "id": "MellogangVisuals, beranda",
+    "en": "MellogangVisuals, home"
+  },
+  "a11y.footer.logo": {
+    "id": "MellogangVisuals",
+    "en": "MellogangVisuals"
+  },
+  "a11y.lang.group": {
+    "id": "Bahasa",
+    "en": "Bahasa"
+  },
+  "a11y.menu.close": {
+    "id": "Tutup menu",
+    "en": "Close menu"
+  },
+  "a11y.menu.open": {
+    "id": "Buka menu",
+    "en": "Open menu"
+  },
+  "a11y.nav.mobile": {
+    "id": "Primary mobile",
+    "en": "Primary mobile"
+  },
+  "a11y.nav.primary": {
+    "id": "Primary",
+    "en": "Primary"
+  },
+  "a11y.social.instagram": {
+    "id": "MellogangVisuals di Instagram",
+    "en": "MellogangVisuals on Instagram"
+  },
+  "a11y.social.whatsapp": {
+    "id": "WhatsApp 0822 3600 4917",
+    "en": "WhatsApp 0822 3600 4917"
+  },
+  "a11y.social.youtube": {
+    "id": "MellogangVisuals di YouTube",
+    "en": "MellogangVisuals on YouTube"
+  },
+  "a11y.theme.toDark": {
+    "id": "Ganti ke tema gelap",
+    "en": "Switch to dark theme"
+  },
+  "a11y.theme.toLight": {
+    "id": "Ganti ke tema terang",
+    "en": "Switch to light theme"
+  },
+  "a11y.wa.float": {
+    "id": "Chat MellogangVisuals di WhatsApp, 0822 3600 4917",
+    "en": "Message MellogangVisuals on WhatsApp, 0822 3600 4917"
+  },
+  "about.cta.btn": {
+    "id": "Booking",
+    "en": "Book"
+  },
+  "about.cta.copy": {
+    "id": "Biasanya kami balas dalam sehari.",
+    "en": "We usually reply within a day."
+  },
+  "about.cta.title": {
+    "id": "Kirim tanggalnya.",
+    "en": "Send us a date."
+  },
+  "about.deliver.1.copy": {
+    "id": "Foto selesai dalam tiga minggu, film dalam enam minggu. Kalau butuh teaser pendek lebih cepat, bilang sebelum shooting supaya editingnya kami atur dari awal.",
+    "en": "Photos are ready in three weeks and the film in six. If you need a short teaser sooner than that, say so before the shoot and we will plan the edit around it."
+  },
+  "about.deliver.1.title": {
+    "id": "Waktu pengerjaan",
+    "en": "Turnaround"
+  },
+  "about.deliver.2.copy": {
+    "id": "Semuanya masuk ke folder Google Drive yang jadi milik kamu: foto resolusi penuh, film yang sudah di-grading, dan file kamera kalau kamu mau.",
+    "en": "Everything goes into a Google Drive folder that stays yours: full resolution photos, the graded film, and the camera files if you want them."
+  },
+  "about.deliver.2.title": {
+    "id": "Cara file sampai ke kamu",
+    "en": "How the files reach you"
+  },
+  "about.deliver.3.copy": {
+    "id": "Satu putaran revisi film sudah termasuk. Kirim timecode-nya, kami kerjakan sekali jalan.",
+    "en": "One round of changes on the film is included. Send us the timecodes and we work through them in a single pass."
+  },
+  "about.deliver.3.title": {
+    "id": "Revisi",
+    "en": "Revisions"
+  },
+  "about.deliver.eyebrow": {
+    "id": "Pengiriman",
+    "en": "Delivery"
+  },
+  "about.deliver.title": {
+    "id": "Apa yang kamu dapat, dan kapan.",
+    "en": "What you get, and when."
+  },
+  "about.hero.copy": {
+    "id": "MellogangVisuals adalah tim foto dan video yang berbasis di Denpasar. Sebagian besar kerjaan kami pernikahan dan acara di sekitar Bali, ditambah proyek korporat dan destinasi kalau briefnya cocok.",
+    "en": "MellogangVisuals is a photo and video team based in Denpasar. Most of our work is weddings and events around Bali, plus corporate and destination projects when the brief fits."
+  },
+  "about.hero.eyebrow": {
+    "id": "Tentang kami",
+    "en": "About"
+  },
+  "about.hero.title": {
+    "id": "Siapa kami, dan bagaimana booking jalan.",
+    "en": "Who we are, and how a booking runs."
+  },
+  "about.process.copy1": {
+    "id": "Kamu kirim tanggal dan lokasinya. Kami cek di kalender, lalu balas: kosong atau tidak, berapa orang yang datang, dan kisaran harga untuk acara seperti itu.",
+    "en": "You send a date and a location. We check it against the calendar and reply with whether it is open, how many of us would come, and a price range for that kind of day."
+  },
+  "about.process.copy2": {
+    "id": "Kalau cocok, tanggalnya kami tahan dengan deposit. Seminggu sebelum shooting kami kirim rundown yang kami pakai, biar bisa kamu koreksi.",
+    "en": "If it works, a deposit holds the date. A week before the shoot we send you the running order we will be working from, so you can correct it."
+  },
+  "about.process.eyebrow": {
+    "id": "Setelah kamu kirim tanggal",
+    "en": "After you send a date"
+  },
+  "about.process.image.alt": {
+    "id": "Pengantin perempuan bermahkota emas menatap kamera saat pengantin lelaki mendekat, dibingkai pintu kayu berukir.",
+    "en": "Bride in a gold headdress looking at the camera while the groom leans in, framed by a carved wooden doorway."
+  },
+  "about.process.ratio": {
+    "id": "1:1",
+    "en": "1:1"
+  },
+  "about.process.slate": {
+    "id": "Upacara pernikahan · Bali",
+    "en": "Wedding ceremony · Bali"
+  },
+  "about.process.title": {
+    "id": "Kami cek kalender dulu sebelum bahas yang lain.",
+    "en": "We check the calendar before we talk about anything else."
+  },
+  "about.team.atar.candid.alt": {
+    "id": "Atar pakai hoodie dan masker, duduk di ambang pintu kena sinar matahari sore.",
+    "en": "Atar in a hoodie and face mask, sitting in a doorway in the afternoon sun."
+  },
+  "about.team.atar.image.alt": {
+    "id": "Atar berjas gelap dan berdasi, difoto dengan latar biru studio.",
+    "en": "Atar in a dark suit and tie, photographed against a blue studio backdrop."
+  },
+  "about.team.atar.name": {
+    "id": "Atar",
+    "en": "Atar"
+  },
+  "about.team.atar.role": {
+    "id": "Editor",
+    "en": "Editor"
+  },
+  "about.team.darmadi.candid.alt": {
+    "id": "Darmadi di depan sebuah toko, pakai jaket cokelat dan kemeja putih.",
+    "en": "Darmadi outside a shopfront in a brown jacket and white shirt."
+  },
+  "about.team.darmadi.image.alt": {
+    "id": "Darmadi mengolah tanah dengan cangkul saat senja, pohon kelapa dan awan di belakangnya.",
+    "en": "Darmadi working a hoe through a field at dusk, palms and cloud behind him."
+  },
+  "about.team.darmadi.name": {
+    "id": "Darmadi",
+    "en": "Darmadi"
+  },
+  "about.team.darmadi.role": {
+    "id": "Owner",
+    "en": "Owner"
+  },
+  "about.team.eyebrow": {
+    "id": "Kami berdua",
+    "en": "The two of us"
+  },
+  "about.team.flip.aria": {
+    "id": "Balik foto {name}",
+    "en": "Flip the photo of {name}"
+  },
+  "about.team.note": {
+    "id": "Arahkan kursor ke fotonya, foto satunya kelihatan lewat situ. Klik untuk balik ke foto itu.",
+    "en": "Move the cursor over a photo and the other one shows through. Click to flip to it."
+  },
+  "about.team.title": {
+    "id": "Kamu akan berhadapan dengan salah satu dari kami.",
+    "en": "You will be dealing with one of these two."
+  },
+  "book.cal.next": {
+    "id": "Bulan berikutnya",
+    "en": "Next month"
+  },
+  "book.cal.prev": {
+    "id": "Bulan sebelumnya",
+    "en": "Previous month"
+  },
+  "book.cal.quick.nextMonth": {
+    "id": "Bulan depan",
+    "en": "Next month"
+  },
+  "book.cal.quick.nextWeek": {
+    "id": "Minggu depan",
+    "en": "Next week"
+  },
+  "book.cal.quick.tomorrow": {
+    "id": "Besok",
+    "en": "Tomorrow"
+  },
+  "book.cal.weekday.fri": {
+    "id": "J",
+    "en": "F"
+  },
+  "book.cal.weekday.mon": {
+    "id": "S",
+    "en": "M"
+  },
+  "book.cal.weekday.sat": {
+    "id": "S",
+    "en": "S"
+  },
+  "book.cal.weekday.sun": {
+    "id": "M",
+    "en": "S"
+  },
+  "book.cal.weekday.thu": {
+    "id": "K",
+    "en": "T"
+  },
+  "book.cal.weekday.tue": {
+    "id": "S",
+    "en": "T"
+  },
+  "book.cal.weekday.wed": {
+    "id": "R",
+    "en": "W"
+  },
+  "book.form.date.chosen": {
+    "id": "Dipilih: {date}",
+    "en": "Chosen: {date}"
+  },
+  "book.form.date.hint": {
+    "id": "Kalau masih bisa geser, tulis tanggal yang paling dekat.",
+    "en": "If it can still move, put the closest date."
+  },
+  "book.form.date.label": {
+    "id": "Tanggal shooting",
+    "en": "Date of the shoot"
+  },
+  "book.form.error.date": {
+    "id": "Isi tanggalnya dulu supaya bisa kami cek.",
+    "en": "Add a date so we can check it."
+  },
+  "book.form.error.name": {
+    "id": "Isi namanya supaya kami tahu balas ke siapa.",
+    "en": "Add a name so we know who we are replying to."
+  },
+  "book.form.location.label": {
+    "id": "Lokasi",
+    "en": "Where"
+  },
+  "book.form.location.placeholder": {
+    "id": "Nama venue, atau kotanya saja",
+    "en": "Venue, or just the town"
+  },
+  "book.form.name.label": {
+    "id": "Nama kamu",
+    "en": "Your name"
+  },
+  "book.form.name.placeholder": {
+    "id": "mis. Indra",
+    "en": "e.g. Indra"
+  },
+  "book.form.notes.label": {
+    "id": "Hal lain yang perlu kami tahu",
+    "en": "Anything we should know"
+  },
+  "book.form.notes.placeholder": {
+    "id": "Jumlah tamu, jam mulai, ada lokasi kedua atau tidak.",
+    "en": "Guest count, start time, whether there is a second location."
+  },
+  "book.form.optional": {
+    "id": "opsional",
+    "en": "optional"
+  },
+  "book.form.submit": {
+    "id": "Buka WhatsApp dengan detail ini",
+    "en": "Open WhatsApp with these details"
+  },
+  "book.form.title": {
+    "id": "Soal shootingnya",
+    "en": "The shoot"
+  },
+  "book.form.type.label": {
+    "id": "Jenis shooting",
+    "en": "What kind of shoot"
+  },
+  "book.hero.copy": {
+    "id": "Isi formnya, WhatsApp langsung terbuka dengan detail yang kamu tulis. Tidak ada data yang disimpan di halaman ini.",
+    "en": "Fill this in and WhatsApp opens with your details already written out. Nothing is stored on this page."
+  },
+  "book.hero.eyebrow": {
+    "id": "Booking",
+    "en": "Book"
+  },
+  "book.hero.title": {
+    "id": "Ceritakan rencana shootingnya.",
+    "en": "Tell us about the shoot."
+  },
+  "book.preview.direct": {
+    "id": "Atau chat langsung tanpa form",
+    "en": "Or message us without the form"
+  },
+  "book.preview.note": {
+    "id": "Form ini tidak menyimpan apa pun. Isinya jadi pesan WhatsApp yang bisa kamu baca dulu sebelum dikirim.",
+    "en": "This form saves nothing. It writes a WhatsApp message you can read before you send it."
+  },
+  "book.preview.title": {
+    "id": "Pratinjau pesan",
+    "en": "Message preview"
+  },
+  "book.type.corporate": {
+    "id": "Korporat atau brand",
+    "en": "Corporate or brand"
+  },
+  "book.type.event": {
+    "id": "Dokumentasi acara",
+    "en": "Event coverage"
+  },
+  "book.type.other": {
+    "id": "Lainnya",
+    "en": "Something else"
+  },
+  "book.type.prewedding": {
+    "id": "Sesi prewedding",
+    "en": "Prewedding session"
+  },
+  "book.type.venue": {
+    "id": "Film venue atau properti",
+    "en": "Venue or property film"
+  },
+  "book.type.wedding": {
+    "id": "Pernikahan, foto dan video",
+    "en": "Wedding, photo and video"
+  },
+  "book.wa.notes": {
+    "id": " {notes}",
+    "en": " {notes}"
+  },
+  "book.wa.placeholder.date": {
+    "id": "[tanggal]",
+    "en": "[date]"
+  },
+  "book.wa.placeholder.location": {
+    "id": "[lokasi]",
+    "en": "[location]"
+  },
+  "book.wa.placeholder.name": {
+    "id": "[nama]",
+    "en": "[name]"
+  },
+  "book.wa.template": {
+    "id": "Halo MellogangVisuals, saya {name}. Mau cek tanggal {date} kosong atau tidak untuk {type} di {location}.{notes}",
+    "en": "Hello MellogangVisuals. I am {name}. I would like to check whether {date} is open for {type} at {location}.{notes}"
+  },
+  "footer.contact": {
+    "id": "Kontak",
+    "en": "Contact"
+  },
+  "footer.copyright": {
+    "id": "© 2026 MellogangVisuals",
+    "en": "© 2026 MellogangVisuals"
+  },
+  "footer.domain": {
+    "id": "mellogang.wyna.dev",
+    "en": "mellogang.wyna.dev"
+  },
+  "footer.email": {
+    "id": "mellogang@wyna.dev",
+    "en": "mellogang@wyna.dev"
+  },
+  "footer.hours": {
+    "id": "Pesan kami baca antara jam 9 pagi sampai 9 malam WITA.",
+    "en": "We read messages between 9am and 9pm WITA."
+  },
+  "footer.nav": {
+    "id": "Halaman",
+    "en": "Pages"
+  },
+  "footer.tagline": {
+    "id": "Foto dan video, berbasis di Denpasar. Kami shooting di seluruh Bali dan berangkat lebih jauh kalau proyeknya memang butuh.",
+    "en": "Photo and video, based in Denpasar. We shoot across Bali and travel further when a project needs it."
+  },
+  "footer.whatsapp": {
+    "id": "WhatsApp 0822 3600 4917",
+    "en": "WhatsApp 0822 3600 4917"
+  },
+  "header.lang.en": {
+    "id": "EN",
+    "en": "EN"
+  },
+  "header.lang.id": {
+    "id": "ID",
+    "en": "ID"
+  },
+  "header.wordmark": {
+    "id": "MellogangVisuals",
+    "en": "MellogangVisuals"
+  },
+  "home.about.copy": {
+    "id": "MellogangVisuals adalah tim foto dan video yang berbasis di Denpasar. Sebagian besar kerjaan kami pernikahan dan acara di sekitar Bali, ditambah proyek korporat dan destinasi kalau briefnya cocok.",
+    "en": "MellogangVisuals is a photo and video team based in Denpasar. Most of our work is weddings and events around Bali, plus corporate and destination projects when the brief fits."
+  },
+  "home.about.eyebrow": {
+    "id": "Tentang kami",
+    "en": "About"
+  },
+  "home.about.image.alt": {
+    "id": "Foto udara petak ladang berteras dan camp di lereng Candikuning, Tabanan, dengan kabut turun dari punggung bukit.",
+    "en": "Aerial view of terraced farm plots and a hillside camp at Candikuning, Tabanan, with mist coming off the ridge."
+  },
+  "home.about.link": {
+    "id": "Baca cara booking jalan",
+    "en": "Read how a booking runs"
+  },
+  "home.about.ratio": {
+    "id": "2.39:1",
+    "en": "2.39:1"
+  },
+  "home.about.slate": {
+    "id": "Puncak Bukit Lestari · Candikuning",
+    "en": "Puncak Bukit Lestari · Candikuning"
+  },
+  "home.about.title": {
+    "id": "Tim kami berbasis di Denpasar.",
+    "en": "The team is based in Denpasar."
+  },
+  "home.cta.btn": {
+    "id": "Kirim tanggal",
+    "en": "Send the date"
+  },
+  "home.cta.copy": {
+    "id": "Kirim ke kami sekalian gambaran acaranya. Biasanya kami balas dalam sehari.",
+    "en": "Send it over with a rough idea of the day. We usually reply within a day."
+  },
+  "home.cta.title": {
+    "id": "Sudah ada tanggalnya?",
+    "en": "Have a date in mind?"
+  },
+  "home.hero.copy": {
+    "id": "Tim kecil, produksi lengkap, dari obrolan pertama sampai file terakhir. Kirim tanggalnya, kami langsung kabari kosong atau tidak.",
+    "en": "Small crew, full production, from the first call to the final file. Send us a date and we will tell you straight away whether it is open."
+  },
+  "home.hero.cta.primary": {
+    "id": "Booking",
+    "en": "Book"
+  },
+  "home.hero.cta.secondary": {
+    "id": "Lihat hasil kerja",
+    "en": "See past work"
+  },
+  "home.hero.eyebrow": {
+    "id": "Denpasar, Bali — menerima tanggal 2026",
+    "en": "Denpasar, Bali — taking 2026 dates"
+  },
+  "home.hero.image.alt": {
+    "id": "Pengantin perempuan bermahkota emas Bali dan pengantin lelaki berudeng duduk berdampingan di bale berhias bunga.",
+    "en": "Bride in a gold Balinese headdress and groom in an udeng seated together at a flower-decorated pavilion."
+  },
+  "home.hero.ratio": {
+    "id": "16:10",
+    "en": "16:10"
+  },
+  "home.hero.slate": {
+    "id": "Jimmy & Diah · Pernikahan · Denpasar",
+    "en": "Jimmy & Diah · Wedding · Denpasar"
+  },
+  "home.hero.title": {
+    "id": "Foto dan video pernikahan, acara, dan brand di Bali.",
+    "en": "Wedding, event and brand shoots in Bali."
+  },
+  "home.works.eyebrow": {
+    "id": "Hasil kerja",
+    "en": "Work"
+  },
+  "home.works.note": {
+    "id": "Lima proyek di sini. Buka satu untuk menonton filmnya dan frame yang kami simpan.",
+    "en": "Five projects here. Open one to watch the film and the frames we kept."
+  },
+  "home.works.title": {
+    "id": "Sebagian yang kami kerjakan",
+    "en": "Some of what we have shot"
+  },
+  "home.works.viewall": {
+    "id": "Lihat hasil kerja lainnya",
+    "en": "See the rest of the work"
+  },
+  "nav.about": {
+    "id": "Tentang Kami",
+    "en": "About"
+  },
+  "nav.book": {
+    "id": "Booking",
+    "en": "Book"
+  },
+  "nav.home": {
+    "id": "Beranda",
+    "en": "Home"
+  },
+  "nav.portfolio": {
+    "id": "Portofolio",
+    "en": "Work"
+  },
+  "portfolio.count": {
+    "id": "{count} proyek",
+    "en": "{count} projects"
+  },
+  "portfolio.cta.btn": {
+    "id": "Booking",
+    "en": "Book"
+  },
+  "portfolio.cta.copy": {
+    "id": "Sebut tanggal dan lokasinya. Kami balas soal ketersediaan dulu.",
+    "en": "Tell us the date and the location. We reply with availability first."
+  },
+  "portfolio.cta.title": {
+    "id": "Tanggal kamu kosong atau tidak?",
+    "en": "Check whether your date is open."
+  },
+  "portfolio.empty": {
+    "id": "Belum ada proyek di filter ini.",
+    "en": "No projects under this filter yet."
+  },
+  "portfolio.filter.all": {
+    "id": "Semua",
+    "en": "All"
+  },
+  "portfolio.filter.commercial": {
+    "id": "Komersial",
+    "en": "Commercial"
+  },
+  "portfolio.filter.film": {
+    "id": "Film",
+    "en": "Film"
+  },
+  "portfolio.filter.photo": {
+    "id": "Foto",
+    "en": "Photo"
+  },
+  "portfolio.filter.wedding": {
+    "id": "Pernikahan",
+    "en": "Wedding"
+  },
+  "portfolio.hero.copy": {
+    "id": "Tidak semua yang kami shooting boleh dipublikasikan. Minta saja, nanti kami kirim contoh lain yang mirip acaramu. Buka satu proyek untuk menonton filmnya dan melihat frame-nya.",
+    "en": "Not everything we shoot gets published. Ask us and we will send more from a shoot like yours. Open a project to watch the film and look through the frames."
+  },
+  "portfolio.hero.eyebrow": {
+    "id": "Hasil kerja",
+    "en": "Work"
+  },
+  "portfolio.hero.title": {
+    "id": "Proyek yang bisa kami tampilkan.",
+    "en": "The projects we can show publicly."
+  },
+  "project.aside.title": {
+    "id": "Apa yang kami ambil",
+    "en": "What we shot"
+  },
+  "project.backToAll": {
+    "id": "Semua hasil kerja",
+    "en": "All work"
+  },
+  "project.book": {
+    "id": "Booking",
+    "en": "Book"
+  },
+  "project.cover.ratio": {
+    "id": "16:9",
+    "en": "16:9"
+  },
+  "project.cover.slate": {
+    "id": "{title} · {location}",
+    "en": "{title} · {location}"
+  },
+  "project.cover.zoom.aria": {
+    "id": "Perbesar frame utama",
+    "en": "Enlarge the cover frame"
+  },
+  "project.film.embedPlaceholder": {
+    "id": "Embed YouTube tampil di sini",
+    "en": "YouTube embed loads here"
+  },
+  "project.film.none": {
+    "id": "Proyek ini tidak ada filmnya. Fotonya ada di bawah, set lengkapnya di tautan sumber.",
+    "en": "No film for this project. The stills are below and the full set is on the source link."
+  },
+  "project.film.play": {
+    "id": "Putar filmnya",
+    "en": "Play the film"
+  },
+  "project.film.play.aria": {
+    "id": "Putar film {title}",
+    "en": "Play the film for {title}"
+  },
+  "project.film.ratio": {
+    "id": "16:9",
+    "en": "16:9"
+  },
+  "project.film.zoom.in": {
+    "id": "Perbesar filmnya",
+    "en": "Enlarge the film"
+  },
+  "project.film.zoom.out": {
+    "id": "Kecilkan filmnya kembali ke halaman",
+    "en": "Shrink the film back into the page"
+  },
+  "project.gallery.image.alt": {
+    "id": "{title} — frame {n} dari {total}",
+    "en": "{title} — frame {n} of {total}"
+  },
+  "project.gallery.zoom.aria": {
+    "id": "Perbesar frame {n}",
+    "en": "Enlarge frame {n}"
+  },
+  "project.meta.format": {
+    "id": "Format",
+    "en": "Format"
+  },
+  "project.meta.location": {
+    "id": "Lokasi",
+    "en": "Location"
+  },
+  "project.meta.type": {
+    "id": "Jenis",
+    "en": "Type"
+  },
+  "project.meta.year": {
+    "id": "Tahun",
+    "en": "Year"
+  },
+  "project.source.instagram": {
+    "id": "Buka di Instagram",
+    "en": "Open on Instagram"
+  },
+  "project.source.youtube": {
+    "id": "Tonton di YouTube",
+    "en": "Watch on YouTube"
+  },
+  "wa.float.label": {
+    "id": "Chat WhatsApp",
+    "en": "WhatsApp us"
+  },
+  "work.format.film": {
+    "id": "Film",
+    "en": "Film"
+  },
+  "zoom.caption": {
+    "id": "{title} · {location}",
+    "en": "{title} · {location}"
+  },
+  "zoom.close": {
+    "id": "Tutup",
+    "en": "Close"
+  },
+  "zoom.image.alt": {
+    "id": "{title} — frame {n}",
+    "en": "{title} — frame {n}"
+  },
+  "zoom.next": {
+    "id": "Frame berikutnya",
+    "en": "Next frame"
+  },
+  "zoom.prev": {
+    "id": "Frame sebelumnya",
+    "en": "Previous frame"
+  }
+}

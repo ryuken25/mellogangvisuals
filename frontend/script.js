@@ -409,7 +409,9 @@ function booking() {
     const note = notesInput ? notesInput.value.trim() : '';
     const values = {
       name: (nameInput && nameInput.value.trim()) || data.waName || '',
-      type: (typeSelect && typeSelect.options[typeSelect.selectedIndex]?.text) || '',
+      // Huruf kecil: label ini duduk di tengah kalimat ("...kosong atau tidak
+      // untuk pernikahan, foto dan video di..."), bukan di awal.
+      type: ((typeSelect && typeSelect.options[typeSelect.selectedIndex]?.text) || '').toLowerCase(),
       date: humanDate(dateInput ? dateInput.value : ''),
       location: (locInput && locInput.value.trim()) || data.waLocation || '',
       // data-wa-notes membawa pembungkusnya sendiri (spasi, awalan), jadi

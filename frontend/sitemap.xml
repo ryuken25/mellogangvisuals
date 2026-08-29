@@ -31,46 +31,10 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/indra-suci-2024/"/>
   </url>
   <url>
-    <loc>https://mellogang.wyna.dev/portfolio/eka-nanda-2024/</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/eka-nanda-2024/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/eka-nanda-2024/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/eka-nanda-2024/"/>
-  </url>
-  <url>
     <loc>https://mellogang.wyna.dev/portfolio/puncak-bukit-lestari-2023/</loc>
     <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/puncak-bukit-lestari-2023/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/puncak-bukit-lestari-2023/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/puncak-bukit-lestari-2023/"/>
-  </url>
-  <url>
-    <loc>https://mellogang.wyna.dev/portfolio/pohen-hill-camp-2023/</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/pohen-hill-camp-2023/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/pohen-hill-camp-2023/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/pohen-hill-camp-2023/"/>
-  </url>
-  <url>
-    <loc>https://mellogang.wyna.dev/portfolio/blooms-garden-2023-promo/</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/blooms-garden-2023-promo/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/blooms-garden-2023-promo/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/blooms-garden-2023-promo/"/>
-  </url>
-  <url>
-    <loc>https://mellogang.wyna.dev/portfolio/blooms-garden-2023-teaser/</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/blooms-garden-2023-teaser/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/blooms-garden-2023-teaser/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/blooms-garden-2023-teaser/"/>
-  </url>
-  <url>
-    <loc>https://mellogang.wyna.dev/portfolio/bank-mandiri-taspen-2023/</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/bank-mandiri-taspen-2023/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/bank-mandiri-taspen-2023/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/bank-mandiri-taspen-2023/"/>
-  </url>
-  <url>
-    <loc>https://mellogang.wyna.dev/portfolio/coinfest-asia-2022/</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/coinfest-asia-2022/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/coinfest-asia-2022/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/coinfest-asia-2022/"/>
   </url>
   <url>
     <loc>https://mellogang.wyna.dev/portfolio/wedding-ceremony/</loc>
@@ -83,6 +47,126 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/cultural-event/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/cultural-event/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/cultural-event/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/bank-mandiri-taspen-2023/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/bank-mandiri-taspen-2023/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/bank-mandiri-taspen-2023/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/bank-mandiri-taspen-2023/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/eka-nanda-2024/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/eka-nanda-2024/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/eka-nanda-2024/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/eka-nanda-2024/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/blooms-garden-2023-teaser/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/blooms-garden-2023-teaser/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/blooms-garden-2023-teaser/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/blooms-garden-2023-teaser/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/blooms-garden-2023-promo/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/blooms-garden-2023-promo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/blooms-garden-2023-promo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/blooms-garden-2023-promo/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/pohen-hill-camp-2023/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/pohen-hill-camp-2023/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/pohen-hill-camp-2023/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/pohen-hill-camp-2023/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/coinfest-asia-2022/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/coinfest-asia-2022/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/coinfest-asia-2022/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/coinfest-asia-2022/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/politeknik-negeri-bali-2021/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/politeknik-negeri-bali-2021/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/politeknik-negeri-bali-2021/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/politeknik-negeri-bali-2021/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/ulun-danu-beratan-eticketing-2021/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/ulun-danu-beratan-eticketing-2021/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/ulun-danu-beratan-eticketing-2021/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/ulun-danu-beratan-eticketing-2021/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/blooms-camp-bukit-pohen-2021/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/blooms-camp-bukit-pohen-2021/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/blooms-camp-bukit-pohen-2021/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/blooms-camp-bukit-pohen-2021/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/smk-restumuning-new-normal-2020/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/smk-restumuning-new-normal-2020/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/smk-restumuning-new-normal-2020/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/smk-restumuning-new-normal-2020/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/blooms-garden-new-normal-2020/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/blooms-garden-new-normal-2020/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/blooms-garden-new-normal-2020/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/blooms-garden-new-normal-2020/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/ulun-danu-beratan-new-normal-2020/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/ulun-danu-beratan-new-normal-2020/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/ulun-danu-beratan-new-normal-2020/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/ulun-danu-beratan-new-normal-2020/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/desa-adat-puseh-2020/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/desa-adat-puseh-2020/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/desa-adat-puseh-2020/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/desa-adat-puseh-2020/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/smk-restumuning-kelulusan-2020/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/smk-restumuning-kelulusan-2020/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/smk-restumuning-kelulusan-2020/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/smk-restumuning-kelulusan-2020/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/smk-bali-medika-2020/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/smk-bali-medika-2020/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/smk-bali-medika-2020/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/smk-bali-medika-2020/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/smkn-2-denpasar-deizzaco-2019/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/smkn-2-denpasar-deizzaco-2019/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/smkn-2-denpasar-deizzaco-2019/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/smkn-2-denpasar-deizzaco-2019/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/wika-dewi-labuan-bajo-2019/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/wika-dewi-labuan-bajo-2019/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/wika-dewi-labuan-bajo-2019/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/wika-dewi-labuan-bajo-2019/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/siapa-kita-2019/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/siapa-kita-2019/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/siapa-kita-2019/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/siapa-kita-2019/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/bts-man-on-fire-2019/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/bts-man-on-fire-2019/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/bts-man-on-fire-2019/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/bts-man-on-fire-2019/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/portfolio/noname-ipa-2-2019/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/noname-ipa-2-2019/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/noname-ipa-2-2019/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/noname-ipa-2-2019/"/>
   </url>
   <url>
     <loc>https://mellogang.wyna.dev/en/</loc>
@@ -115,46 +199,10 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/indra-suci-2024/"/>
   </url>
   <url>
-    <loc>https://mellogang.wyna.dev/en/portfolio/eka-nanda-2024/</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/eka-nanda-2024/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/eka-nanda-2024/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/eka-nanda-2024/"/>
-  </url>
-  <url>
     <loc>https://mellogang.wyna.dev/en/portfolio/puncak-bukit-lestari-2023/</loc>
     <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/puncak-bukit-lestari-2023/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/puncak-bukit-lestari-2023/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/puncak-bukit-lestari-2023/"/>
-  </url>
-  <url>
-    <loc>https://mellogang.wyna.dev/en/portfolio/pohen-hill-camp-2023/</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/pohen-hill-camp-2023/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/pohen-hill-camp-2023/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/pohen-hill-camp-2023/"/>
-  </url>
-  <url>
-    <loc>https://mellogang.wyna.dev/en/portfolio/blooms-garden-2023-promo/</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/blooms-garden-2023-promo/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/blooms-garden-2023-promo/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/blooms-garden-2023-promo/"/>
-  </url>
-  <url>
-    <loc>https://mellogang.wyna.dev/en/portfolio/blooms-garden-2023-teaser/</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/blooms-garden-2023-teaser/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/blooms-garden-2023-teaser/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/blooms-garden-2023-teaser/"/>
-  </url>
-  <url>
-    <loc>https://mellogang.wyna.dev/en/portfolio/bank-mandiri-taspen-2023/</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/bank-mandiri-taspen-2023/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/bank-mandiri-taspen-2023/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/bank-mandiri-taspen-2023/"/>
-  </url>
-  <url>
-    <loc>https://mellogang.wyna.dev/en/portfolio/coinfest-asia-2022/</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/coinfest-asia-2022/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/coinfest-asia-2022/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/coinfest-asia-2022/"/>
   </url>
   <url>
     <loc>https://mellogang.wyna.dev/en/portfolio/wedding-ceremony/</loc>
@@ -167,5 +215,125 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/cultural-event/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/cultural-event/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/cultural-event/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/bank-mandiri-taspen-2023/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/bank-mandiri-taspen-2023/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/bank-mandiri-taspen-2023/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/bank-mandiri-taspen-2023/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/eka-nanda-2024/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/eka-nanda-2024/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/eka-nanda-2024/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/eka-nanda-2024/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/blooms-garden-2023-teaser/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/blooms-garden-2023-teaser/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/blooms-garden-2023-teaser/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/blooms-garden-2023-teaser/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/blooms-garden-2023-promo/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/blooms-garden-2023-promo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/blooms-garden-2023-promo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/blooms-garden-2023-promo/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/pohen-hill-camp-2023/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/pohen-hill-camp-2023/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/pohen-hill-camp-2023/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/pohen-hill-camp-2023/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/coinfest-asia-2022/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/coinfest-asia-2022/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/coinfest-asia-2022/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/coinfest-asia-2022/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/politeknik-negeri-bali-2021/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/politeknik-negeri-bali-2021/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/politeknik-negeri-bali-2021/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/politeknik-negeri-bali-2021/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/ulun-danu-beratan-eticketing-2021/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/ulun-danu-beratan-eticketing-2021/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/ulun-danu-beratan-eticketing-2021/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/ulun-danu-beratan-eticketing-2021/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/blooms-camp-bukit-pohen-2021/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/blooms-camp-bukit-pohen-2021/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/blooms-camp-bukit-pohen-2021/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/blooms-camp-bukit-pohen-2021/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/smk-restumuning-new-normal-2020/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/smk-restumuning-new-normal-2020/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/smk-restumuning-new-normal-2020/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/smk-restumuning-new-normal-2020/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/blooms-garden-new-normal-2020/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/blooms-garden-new-normal-2020/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/blooms-garden-new-normal-2020/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/blooms-garden-new-normal-2020/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/ulun-danu-beratan-new-normal-2020/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/ulun-danu-beratan-new-normal-2020/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/ulun-danu-beratan-new-normal-2020/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/ulun-danu-beratan-new-normal-2020/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/desa-adat-puseh-2020/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/desa-adat-puseh-2020/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/desa-adat-puseh-2020/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/desa-adat-puseh-2020/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/smk-restumuning-kelulusan-2020/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/smk-restumuning-kelulusan-2020/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/smk-restumuning-kelulusan-2020/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/smk-restumuning-kelulusan-2020/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/smk-bali-medika-2020/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/smk-bali-medika-2020/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/smk-bali-medika-2020/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/smk-bali-medika-2020/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/smkn-2-denpasar-deizzaco-2019/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/smkn-2-denpasar-deizzaco-2019/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/smkn-2-denpasar-deizzaco-2019/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/smkn-2-denpasar-deizzaco-2019/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/wika-dewi-labuan-bajo-2019/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/wika-dewi-labuan-bajo-2019/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/wika-dewi-labuan-bajo-2019/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/wika-dewi-labuan-bajo-2019/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/siapa-kita-2019/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/siapa-kita-2019/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/siapa-kita-2019/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/siapa-kita-2019/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/bts-man-on-fire-2019/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/bts-man-on-fire-2019/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/bts-man-on-fire-2019/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/bts-man-on-fire-2019/"/>
+  </url>
+  <url>
+    <loc>https://mellogang.wyna.dev/en/portfolio/noname-ipa-2-2019/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mellogang.wyna.dev/portfolio/noname-ipa-2-2019/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mellogang.wyna.dev/en/portfolio/noname-ipa-2-2019/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mellogang.wyna.dev/portfolio/noname-ipa-2-2019/"/>
   </url>
 </urlset>

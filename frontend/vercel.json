@@ -28,16 +28,6 @@
       "permanent": true
     },
     {
-      "source": "/portfolio/eka-nanda/:path*",
-      "destination": "/portfolio/eka-nanda-2024/",
-      "permanent": true
-    },
-    {
-      "source": "/en/portfolio/eka-nanda/:path*",
-      "destination": "/en/portfolio/eka-nanda-2024/",
-      "permanent": true
-    },
-    {
       "source": "/portfolio/bukit-lestari/:path*",
       "destination": "/portfolio/puncak-bukit-lestari-2023/",
       "permanent": true
@@ -48,23 +38,23 @@
       "permanent": true
     },
     {
-      "source": "/portfolio/pohen-camp/:path*",
-      "destination": "/portfolio/pohen-hill-camp-2023/",
+      "source": "/portfolio/mandiri-taspen/:path*",
+      "destination": "/portfolio/bank-mandiri-taspen-2023/",
       "permanent": true
     },
     {
-      "source": "/en/portfolio/pohen-camp/:path*",
-      "destination": "/en/portfolio/pohen-hill-camp-2023/",
+      "source": "/en/portfolio/mandiri-taspen/:path*",
+      "destination": "/en/portfolio/bank-mandiri-taspen-2023/",
       "permanent": true
     },
     {
-      "source": "/portfolio/blooms-promo/:path*",
-      "destination": "/portfolio/blooms-garden-2023-promo/",
+      "source": "/portfolio/eka-nanda/:path*",
+      "destination": "/portfolio/eka-nanda-2024/",
       "permanent": true
     },
     {
-      "source": "/en/portfolio/blooms-promo/:path*",
-      "destination": "/en/portfolio/blooms-garden-2023-promo/",
+      "source": "/en/portfolio/eka-nanda/:path*",
+      "destination": "/en/portfolio/eka-nanda-2024/",
       "permanent": true
     },
     {
@@ -78,13 +68,23 @@
       "permanent": true
     },
     {
-      "source": "/portfolio/mandiri-taspen/:path*",
-      "destination": "/portfolio/bank-mandiri-taspen-2023/",
+      "source": "/portfolio/blooms-promo/:path*",
+      "destination": "/portfolio/blooms-garden-2023-promo/",
       "permanent": true
     },
     {
-      "source": "/en/portfolio/mandiri-taspen/:path*",
-      "destination": "/en/portfolio/bank-mandiri-taspen-2023/",
+      "source": "/en/portfolio/blooms-promo/:path*",
+      "destination": "/en/portfolio/blooms-garden-2023-promo/",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/pohen-camp/:path*",
+      "destination": "/portfolio/pohen-hill-camp-2023/",
+      "permanent": true
+    },
+    {
+      "source": "/en/portfolio/pohen-camp/:path*",
+      "destination": "/en/portfolio/pohen-hill-camp-2023/",
       "permanent": true
     },
     {
