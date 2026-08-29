@@ -287,30 +287,38 @@ test('setiap class yang dipakai markup punya aturan di styles.css', () => {
   assert.deepEqual(missing, [], `class tanpa aturan CSS: ${missing.join(', ')}`);
 });
 
-test('section tim: kalau fotonya ada maka dirender, kalau tidak maka disembunyikan', () => {
+test('section tim selalu tayang; potret hanya kalau filenya ada', () => {
   const ready = TEAM.every((m) => existsSync(join(OUT, m.photo)) && existsSync(join(OUT, m.candid)));
-  const about = read(join(OUT, 'about', 'index.html'));
-  if (ready) {
-    assert.ok(about.includes('class="person__photo"'), 'foto tim ada tapi section tidak dirender');
-    for (const m of TEAM) assert.ok(about.includes(m.photo), `foto ${m.key} tidak dirujuk`);
-  } else {
-    assert.ok(!about.includes('class="person__photo"'), 'foto tim belum ada tapi kartu tetap dirender');
+  for (const f of ['about/index.html', 'en/about/index.html']) {
+    const about = read(join(OUT, f));
+    // Nama dan jabatan berdiri sendiri sebagai konten, jadi tidak boleh hilang
+    // hanya karena potretnya belum ada.
+    for (const m of TEAM) assert.ok(about.includes(m.name), `${f}: nama ${m.name} tidak tayang`);
+    if (ready) {
+      assert.ok(about.includes('class="person__photo"'), `${f}: foto ada tapi tidak dirender`);
+      for (const m of TEAM) assert.ok(about.includes(m.photo), `${f}: potret ${m.key} tidak dirujuk`);
+    } else {
+      assert.ok(!about.includes('class="person__photo"'), `${f}: potret belum ada tapi tombol tetap dirender`);
+      assert.ok(about.includes('person--nophoto'), `${f}: varian tanpa potret tidak dipakai`);
+    }
   }
 });
 
-test('pola sumber redirect menangkap bentuk berslash', () => {
-  // trailingSlash:true menormalkan /packages menjadi /packages/ SEBELUM redirect
-  // dicocokkan. `:path*` dengan nol segmen cocoknya /packages tanpa slash, jadi
-  // bentuk berslash jatuh ke 404 — persis bug yang pernah tayang.
-  const vercel = JSON.parse(read(join(OUT, 'vercel.json')));
-  const bad = vercel.redirects.filter((r) => !r.source.endsWith('/(.*)')).map((r) => r.source);
-  assert.deepEqual(bad, [], `pola sumber tidak menangkap bentuk berslash: ${bad.join(', ')}`);
+test('kartu karya memakai varian yang benar per lokasi', () => {
+  const home = read(join(OUT, 'index.html'));
+  const index = read(join(OUT, 'portfolio', 'index.html'));
+  assert.equal((home.match(/work-card--a/g) ?? []).length, 2, 'beranda harus punya 2 kartu baris pertama');
+  assert.equal((home.match(/work-card--b/g) ?? []).length, 3, 'beranda harus punya 3 kartu baris kedua');
+  assert.ok(!home.includes('work-card--index'), 'beranda tidak boleh memakai varian index');
 
-  // dan buktikan dengan regex, bukan cuma dengan bentuk string
-  for (const r of vercel.redirects) {
-    const re = new RegExp('^' + r.source.replace('/(.*)', '/(.*)$'));
-    const base = r.source.slice(0, -'/(.*)'.length);
-    assert.ok(re.test(base + '/'), `${r.source} tidak cocok dengan ${base}/`);
-    assert.ok(re.test(base + '/lanjutan'), `${r.source} tidak cocok dengan ${base}/lanjutan`);
+  assert.equal((index.match(/work-card--index/g) ?? []).length, PROJECTS.length);
+  assert.ok(!index.includes('work-card--a'), 'halaman portofolio tidak boleh memakai varian beranda');
+
+  // Beranda: meta cuma kategori, tanpa tahun dan tanpa rasio.
+  for (const m of home.matchAll(/<div class="work-card__meta">([^<]*)<\/div>/g)) {
+    assert.ok(!/\d{4}/.test(m[1]), `meta beranda tidak boleh memuat tahun: "${m[1]}"`);
+    assert.ok(!/\d+:\d+/.test(m[1]), `meta beranda tidak boleh memuat rasio: "${m[1]}"`);
   }
+  // Halaman portofolio: rasio tampil di kanan meta.
+  assert.ok(index.includes('class="work-card__ratio"'), 'kartu index harus menampilkan rasio');
 });

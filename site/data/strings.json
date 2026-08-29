@@ -135,6 +135,10 @@
     "id": "Arahkan kursor ke fotonya, foto satunya kelihatan lewat situ. Klik untuk balik ke foto itu.",
     "en": "Move the cursor over a photo and the other one shows through. Click to flip to it."
   },
+  "about.team.copy.nophoto": {
+    "id": "Dua orang ini yang akan berhadapan langsung dengan kamu.",
+    "en": "These are the two people you will be dealing with."
+  },
   "about.team.eyebrow": {
     "id": "Kami berdua",
     "en": "The two of us"

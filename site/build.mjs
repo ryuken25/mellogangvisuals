@@ -173,18 +173,41 @@ function headAlternates(path) {
 
 const TICKS = '<div class="ticks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>';
 
-function projectCard(locale, p, s) {
-  const meta = p.year && p.year !== '—' ? `${p.category[locale]} · ${p.year}` : p.category[locale];
+// Desain memakai tiga varian kartu, bukan satu. Beranda memakai tinggi tetap
+// supaya tiap baris rata apa pun rasio fotonya (440px lalu 300px), dan metanya
+// cuma kategori. Halaman portofolio memakai aspect-ratio asli tiap proyek dan
+// menambahkan rasio di kanan meta. Rasio 9:16 sengaja ditampilkan dan dipotong
+// sebagai 4:5 — potret penuh merusak tinggi baris.
+const RATIO_MEDIA = {
+  '16:9': 'media--wide',
+  '16:10': 'media--hero',
+  '4:5': 'media--tall',
+  '9:16': 'media--tall',
+  '1:1': 'media--square',
+  '2.39:1': 'media--cinema',
+};
+const shownRatio = (r) => (r === '9:16' ? '4:5' : r);
+
+function projectCard(locale, p, s, variant) {
+  const onSunken = variant === 'a' || variant === 'b';
   const pos = p.pos ? ` style="object-position:${esc(p.pos)}"` : '';
+  // Beranda memakai tinggi tetap dari CSS, jadi class rasio hanya dipakai index.
+  const mediaClass = variant === 'index' ? ` ${RATIO_MEDIA[p.ratio] || 'media--wide'}` : '';
+  const meta =
+    variant === 'index'
+      ? `<span>${esc(p.category[locale])}</span><span class="work-card__ratio">${esc(shownRatio(p.ratio))}</span>`
+      : esc(p.category[locale]);
+
   return (
-    `<a class="work-card frame frame--sunken" data-tags="${esc(p.tag)} all" href="${urlOf(locale, `portfolio/${p.slug}/`)}">` +
-    `<div class="frame__media ${ratioClass(p.ratio)}">` +
+    `<a class="work-card work-card--${variant} frame${onSunken ? ' frame--sunken' : ''}" ` +
+    `data-tags="${esc(p.tag)} all" href="${urlOf(locale, `portfolio/${p.slug}/`)}">` +
+    `<div class="frame__media${mediaClass}">` +
     `<img src="${esc(p.cover)}" alt="${esc(p.alt[locale])}" loading="lazy" width="1280" height="720"${pos}>` +
     TICKS +
     `</div>` +
     `<div class="work-card__body">` +
     `<div class="work-card__title">${esc(p.title[locale])}</div>` +
-    `<div class="work-card__meta">${esc(meta)} · ${esc(p.ratio)}</div>` +
+    `<div class="work-card__meta">${meta}</div>` +
     `</div></a>`
   );
 }
@@ -227,20 +250,29 @@ function deliverItems(locale, s) {
     .join('');
 }
 
-// Foto tim datang dari project Claude Design, tapi DesignSync get_file memotong
-// di 256KiB sehingga PNG-nya tidak utuh. Daripada memasang gambar yang salah
-// atau menggagalkan build, section tim dilewati selama filenya belum ada —
-// dan build meneriakkan peringatan supaya tidak diam-diam hilang.
+// Foto tim ada di project Claude Design, tapi DesignSync get_file memotong di
+// 256KiB sehingga PNG-nya tidak pernah utuh. Nama dan jabatan tetap ditampilkan
+// — itu konten yang berdiri sendiri — dan potretnya menyusul begitu keempat file
+// diletakkan di frontend/assets/team/. Efek lensa hanya aktif kalau fotonya ada.
 const TEAM_READY = TEAM.every((m) => existsSync(join(OUT, m.photo)) && existsSync(join(OUT, m.candid)));
 if (!TEAM_READY) {
   warnings.push(
-    'foto tim belum ada di frontend/assets/team/ — section tim di halaman About dilewati. ' +
+    'foto tim belum ada di frontend/assets/team/ — nama dan jabatan tetap tayang, potretnya belum. ' +
       'Letakkan darmadi.png, darmadi-candid.png, atar.png, atar-candid.png lalu build ulang.'
   );
 }
 
 function teamCards(locale, s) {
-  if (!TEAM_READY) return '';
+  if (!TEAM_READY) {
+    // Tanpa potret, kartu jadi blok nama saja. Tidak ada tombol, karena tidak
+    // ada yang bisa dibalik.
+    return TEAM.map(
+      (m) =>
+        `<div class="person person--nophoto">` +
+        `<div class="person__name">${esc(m.name)} <span class="person__role">· ${esc(m.role[locale])}</span></div>` +
+        `</div>`
+    ).join('');
+  }
   return TEAM.map((m) => {
     const flip = s['about.team.flip'].replace('{name}', m.name);
     return (
@@ -314,12 +346,12 @@ function buildPage(locale, page) {
 
   if (page.template === 'home') {
     const featured = PROJECTS.filter((x) => x.featured);
-    ctx['home.cardsA'] = featured.slice(0, 2).map((x) => projectCard(locale, x, s)).join('');
-    ctx['home.cardsB'] = featured.slice(2, 5).map((x) => projectCard(locale, x, s)).join('');
+    ctx['home.cardsA'] = featured.slice(0, 2).map((x) => projectCard(locale, x, s, 'a')).join('');
+    ctx['home.cardsB'] = featured.slice(2, 5).map((x) => projectCard(locale, x, s, 'b')).join('');
   }
 
   if (page.template === 'portfolio') {
-    ctx['portfolio.cards'] = PROJECTS.map((x) => projectCard(locale, x, s)).join('');
+    ctx['portfolio.cards'] = PROJECTS.map((x) => projectCard(locale, x, s, 'index')).join('');
     ctx['portfolio.filters'] = filterChips(s);
     ctx['portfolio.countInitial'] = s['portfolio.count'].replace('{n}', String(PROJECTS.length));
   }
@@ -356,7 +388,7 @@ function buildPage(locale, page) {
   if (page.template === 'about') {
     ctx['about.deliverItems'] = deliverItems(locale, s);
     ctx['about.teamCards'] = teamCards(locale, s);
-    ctx['about.teamHidden'] = TEAM_READY ? '' : ' hidden';
+    ctx['about.team.copy'] = TEAM_READY ? s['about.team.copy'] : s['about.team.copy.nophoto'];
   }
 
   if (page.template === 'book') {

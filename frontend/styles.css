@@ -395,10 +395,16 @@ h1, h2, h3, p { margin: 0; }
 .work-grid--b { grid-template-columns: var(--cols-work-b); }
 .work-grid--index { grid-template-columns: var(--cols-work-b); }
 
+/* Tiga varian kartu, persis seperti desain: dua baris beranda memakai tinggi
+   tetap (440px dan 300px) supaya barisnya rata apa pun rasio fotonya, sementara
+   kartu di halaman portofolio memakai aspect-ratio asli tiap proyek. */
 .work-card { display: block; color: inherit; }
 .work-card:hover { color: inherit; }
+.work-card__body { padding-top: var(--frame-pad); }
+.work-card[hidden] { display: none; }
+
 .work-card__title {
-  font: 600 var(--fs-card) / 1.15 var(--font-display);
+  font: 600 var(--fs-lead) / 1.15 var(--font-display);
   font-stretch: 125%;
   letter-spacing: var(--tr-display);
 }
@@ -408,10 +414,44 @@ h1, h2, h3, p { margin: 0; }
   letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--ink-muted);
+  transition: color 140ms ease-out;
 }
 .section--sunken .work-card__meta { color: var(--ink-on-sunken-muted); }
-.work-card__body { padding-top: var(--space-3); }
-.work-card[hidden] { display: none; }
+.work-card:hover .work-card__meta,
+.work-card:focus-visible .work-card__meta { color: var(--signal); }
+.section--sunken .work-card:hover .work-card__meta,
+.section--sunken .work-card:focus-visible .work-card__meta { color: var(--signal-on-sunken); }
+
+/* baris pertama beranda: judul besar, meta duduk di kanan sejajar baseline */
+.work-card--a .frame__media { height: 440px; }
+.work-card--a .work-card__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-4);
+}
+.work-card--a .work-card__title {
+  font-size: var(--fs-card);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.work-card--a .work-card__meta { margin-top: 0; white-space: nowrap; }
+.work-card--a .ticks i { width: 16px; height: 16px; }
+
+/* baris kedua beranda: lebih pendek, meta ditumpuk di bawah judul */
+.work-card--b .frame__media { height: 300px; }
+
+/* halaman portofolio: kartu duduk di permukaan terang, rasio asli dipertahankan,
+   dan rasio ditampilkan di kanan meta */
+.work-card--index .work-card__title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.work-card--index .work-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  white-space: nowrap;
+}
+.work-card--index .work-card__ratio { color: var(--signal); }
 
 .media--tall { aspect-ratio: 4 / 5; }
 .media--wide { aspect-ratio: 16 / 9; }
@@ -505,6 +545,7 @@ h1, h2, h3, p { margin: 0; }
   gap: var(--space-5);
   margin-top: var(--space-6);
 }
+.person { min-width: 0; }
 .person__photo {
   position: relative;
   display: block;
@@ -945,4 +986,12 @@ h1, h2, h3, p { margin: 0; }
     animation-duration: .01ms !important;
   }
   .reveal { opacity: 1; transform: none; }
+}
+
+/* Kartu tim tanpa potret: dipakai selama foto belum ada di assets/team/. */
+.person--nophoto {
+  padding: var(--space-5);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-frame);
+  background: var(--surface-raised);
 }
