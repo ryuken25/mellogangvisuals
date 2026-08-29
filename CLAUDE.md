@@ -38,6 +38,55 @@ cd video && npm install
 cd video && npx remotion render ShowcaseReel out/mellogangvisuals-reel.mp4
 ```
 
+## Situs publik statis (`frontend/`) — DIHASILKAN, jangan disunting tangan
+
+Repo ini berisi **dua hal yang tidak berbagi kode apa pun**: aplikasi order
+CodeIgniter di `app/`, dan situs publik statis di `frontend/` yang di-deploy ke
+Vercel (project `mellogang`, `rootDirectory=frontend`, domain kanonik
+`https://mellogang.wyna.dev`).
+
+**Seluruh isi `frontend/**/*.html`, `sitemap.xml`, `robots.txt`, dan
+`vercel.json` adalah output generator.** Menyuntingnya langsung akan tertimpa.
+Sunting sumbernya, lalu jalankan build:
+
+```bash
+node site/build.mjs            # render ke frontend/
+node site/build.mjs --check    # validasi saja, tidak menulis file
+node --test site/test.mjs      # 17 tes (paritas i18n, link, SEO, copy)
+```
+
+Sumber kebenaran:
+
+| File | Isi |
+|---|---|
+| `site/data/strings.json` | semua string yang terlihat user, per key, `{id, en}` |
+| `site/data/projects.json` | data proyek portofolio, termasuk `oldSlug` untuk redirect |
+| `site/data/site.json` | route, domain, kontak, filter, redirect legacy |
+| `site/templates/*.html` | markup, tanpa teks yang terlihat user |
+
+Aturan yang ditegakkan build dan test (build exit 1 kalau dilanggar):
+
+- Setiap key wajib punya ID **dan** EN yang terisi. Tidak ada key yatim di kedua arah.
+- Tidak ada teks yang terlihat user ditulis langsung di template.
+- Semua link internal dan aset harus menunjuk file yang benar-benar ada.
+- Setiap class yang dipakai markup harus punya aturan di `frontend/styles.css`.
+- Setiap slug lama wajib punya redirect 308 di `vercel.json`.
+
+Yang **tidak** dihasilkan generator dan boleh disunting tangan:
+`frontend/styles.css`, `frontend/script.js`, `frontend/assets/`.
+
+**Bahasa punya URL, bukan toggle JS.** Indonesia default di root, Inggris di
+`/en/`. Pengalih bahasa adalah tautan ke URL padanan, dengan `hreflang`
+resiprokal dan `x-default` ke versi Indonesia. Jangan menambahkan swap DOM
+berbasis `localStorage` untuk bahasa — itu justru yang dibongkar. `localStorage`
+hanya dipakai untuk tema.
+
+Sistem i18n situs statis ini **terpisah total** dari `App\Support\I18n` milik
+aplikasi CI4 (cookie `mllang`, httponly, default EN). Keduanya tidak berbagi
+kamus dan tidak bisa saling membaca.
+
+Latar belakang lengkap: `FINDINGS.md` (audit), `DECISIONS.md` §16–§23.
+
 ## Architecture
 
 **Framework**: CodeIgniter 4.7.x (PHP 8.2/8.3), MySQL/MariaDB (InnoDB, utf8mb4_unicode_ci), Bootstrap 5 + jQuery. Controllers use CodeIgniter's Query Builder directly — no Eloquent/ORM. **All status values are stored as canonical snake_case** (e.g. `pra_produksi`, `menunggu_pembayaran`) — no more `LOWER(col) = '...'` queries (would defeat indexes).

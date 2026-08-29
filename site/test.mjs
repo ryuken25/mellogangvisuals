@@ -240,6 +240,20 @@ test('sitemap memuat semua halaman terindeks dengan alternate hreflang', () => {
   assert.equal((xml.match(/<url>/g) ?? []).length, pages.length);
 });
 
+test('setiap class yang dipakai markup punya aturan di styles.css', () => {
+  // Justru bug inilah yang membuat 8 halaman generasi lama tayang tanpa style:
+  // markup-nya memakai .button/.package-card dst yang sudah dihapus dari CSS.
+  const css = read(join(OUT, 'styles.css'));
+  const defined = new Set([...css.matchAll(/\.([A-Za-z][\w-]*)/g)].map((m) => m[1]));
+  const used = new Set();
+  for (const f of htmlFiles) {
+    const body = read(f).replace(/<script[\s\S]*?<\/script>/g, '');
+    for (const m of body.matchAll(/class="([^"]+)"/g)) for (const c of m[1].split(/\s+/)) used.add(c);
+  }
+  const missing = [...used].filter((c) => !defined.has(c)).sort();
+  assert.deepEqual(missing, [], `class tanpa aturan CSS: ${missing.join(', ')}`);
+});
+
 test('alt gambar mendeskripsikan isi foto, bukan nama studio', () => {
   const lazy = [];
   for (const f of htmlFiles) {

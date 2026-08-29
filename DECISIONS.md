@@ -198,3 +198,153 @@ ada lagi query `LOWER(col) = '...'`** — index kepakai.
 12. ./pages screenshot + README
 13. .env.example + .gitignore + README + push
 14. Final verify + cetak MANUAL STEPS
+
+---
+
+# Overhaul route + copy (2026-08-29)
+
+Konteks: audit lengkap ada di `FINDINGS.md`, inventaris string di
+`FINDINGS-strings.md`.
+
+## 16. Situs statis dan aplikasi CI4 tetap terpisah
+
+Diverifikasi tiga cara: nol marker situs statis di `app/Views`, nol file di luar
+`frontend/` yang menyebut path `frontend/`, dan `builds` ternyata skrip
+stabilitas CodeIgniter, bukan generator situs. Keduanya juga punya sistem i18n
+yang tidak berbagi apa pun (localStorage vs cookie httponly, default ID vs EN).
+
+Konsekuensi yang dipakai sepanjang pekerjaan ini: mengganti seluruh copy situs
+statis tidak menyentuh aplikasi order sama sekali. Menyatukan keduanya sengaja
+**tidak** dikerjakan. Kalau nanti disatukan, dua hal harus diputuskan lebih
+dulu: tabrakan `/portfolio/` (statis) vs `/portofolio` (CI4), dan bagaimana
+pilihan bahasa dibawa antar keduanya.
+
+## 17. Generator statis, bukan HTML tangan
+
+Sebelumnya 23 file HTML ditulis tangan tanpa build step. Nav desktop, nav
+mobile, dan footer disalin terpisah ke tiap file, jadi mengubah satu link nav
+berarti menyentuh sampai 3 blok di 22 file. Ketiganya sudah terbukti menyimpang:
+10 halaman detail tidak punya blok footer sama sekali, 8 halaman kehilangan link
+Home dan Book, `/workflow/` menghilangkan link Workflow dari mobile menu-nya
+sendiri.
+
+Target megaprompt ("satu partial nav dan footer dipakai semua halaman", "satu
+sumber kebenaran untuk semua string") **tidak bisa dipenuhi** tanpa build step.
+Karena itu `site/build.mjs` diperkenalkan.
+
+Yang dipilih dan alasannya:
+
+- **Output di-commit ke `frontend/`, bukan di-build di Vercel.** Vercel tetap
+  menyajikan file statis tanpa build command, jadi tidak ada perubahan
+  konfigurasi deploy dan tidak ada langkah baru yang bisa gagal saat produksi.
+  Harganya: file hasil ikut masuk git. Diterima, dan setiap file diberi banner
+  "jangan sunting" di baris pertama.
+- **Tanpa dependensi.** Node murni, nol `node_modules`, nol `package.json` di
+  root. Templating-nya `{{key}}` sederhana; loop dirender di JS lalu dimasukkan
+  sebagai nilai mentah.
+- **Build gagal keras (exit 1)** kalau ada key yatim, placeholder tak
+  tergantikan, link internal mati, atau aset hilang.
+
+Perintah:
+
+```bash
+node site/build.mjs            # render ke frontend/
+node site/build.mjs --check    # validasi saja, tidak menulis
+node --test site/test.mjs      # 17 tes
+```
+
+## 18. Strategi URL bahasa: ID di root, EN di /en/ (opsi B)
+
+Bahasa default situs adalah Indonesia. Sebelumnya toggle-nya swap DOM lewat
+`localStorage`, akibatnya versi Indonesia tidak bisa dishare, tidak bisa
+diindeks, tidak punya `hreflang`, dan setiap halaman berkedip Inggris dulu
+sebelum berganti ke Indonesia.
+
+Tiga opsi dipertimbangkan. Dipilih **B** (ID di `/`, EN di `/en/`), bukan A
+(`/id/` + `/en/`), dengan alasan spesifik repo ini:
+
+1. Tanpa build step, opsi A berarti memelihara 46 file HTML dengan tangan; B
+   berarti 23. Setelah generator ada, selisih itu mengecil, tapi B tetap memberi
+   URL terpendek ke bahasa mayoritas klien.
+2. Konten lama 99% Inggris keras, jadi membangun `/en/` dari markup yang sudah
+   ada lebih murah daripada menerjemahkan dua arah sekaligus.
+
+Konsekuensi: `hreflang` resiprokal plus `x-default` ke versi Indonesia wajib ada
+di setiap halaman. Pengalih bahasa jadi tautan asli ke URL padanannya, bukan
+tombol JS.
+
+Judul halaman detail portofolio sengaja dibiarkan sama di kedua bahasa untuk
+proyek yang namanya nama diri ("Indra & Suci", "CoinFest Asia 2022"). Membedakan
+paksa akan mengarang. `hreflang` dan `canonical` yang menangani duplikasinya,
+dan meta description tetap unik di 28 halaman.
+
+## 19. Aturan slug portofolio: <subjek>-<tahun>
+
+Sebelumnya slug bercampur tiga sumbu: nama klien (`indra-suci`), nama tempat
+(`bukit-lestari`), dan tipe proyek generik (`cultural-event`).
+
+Aturan yang ditetapkan: `<subjek>-<tahun>`, dengan `<subjek>` nama klien,
+pasangan, atau venue dalam kebab-case, tidak pernah tipe deliverable atau
+kategori. Kalau satu subjek punya dua deliverable di tahun yang sama, dan hanya
+saat itu, tambahkan token format.
+
+Sekaligus memperbaiki typo yang sudah masuk URL: `coinvest-asia` seharusnya
+**CoinFest** Asia.
+
+**Pengecualian yang disengaja:** `wedding-ceremony` dan `cultural-event`
+dibiarkan apa adanya. Keduanya bukan proyek bertanggal, melainkan kumpulan foto
+dari arsip Instagram (`video:''`, satu gambar galeri). Memberi mereka tahun
+berarti mengarang. Keduanya perlu diganti nama proyek yang sebenarnya atau
+dikeluarkan dari namespace proyek begitu klien memberi datanya.
+
+Semua slug lama dapat redirect 308, dihasilkan otomatis dari `oldSlug` di
+`site/data/projects.json` supaya tidak mungkin melenceng.
+
+## 20. /packages/** dan /workflow/ dihapus, bukan diperbaiki
+
+Delapan halaman ini sisa generasi desain lama: memakai 12 class CSS yang sudah
+dihapus dari `frontend/styles.css` sehingga tayang tanpa style, nol tautan masuk
+dari nav utama, CTA menunjuk anchor `/#booking` yang tidak ada, dan merek di
+`<title>` masih `mellogang.wyna.dev` yang lama.
+
+Keputusan bisnis dari pemilik: hapus, redirect 308 ke `/book/`. Isi paketnya
+tidak dipindahkan ke halaman lain karena harga selalu "Custom quote" dan alur
+penawaran sekarang lewat WhatsApp.
+
+`/contact/` yang cuma stub meta-refresh juga dihapus, diganti redirect 308 asli
+ke `/about/`.
+
+## 21. Pohon statis duplikat di root repo dihapus
+
+13 file (`index.html`, `styles.css`, `script.js`, `about/`, `contact/`,
+`packages/`, `portfolio/`, `workflow/`, `assets/`, `vercel.json`) yang isinya
+sudah menyimpang dari padanan `frontend/`-nya. Diverifikasi tidak di-deploy ke
+mana pun: Vercel project `mellogang` memakai `rootDirectory=frontend`, dan dari
+29 project di akun hanya satu yang terhubung ke repo ini.
+
+Bahaya nyatanya bukan ukuran repo, tapi salah setel Root Directory akan
+diam-diam men-deploy situs lama yang tidak punya `/book/` dan tidak punya i18n,
+lalu **kelihatan seperti situs yang bekerja** alih-alih gagal dengan berisik.
+
+## 22. GSAP dihapus, bukan di-vendor
+
+`/assets/vendor/gsap.min.js` dan `ScrollTrigger.min.js` dirujuk 14 halaman,
+direktorinya tidak pernah ada di repo. 28 request 404 per crawl. Animasinya
+memang tidak pernah aktif karena `gsapMotion()` punya guard `!window.gsap`.
+
+Tag-nya dihapus: nol perubahan visual, 28 request 404 hilang. Menghidupkan
+animasi adalah keputusan desain, dan desain akan diganti terpisah.
+
+Catatan yang belum dibereskan: `frontend/styles.css` masih memuat font dari
+`fonts.googleapis.com`, bertentangan dengan aturan di CLAUDE.md ("No CDN fonts").
+Dibiarkan karena menyentuh tipografi berarti menyentuh desain.
+
+## 23. Domain kanonik: mellogang.wyna.dev
+
+`mellogang.wyna.dev` didaftarkan ke project Vercel (DNS-nya sudah lama menunjuk
+`cname.vercel-dns.com`, yang kurang cuma pendaftaran domain sehingga TLS tidak
+pernah diterbitkan). `mellogangvisual.wyna.dev` (ejaan lama, tanpa "s") diubah
+jadi redirect 308 ke host kanonik supaya keduanya tidak bersaing di indeks.
+
+`creds.txt` berisi kredensial hidup dan ditambahkan ke `.gitignore`. File itu
+belum pernah ter-commit, jadi tidak ada riwayat yang perlu di-purge.

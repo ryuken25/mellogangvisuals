@@ -72,3 +72,5 @@ a{color:inherit;text-decoration:none}img,video{display:block;max-width:100%}butt
   .detail-nav a{width:100%}
   .detail-nav-next{text-align:left;margin-left:0}
 }
+.detail-nav-prev{align-items:flex-start}
+.nf-block{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
