@@ -52,7 +52,8 @@ Sunting sumbernya, lalu jalankan build:
 ```bash
 node site/build.mjs            # render ke frontend/
 node site/build.mjs --check    # validasi saja, tidak menulis file
-node --test site/test.mjs      # 17 tes (paritas i18n, link, SEO, copy)
+node --test site/test.mjs      # 23 tes (paritas i18n, link, SEO, copy, token, font)
+node tools/scrape-youtube.mjs  # tarik ulang daftar video dari kanal YouTube
 ```
 
 Sumber kebenaran:
@@ -61,8 +62,23 @@ Sumber kebenaran:
 |---|---|
 | `site/data/strings.json` | semua string yang terlihat user, per key, `{id, en}` |
 | `site/data/projects.json` | data proyek portofolio, termasuk `oldSlug` untuk redirect |
+| `site/data/team.json` | anggota tim untuk section About |
 | `site/data/site.json` | route, domain, kontak, filter, redirect legacy |
+| `site/data/youtube.json` | hasil mentah scrape kanal, ditulis `tools/scrape-youtube.mjs` |
 | `site/templates/*.html` | markup, tanpa teks yang terlihat user |
+
+**Sistem visual.** `frontend/tokens.css` adalah sumber tunggal warna, tipe, ritme,
+dan breakpoint — breakpoint hidup sebagai custom property (`--cols-hero`,
+`--show-desktop-nav`) sehingga `styles.css` nyaris tidak punya `@media` sendiri.
+Jangan menulis warna atau ukuran langsung di `styles.css`; ambil dari token, dan
+kalau tokennya belum ada, tambahkan di `tokens.css`. Ada tes yang menggagalkan
+build kalau ada `var(--…)` tanpa definisi.
+
+**Font di-self-host** di `frontend/assets/fonts/` (8 woff2, latin + latin-ext).
+Blok `@font-face` ada di antara penanda `@font-face-start` / `@font-face-end` di
+`styles.css`. Archivo adalah font variabel dua sumbu: panggil lebar display lewat
+`font-stretch: 125%`, bukan `font-variation-settings`. **Jangan pernah menambah
+`@import` atau menunjuk Google Fonts** — ada tes yang menolaknya.
 
 Aturan yang ditegakkan build dan test (build exit 1 kalau dilanggar):
 
