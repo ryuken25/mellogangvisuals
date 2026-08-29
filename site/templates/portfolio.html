@@ -1,28 +1,32 @@
 <main id="main">
-<section class="container page-hero reveal">
+
+<section class="wrap section section--tight">
 <div class="eyebrow">{{portfolio.hero.eyebrow}}</div>
-<h1 class="display">{{portfolio.hero.title}}</h1>
-<p>{{portfolio.hero.copy}}</p>
-<div class="works-filter" role="group" aria-label="{{a11y.filter.group}}">{{{portfolio.filters}}}</div>
+<h1 class="display display--h1">{{portfolio.hero.title}}</h1>
+<p class="lead">{{portfolio.hero.copy}}</p>
+<div class="filters" role="group" aria-label="{{a11y.filter.group}}">
+{{{portfolio.filters}}}
+<span class="filter-count" id="worksCount" data-count-template="{{portfolio.count}}">{{portfolio.countInitial}}</span>
+</div>
 </section>
 
-<section class="section">
-<div class="container">
-<div class="works-grid" id="worksGrid">{{{portfolio.cards}}}</div>
+<section class="section section--tight">
+<div class="wrap">
+<div class="work-grid work-grid--index" id="worksGrid">{{{portfolio.cards}}}</div>
 <p class="works-empty" id="worksEmpty" hidden>{{portfolio.empty}}</p>
 </div>
 </section>
 
-<section class="section">
-<div class="container">
-<div class="cta reveal">
+<section class="section section--tight">
+<div class="wrap">
+<div class="band">
 <div>
-<div class="eyebrow">{{portfolio.cta.eyebrow}}</div>
 <h2 class="display">{{portfolio.cta.title}}</h2>
 <p>{{portfolio.cta.copy}}</p>
 </div>
-<a class="btn btn-primary" href="{{page.bookUrl}}">{{portfolio.cta.btn}}</a>
+<div class="actions"><a class="btn btn--solid" href="{{page.bookUrl}}">{{nav.book}}</a></div>
 </div>
 </div>
 </section>
+
 </main>

@@ -1,45 +1,44 @@
-<main id="main">
-<nav class="container breadcrumb" aria-label="{{a11y.breadcrumb}}">
-<a href="{{page.homeUrl}}">{{nav.home}}</a> <span aria-hidden="true">/</span> <a href="{{page.portfolioUrl}}">{{nav.portfolio}}</a> <span aria-hidden="true">/</span> <span aria-current="page">{{project.title}}</span>
-</nav>
+<main id="main" data-project="{{project.slug}}">
 
-<section class="container detail-hero reveal">
-<div>
-<div class="eyebrow">{{project.category}}</div>
-<h1 class="display">{{project.title}}</h1>
-<p>{{project.description}}</p>
-</div>
-<div>
+<section class="wrap">
+<nav class="breadcrumb" aria-label="{{a11y.breadcrumb}}"><a href="{{page.portfolioUrl}}">← {{project.back}}</a></nav>
+<h1 class="display display--h1">{{project.title}}</h1>
 <div class="detail-meta">
-{{{project.yearRow}}}
+<span>{{project.meta.type}} <strong>{{project.category}}</strong></span>
 <span>{{project.meta.format}} <strong>{{project.format}}</strong></span>
-</div>
+<span>{{project.meta.location}} <strong>{{project.location}}</strong></span>
 </div>
 </section>
 
-<section class="container">
-<div class="detail-cover reveal"><img src="{{project.cover}}" alt="{{project.alt}}" width="1280" height="720"></div>
+<section class="wrap section section--tight">
+<div class="frame">
+<button class="gallery__item" type="button" data-zoom="0" aria-label="{{project.zoom.open}}">
+<div class="frame__media media--wide"><img src="{{project.cover}}" alt="{{project.alt}}" width="1280" height="720"></div>
+</button>
+<div class="frame__slate"><span>{{project.slate}}</span><span class="frame__ratio">{{project.ratio}}</span></div>
+</div>
 </section>
 
-<section class="section">
-<div class="container detail-layout">
+<section class="section section--tight">
+<div class="wrap detail-layout">
 <div>
-<div class="detail-video reveal">{{{project.video}}}</div>
-<div class="detail-gallery reveal">{{{project.gallery}}}</div>
+{{{project.film}}}
+<div class="gallery">{{{project.gallery}}}</div>
 </div>
-<aside class="detail-aside reveal">
-<h3 class="display">{{project.notes.title}}</h3>
+
+<aside class="detail-aside">
+<div class="eyebrow">{{project.notes.title}}</div>
 <p>{{project.description}}</p>
 <div class="source-links">
-<a class="btn btn-primary btn-small" href="{{project.sourceUrl}}" target="_blank" rel="noopener noreferrer">{{project.sourceLabel}}</a>
-<a class="btn btn-outline btn-small" href="{{page.bookUrl}}">{{project.book}}</a>
+<a class="btn btn--solid btn--small" href="{{project.sourceUrl}}" target="_blank" rel="noopener noreferrer">{{project.sourceLabel}} ↗</a>
+<a class="btn btn--outline btn--small" href="{{page.bookUrl}}">{{nav.book}}</a>
 </div>
 </aside>
 </div>
 </section>
 
-<section class="section">
-<div class="container">
+<section class="section section--tight">
+<div class="wrap">
 <nav class="detail-nav" aria-label="{{a11y.projectNav}}">
 {{{project.prev}}}
 <a class="detail-nav-all" href="{{page.portfolioUrl}}">{{project.backToAll}}</a>
@@ -47,4 +46,19 @@
 </nav>
 </div>
 </section>
+
+<div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-label="{{project.zoom.dialog}}" hidden>
+<div class="zoom__dialog">
+<div class="zoom__media">
+<img id="zoomImg" src="" alt="">
+<button class="zoom__nav zoom__prev" type="button" id="zoomPrev" aria-label="{{project.zoom.prev}}">←</button>
+<button class="zoom__nav zoom__next" type="button" id="zoomNext" aria-label="{{project.zoom.next}}">→</button>
+</div>
+<div class="zoom__bar">
+<span id="zoomCaption"></span>
+<span><span class="zoom__counter" id="zoomCounter"></span><button class="zoom__close" type="button" id="zoomClose" aria-label="{{project.zoom.close}}">✕</button></span>
+</div>
+</div>
+</div>
+
 </main>

@@ -1,0 +1,36 @@
+[
+  {
+    "key": "darmadi",
+    "name": "Darmadi",
+    "role": { "id": "Owner", "en": "Owner" },
+    "photo": "/assets/team/darmadi.png",
+    "pos": "center 30%",
+    "candid": "/assets/team/darmadi-candid.png",
+    "candidPos": "center 20%",
+    "alt": {
+      "id": "Darmadi mengolah tanah dengan cangkul saat senja, pohon kelapa dan awan di belakangnya.",
+      "en": "Darmadi working a hoe through a field at dusk, palms and cloud behind him."
+    },
+    "candidAlt": {
+      "id": "Darmadi di depan sebuah toko, pakai jaket cokelat dan kemeja putih.",
+      "en": "Darmadi outside a shopfront in a brown jacket and white shirt."
+    }
+  },
+  {
+    "key": "atar",
+    "name": "Atar",
+    "role": { "id": "Editor", "en": "Editor" },
+    "photo": "/assets/team/atar.png",
+    "pos": "center 18%",
+    "candid": "/assets/team/atar-candid.png",
+    "candidPos": "center 15%",
+    "alt": {
+      "id": "Atar berjas gelap dan berdasi, difoto dengan latar biru studio.",
+      "en": "Atar in a dark suit and tie, photographed against a blue studio backdrop."
+    },
+    "candidAlt": {
+      "id": "Atar pakai hoodie dan masker, duduk di ambang pintu kena sinar matahari sore.",
+      "en": "Atar in a hoodie and face mask, sitting in a doorway in the afternoon sun."
+    }
+  }
+]

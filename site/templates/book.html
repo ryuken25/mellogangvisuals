@@ -1,55 +1,81 @@
 <main id="main">
-<section class="container page-hero reveal">
+
+<section class="wrap section section--tight">
 <div class="eyebrow">{{book.hero.eyebrow}}</div>
-<h1 class="display">{{book.hero.title}}</h1>
-<p>{{book.hero.copy}}</p>
+<h1 class="display display--h1">{{book.hero.title}}</h1>
+<p class="lead">{{book.hero.copy}}</p>
 </section>
 
-<section class="section">
-<div class="container book-layout">
-<div class="book-intro reveal">
-<div class="eyebrow">{{book.intro.eyebrow}}</div>
-<h2 class="display">{{book.intro.title}}</h2>
-<p>{{book.intro.copy}}</p>
-<div class="book-preview">
-<img src="/assets/brand/instagram/ig-05.jpg" alt="{{book.intro.image.alt}}" loading="lazy" width="1280" height="960">
-<div><strong>{{book.intro.aside.title}}</strong><span>{{book.intro.aside.copy}}</span></div>
+<section class="section section--tight">
+<div class="wrap book-layout">
+
+<div>
+<div class="wa-preview">
+<div class="wa-preview__title">{{book.preview.title}}</div>
+<p class="wa-preview__body" id="waPreview"></p>
+<p class="wa-preview__note">{{book.preview.note}}</p>
 </div>
+<div class="section-more"><a class="arrow-link" href="https://wa.me/{{site.whatsapp}}" target="_blank" rel="noopener noreferrer">{{book.preview.direct}} →</a></div>
 </div>
 
-<form class="book-form reveal" id="bookForm" data-wa-number="{{site.whatsapp}}" data-wa-template="{{book.waTemplate}}" data-wa-name="{{book.waPlaceholderName}}" data-wa-date="{{book.waPlaceholderDate}}" data-wa-location="{{book.waPlaceholderLocation}}" data-wa-notes="{{book.waNotes}}" data-date-locale="{{book.dateLocale}}">
-<h2>{{book.form.title}}</h2>
+<form class="book-form" id="bookForm"
+      data-wa-number="{{site.whatsapp}}"
+      data-wa-template="{{book.waTemplate}}"
+      data-wa-name="{{book.waPlaceholderName}}"
+      data-wa-date="{{book.waPlaceholderDate}}"
+      data-wa-location="{{book.waPlaceholderLocation}}"
+      data-wa-notes="{{book.waNotes}}"
+      data-date-locale="{{book.dateLocale}}"
+      data-month-names="{{book.cal.months}}"
+      data-weekday-names="{{book.cal.weekdays}}">
 
-<div class="field">
-<label for="bookPackage">{{book.form.type.label}}</label>
-<select id="bookPackage" name="type" required>{{{book.options}}}</select>
-</div>
-
-<div class="field">
-<label for="bookName">{{book.form.name.label}}</label>
-<input id="bookName" name="name" type="text" placeholder="{{book.form.name.placeholder}}" autocomplete="name" required>
-</div>
-
-<div class="field">
-<label for="bookDate">{{book.form.date.label}}</label>
-<input id="bookDate" name="date" type="date" required>
-<small class="field-hint">{{book.form.date.hint}}</small>
-</div>
+<h2 class="display display--h3">{{book.form.title}}</h2>
 
 <div class="field">
-<label for="bookLocation">{{book.form.location.label}}</label>
-<input id="bookLocation" name="location" type="text" placeholder="{{book.form.location.placeholder}}" required>
+<label class="field__label" for="bookType">{{book.form.type.label}}</label>
+<select id="bookType" name="type">{{{book.options}}}</select>
 </div>
 
 <div class="field">
-<label for="bookNotes">{{book.form.notes.label}} <span class="field-optional">{{book.form.optional}}</span></label>
+<label class="field__label" for="bookName">{{book.form.name.label}}</label>
+<input id="bookName" name="name" type="text" placeholder="{{book.form.name.placeholder}}" autocomplete="name">
+</div>
+
+<fieldset class="field">
+<legend>{{book.form.date.label}}</legend>
+<div class="quick-dates">{{{book.quickDates}}}</div>
+<div class="cal" id="cal">
+<div class="cal__head">
+<span id="calTitle"></span>
+<span class="cal__nav">
+<button type="button" id="calPrev" aria-label="{{book.cal.prev}}">←</button>
+<button type="button" id="calNext" aria-label="{{book.cal.next}}">→</button>
+</span>
+</div>
+<div class="cal__week" id="calWeek" aria-hidden="true"></div>
+<div class="cal__grid" id="calGrid"></div>
+</div>
+<input type="hidden" id="bookDate" name="date" value="">
+<span class="field__hint" id="calHint">{{book.form.date.hint}}</span>
+</fieldset>
+
+<div class="field">
+<label class="field__label" for="bookLocation">{{book.form.location.label}}</label>
+<input id="bookLocation" name="location" type="text" placeholder="{{book.form.location.placeholder}}">
+</div>
+
+<div class="field">
+<label class="field__label" for="bookNotes">{{book.form.notes.label}} <span class="field__optional">{{book.form.optional}}</span></label>
 <textarea id="bookNotes" name="notes" rows="4" placeholder="{{book.form.notes.placeholder}}"></textarea>
 </div>
 
-<p class="book-note">{{book.form.note}}</p>
-<button class="btn btn-primary" type="submit">{{book.form.submit}}</button>
+<p class="form-error" id="bookError" role="alert" hidden>{{book.form.error}}</p>
+
+<button class="btn btn--solid" type="submit">{{book.form.submit}} ↗</button>
 <a id="waLink" href="https://wa.me/{{site.whatsapp}}" target="_blank" rel="noopener noreferrer" hidden>{{book.form.submit}}</a>
 </form>
+
 </div>
 </section>
+
 </main>

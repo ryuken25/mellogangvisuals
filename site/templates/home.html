@@ -1,78 +1,59 @@
 <main id="main">
-<section class="container hero">
-<div class="reveal">
+
+<section class="wrap hero">
+<div>
 <div class="eyebrow">{{home.hero.eyebrow}}</div>
-<h1 class="display display-title">{{home.hero.title}}</h1>
-<p class="hero-copy">{{home.hero.copy}}</p>
-<div class="hero-actions">
-<a class="btn btn-primary magnetic" href="{{page.bookUrl}}">{{home.hero.cta.primary}}</a>
-<a class="btn btn-outline" href="{{page.portfolioUrl}}">{{home.hero.cta.secondary}}</a>
-</div>
-<div class="hero-meta">
-<span><i aria-hidden="true"></i> <span>{{home.hero.meta.location}}</span></span>
-<span><i aria-hidden="true"></i> <span>{{home.hero.meta.service}}</span></span>
-<span><i aria-hidden="true"></i> <span>{{home.hero.meta.availability}}</span></span>
+<h1 class="display display--h1">{{home.hero.title}}</h1>
+<p class="lead lead--narrow">{{home.hero.copy}}</p>
+<div class="actions">
+<a class="btn btn--solid" href="{{page.bookUrl}}">{{nav.book}}</a>
+<a class="btn btn--outline" href="{{page.portfolioUrl}}">{{home.hero.cta.secondary}}</a>
 </div>
 </div>
-<div class="hero-media reveal">
-<div class="hero-image"><img src="/assets/brand/instagram/ig-05-display.jpg" alt="{{home.hero.image.alt}}" width="1280" height="1600"></div>
-<div class="hero-stamp" aria-hidden="true">{{{home.hero.stamp}}}</div>
-<div class="hero-caption"><small>{{home.hero.caption.label}}</small><strong>{{home.hero.caption.text}}</strong></div>
+<div class="frame">
+<div class="frame__media media--hero"><img src="/assets/brand/instagram/ig-05-display.jpg" alt="{{home.hero.image.alt}}" width="1280" height="800"></div>
+<div class="frame__slate"><span>{{home.hero.slate}}</span><span class="frame__ratio">16:10</span></div>
 </div>
 </section>
 
-<section class="section section-dark dark-works">
-<div class="container">
-<div class="section-head">
-<div>
+<section class="section section--sunken">
+<div class="wrap">
 <div class="eyebrow">{{home.works.eyebrow}}</div>
-<h2 class="display">{{home.works.title}}</h2>
-</div>
-<div class="section-note">{{home.works.note}}</div>
-</div>
-<div class="works-grid">{{{home.cards}}}</div>
-<div class="section-more"><a class="arrow-link" href="{{page.portfolioUrl}}">{{home.works.viewall}}</a></div>
-</div>
-</section>
-
-<section class="section">
-<div class="container">
 <div class="section-head">
-<div>
-<div class="eyebrow">{{home.stages.eyebrow}}</div>
-<h2 class="display">{{home.stages.title}}</h2>
+<h2 class="display">{{home.works.title}}</h2>
+<p class="section-note">{{home.works.note}}</p>
 </div>
-</div>
-<div class="stages">
-<div class="stage reveal"><h3>{{home.stages.before.title}}</h3><p>{{home.stages.before.copy}}</p></div>
-<div class="stage reveal"><h3>{{home.stages.during.title}}</h3><p>{{home.stages.during.copy}}</p></div>
-<div class="stage reveal"><h3>{{home.stages.after.title}}</h3><p>{{home.stages.after.copy}}</p></div>
-</div>
+<div class="work-grid work-grid--a">{{{home.cardsA}}}</div>
+<div class="work-grid work-grid--b">{{{home.cardsB}}}</div>
+<div class="section-more"><a class="arrow-link" href="{{page.portfolioUrl}}">{{home.works.viewall}} →</a></div>
 </div>
 </section>
 
 <section class="section">
-<div class="container about-strip">
-<div class="about-copy reveal">
+<div class="wrap split">
+<div>
 <div class="eyebrow">{{home.about.eyebrow}}</div>
 <h2 class="display">{{home.about.title}}</h2>
-<p>{{home.about.copy}}</p>
-<a class="arrow-link" href="{{page.aboutUrl}}">{{home.about.link}}</a>
+<p class="lead">{{home.about.copy}}</p>
+<div class="section-more"><a class="arrow-link" href="{{page.aboutUrl}}">{{home.about.link}} →</a></div>
 </div>
-<div class="about-image reveal"><img src="/assets/brand/instagram/ig-02.jpg" alt="{{home.about.image.alt}}" loading="lazy" width="1280" height="960"></div>
+<div class="frame">
+<div class="frame__media media--cinema"><img src="/assets/video/frames/bukit-lestari-12.jpg" alt="{{home.about.image.alt}}" loading="lazy" width="1280" height="536"></div>
+<div class="frame__slate"><span>{{home.about.slate}}</span><span class="frame__ratio">2.39:1</span></div>
+</div>
 </div>
 </section>
 
-<section class="section">
-<div class="container">
-<div class="cta reveal">
+<section class="section section--tight">
+<div class="wrap">
+<div class="band">
 <div>
-<div class="eyebrow">{{home.cta.eyebrow}}</div>
 <h2 class="display">{{home.cta.title}}</h2>
 <p>{{home.cta.copy}}</p>
 </div>
-<a class="btn btn-primary magnetic" href="{{page.bookUrl}}">{{home.cta.btn}}</a>
+<div class="actions"><a class="btn btn--solid" href="{{page.bookUrl}}">{{home.cta.btn}}</a></div>
 </div>
 </div>
 </section>
+
 </main>
