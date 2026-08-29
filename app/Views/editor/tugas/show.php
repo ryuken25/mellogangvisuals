@@ -95,9 +95,9 @@
     <h3 class="section__title" style="margin-bottom:10px;">Update Progres</h3>
 
     <?php if (!$canEdit): ?>
-      <?php if (($statusNow ?? '') === 'done'): ?>
+      <?php if (($statusNow ?? '') === \App\Support\Status::PROD_DONE): ?>
         <div class="alert ok">Editing sudah <b>DONE</b>. Tunggu revisi pelanggan (jika ada).</div>
-      <?php elseif (($statusNow ?? '') === 'revisi selesai'): ?>
+      <?php elseif (($statusNow ?? '') === \App\Support\Status::PROD_REVISI_SELESAI): ?>
         <div class="alert ok">Revisi sudah <b>SELESAI</b>. Tunggu revisi tambahan atau serah terima hasil.</div>
       <?php else: ?>
         <div class="alert error">Tidak ada status lanjutan yang valid.</div>

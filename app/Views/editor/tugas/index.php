@@ -15,11 +15,19 @@
       <select class="input" name="status" style="max-width:260px;">
         <option value="">-- semua status --</option>
         <?php
-          $opts = ['pra produksi','shooting','cut-to-cut','finishing','done','revisi','revisi selesai'];
+          $opts = [
+            \App\Support\Status::PROD_PRA_PRODUKSI,
+            \App\Support\Status::PROD_SHOOTING,
+            \App\Support\Status::PROD_CUT_TO_CUT,
+            \App\Support\Status::PROD_FINISHING,
+            \App\Support\Status::PROD_DONE,
+            \App\Support\Status::PROD_REVISI,
+            \App\Support\Status::PROD_REVISI_SELESAI,
+          ];
           foreach ($opts as $o):
             $sel = ($status === $o) ? 'selected' : '';
         ?>
-          <option value="<?= esc($o) ?>" <?= $sel ?>><?= esc($o) ?></option>
+          <option value="<?= esc($o) ?>" <?= $sel ?>><?= esc(\App\Support\Status::prodLabel($o)) ?></option>
         <?php endforeach; ?>
       </select>
       <button class="btnPrimary" type="submit">Filter</button>

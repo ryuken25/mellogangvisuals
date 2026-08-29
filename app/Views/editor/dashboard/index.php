@@ -115,8 +115,8 @@
               $tglDeadline = $t['tanggal_selesai_editing'] ?? null;
               $status = strtolower(trim($t['status_produksi'] ?? ''));
 
-              if ($status === 'shooting') { $pillBg = '#fef9c3'; $pillColor = '#854d0e'; }
-              elseif ($status === 'pra produksi') { $pillBg = '#e5e7eb'; $pillColor = '#374151'; }
+              if ($status === \App\Support\Status::PROD_SHOOTING) { $pillBg = '#fef9c3'; $pillColor = '#854d0e'; }
+              elseif ($status === \App\Support\Status::PROD_PRA_PRODUKSI) { $pillBg = '#e5e7eb'; $pillColor = '#374151'; }
               else { $pillBg = 'rgba(19,226,183,.12)'; $pillColor = '#0f766e'; }
             ?>
               <div class="tugasCard">
@@ -290,7 +290,7 @@
 
 
 <div class="adminCards" style="margin-top:12px;">
-  <a class="adminCard" href="<?= site_url('editor/tugas?status=cut-to-cut') ?>" style="text-decoration:none;">
+  <a class="adminCard" href="<?= site_url('editor/tugas?status=' . \App\Support\Status::PROD_CUT_TO_CUT) ?>" style="text-decoration:none;">
     <div class="adminCard__label">A — Cut-to-cut (baru)</div>
     <div class="adminCard__value"><?= (int)($countA ?? 0) ?></div>
   </a>

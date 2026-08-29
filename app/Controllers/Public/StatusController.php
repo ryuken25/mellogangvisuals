@@ -48,8 +48,10 @@ class StatusController extends BaseController
         if (str_contains($sp, 'cut')) return 6;
         if (str_contains($sp, 'finish')) return 7;
 
-        if ($sp === 'done' || $sp === 'revisi selesai' || str_contains($sp, 'revisi selesai')) return 8;
-        if ($sp === 'revisi' || str_contains($sp, 'revisi')) return 9;
+        // revisi_selesai harus dicek lebih dulu: str_contains 'revisi' di bawah
+        // ikut cocok dengannya dan akan melempar order ke langkah yang salah.
+        if ($sp === Status::PROD_DONE || $sp === Status::PROD_REVISI_SELESAI) return 8;
+        if ($sp === Status::PROD_REVISI || str_contains($sp, 'revisi')) return 9;
 
         return $rank;
     }
@@ -132,7 +134,7 @@ class StatusController extends BaseController
         $delivered = (str_contains($statusPesanan, 'serah terima') || $statusPesanan === 'selesai');
 
         $sp = $this->norm($jadwal['status_produksi'] ?? '');
-        $isFinalEditing = in_array($sp, ['done', 'revisi selesai'], true);
+        $isFinalEditing = in_array($sp, [Status::PROD_DONE, Status::PROD_REVISI_SELESAI], true);
 
         $revCount = $order ? $this->countRevisi((string)($order['catatan_pelanggan'] ?? '')) : 0;
 
@@ -326,7 +328,7 @@ class StatusController extends BaseController
             ->get()->getRowArray();
 
         $sp = $this->norm($jadwal['status_produksi'] ?? '');
-        if (!in_array($sp, ['done', 'revisi selesai'], true)) {
+        if (!in_array($sp, [Status::PROD_DONE, Status::PROD_REVISI_SELESAI], true)) {
             return redirect()->to(site_url('status-pesanan?kode=' . urlencode($order['kode_pemesanan'])))
                 ->with('error', 'Revisi hanya bisa diajukan setelah status produksi DONE / REVISI SELESAI.');
         }
@@ -388,7 +390,7 @@ class StatusController extends BaseController
             ->get()->getRowArray();
 
         $sp = $this->norm($jadwal['status_produksi'] ?? '');
-        if (!in_array($sp, ['done', 'revisi selesai'], true)) {
+        if (!in_array($sp, [Status::PROD_DONE, Status::PROD_REVISI_SELESAI], true)) {
             return redirect()->to(site_url('status-pesanan?kode=' . urlencode($order['kode_pemesanan'])))
                 ->with('error', 'Konfirmasi hanya bisa setelah status produksi DONE / REVISI SELESAI.');
         }

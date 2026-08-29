@@ -2,6 +2,7 @@
 
 namespace App\Database\Seeds;
 
+use App\Support\Status;
 use CodeIgniter\Database\Seeder;
 
 class JadwalProduksiSeeder extends Seeder
@@ -43,7 +44,11 @@ class JadwalProduksiSeeder extends Seeder
             ->limit(6)
             ->get()->getResultArray();
 
-        $statusProduksi = ['cut-to-cut', 'cut-to-cut', 'finishing', 'finishing', 'done', 'done'];
+        $statusProduksi = [
+            Status::PROD_CUT_TO_CUT, Status::PROD_CUT_TO_CUT,
+            Status::PROD_FINISHING, Status::PROD_FINISHING,
+            Status::PROD_DONE, Status::PROD_DONE,
+        ];
 
         foreach ($orders as $idx => $o) {
             // cari PK pemesanan
@@ -64,7 +69,7 @@ class JadwalProduksiSeeder extends Seeder
                 'id_editor'       => $idEditor,
                 'tanggal_mulai'   => $mulai,
                 'tanggal_selesai' => $selesai,
-                'status_produksi' => $statusProduksi[$idx] ?? 'cut-to-cut',
+                'status_produksi' => $statusProduksi[$idx] ?? Status::PROD_CUT_TO_CUT,
                 'catatan'         => 'Progress sesuai alur: cut-to-cut → finishing → done.',
                 'progress'        => in_array($statusProduksi[$idx] ?? '', ['done'], true) ? 100 : (in_array($statusProduksi[$idx] ?? '', ['finishing'], true) ? 75 : 40),
             ];

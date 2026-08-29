@@ -14,7 +14,7 @@ class JadwalProduksiController extends BaseController
 
     private function adminAllowedStatus(): array
     {
-        return ['pra produksi', 'shooting', 'cut-to-cut'];
+        return [Status::PROD_PRA_PRODUKSI, Status::PROD_SHOOTING, Status::PROD_CUT_TO_CUT];
     }
 
     /** hanya order yang sudah punya pembayaran VALID (DP/lunas) dan belum dibuat jadwal */
@@ -143,14 +143,16 @@ class JadwalProduksiController extends BaseController
             'jam_selesai_shooting' => $this->request->getPost('jam_selesai_shooting') ?: null,
             'tanggal_mulai_editing' => $this->request->getPost('tanggal_mulai_editing') ?: null,
             'tanggal_selesai_editing' => $this->request->getPost('tanggal_selesai_editing') ?: null,
-            'status_produksi' => $this->request->getPost('status_produksi') ?: 'pra produksi',
+            'status_produksi' => $this->request->getPost('status_produksi') ?: Status::PROD_PRA_PRODUKSI,
             'catatan_produksi' => $this->request->getPost('catatan_produksi') ?: null,
         ];
 
         $st = $this->norm($data['status_produksi']);
         if (!in_array($st, $this->adminAllowedStatus(), true)) {
-            $data['status_produksi'] = 'pra produksi';
+            $st = Status::PROD_PRA_PRODUKSI;
         }
+        // simpan bentuk yang sudah dinormalisasi, bukan input mentah
+        $data['status_produksi'] = $st;
 
         $db->table('jadwal_produksi')->insert($data);
 
@@ -210,9 +212,9 @@ class JadwalProduksiController extends BaseController
             return redirect()->back()->with('error', 'Status ini harus diupdate oleh editor (finishing/revisi/done/revisi selesai).');
         }
 
-        // aturan: shooting -> cut-to-cut harus sudah ada jam_selesai_shooting
-        if ($newStatus === 'cut-to-cut') {
-            if ($oldStatus !== 'shooting') {
+        // aturan: shooting -> cut to cut harus sudah ada jam_selesai_shooting
+        if ($newStatus === Status::PROD_CUT_TO_CUT) {
+            if ($oldStatus !== Status::PROD_SHOOTING) {
                 return redirect()->back()->with('error', 'Tidak bisa masuk cut-to-cut sebelum status shooting.');
             }
             $jamSelesai = $this->request->getPost('jam_selesai_shooting') ?: ($old['jam_selesai_shooting'] ?? null);
@@ -229,7 +231,7 @@ class JadwalProduksiController extends BaseController
             'jam_selesai_shooting' => $this->request->getPost('jam_selesai_shooting') ?: null,
             'tanggal_mulai_editing' => $this->request->getPost('tanggal_mulai_editing') ?: null,
             'tanggal_selesai_editing' => $this->request->getPost('tanggal_selesai_editing') ?: null,
-            'status_produksi' => $newStatusRaw,
+            'status_produksi' => $newStatus,
             'catatan_produksi' => $this->request->getPost('catatan_produksi') ?: $old['catatan_produksi'],
         ];
 

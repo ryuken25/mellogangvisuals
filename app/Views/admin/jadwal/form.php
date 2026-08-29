@@ -20,7 +20,7 @@
 
     $selectedPemesanan = (int)($data['id_pemesanan'] ?? 0);
     $selectedEditor    = (int)($data['id_editor'] ?? 0);
-    $statusNow = (string)($data['status_produksi'] ?? 'pra produksi');
+    $statusNow = (string)($data['status_produksi'] ?? \App\Support\Status::PROD_PRA_PRODUKSI);
   ?>
 
   <div class="panel" style="margin-top:12px;">
@@ -106,11 +106,15 @@
           <div class="label">Status Produksi</div>
           <select class="input" name="status_produksi">
             <?php
-              $list = $allowedStatus ?? ['pra produksi','shooting','cut-to-cut'];
+              $list = $allowedStatus ?? [
+                \App\Support\Status::PROD_PRA_PRODUKSI,
+                \App\Support\Status::PROD_SHOOTING,
+                \App\Support\Status::PROD_CUT_TO_CUT,
+              ];
               foreach ($list as $s):
                 $sel = (strtolower($statusNow) === strtolower($s)) ? 'selected' : '';
             ?>
-              <option value="<?= esc($s) ?>" <?= $sel ?>><?= esc($s) ?></option>
+              <option value="<?= esc($s) ?>" <?= $sel ?>><?= esc(\App\Support\Status::prodLabel($s)) ?></option>
             <?php endforeach; ?>
           </select>
           <small class="muted">Admin set sampai cut-to-cut. Finishing/revisi/done/revisi selesai dikerjakan editor.</small>
