@@ -1,0 +1,263 @@
+{
+  "nav.home": { "id": "Beranda", "en": "Home" },
+  "nav.portfolio": { "id": "Portofolio", "en": "Portfolio" },
+  "nav.about": { "id": "Tentang", "en": "About" },
+  "nav.book": { "id": "Pesan", "en": "Book" },
+
+  "lang.switch.id": { "id": "Halaman ini dalam Bahasa Indonesia", "en": "Read this page in Indonesian" },
+  "lang.switch.en": { "id": "Baca halaman ini dalam Bahasa Inggris", "en": "This page in English" },
+
+  "a11y.skip": { "id": "Langsung ke konten", "en": "Skip to content" },
+  "a11y.logo.alt": { "id": "MellogangVisuals", "en": "MellogangVisuals" },
+  "a11y.lang.group": { "id": "Pilihan bahasa", "en": "Language" },
+  "a11y.theme.toLight": { "id": "Ganti ke tema terang", "en": "Switch to the light theme" },
+  "a11y.theme.toDark": { "id": "Ganti ke tema gelap", "en": "Switch to the dark theme" },
+  "a11y.nav.primary": { "id": "Navigasi utama", "en": "Main" },
+  "a11y.nav.mobile": { "id": "Navigasi utama, tampilan ponsel", "en": "Main, mobile" },
+  "a11y.menu.open": { "id": "Buka menu", "en": "Open the menu" },
+  "a11y.social.instagram": { "id": "MellogangVisuals di Instagram", "en": "MellogangVisuals on Instagram" },
+  "a11y.social.youtube": { "id": "MellogangVisuals di YouTube", "en": "MellogangVisuals on YouTube" },
+  "a11y.filter.group": { "id": "Saring proyek menurut jenis", "en": "Filter projects by type" },
+  "a11y.breadcrumb": { "id": "Jejak halaman", "en": "Breadcrumb" },
+  "a11y.projectNav": { "id": "Pindah proyek", "en": "Project navigation" },
+
+  "meta.home.title": { "id": "MellogangVisuals — Foto dan video di Bali", "en": "MellogangVisuals — Photo and video in Bali" },
+  "meta.home.description": {
+    "id": "Tim foto dan video di Denpasar. Pernikahan, prewedding, acara, video korporat, dan promosi destinasi. Kirim tanggalnya, kami cek ketersediaan.",
+    "en": "Photo and video team in Denpasar. Weddings, prewedding, events, corporate video and destination promos. Send us a date and we will check availability."
+  },
+  "meta.portfolio.title": { "id": "Portofolio — MellogangVisuals", "en": "Portfolio — MellogangVisuals" },
+  "meta.portfolio.description": {
+    "id": "Sepuluh proyek foto dan video dari 2022 sampai 2024: pernikahan, prewedding, acara, korporat, dan destinasi.",
+    "en": "Ten photo and video projects from 2022 to 2024: weddings, prewedding, events, corporate and destination."
+  },
+  "meta.about.title": { "id": "Tentang — MellogangVisuals", "en": "About — MellogangVisuals" },
+  "meta.about.description": {
+    "id": "MellogangVisuals berbasis di Denpasar. Apa yang kami kerjakan, bagaimana produksinya jalan, dan bagaimana hasilnya dikirim.",
+    "en": "MellogangVisuals is based in Denpasar. What we shoot, how production runs, and how the files reach you."
+  },
+  "meta.book.title": { "id": "Cek tanggal — MellogangVisuals", "en": "Check a date — MellogangVisuals" },
+  "meta.book.description": {
+    "id": "Isi form singkat, WhatsApp terbuka dengan detail proyekmu. Halaman ini tidak menyimpan data.",
+    "en": "Fill in a short form and WhatsApp opens with your project details. This page stores nothing."
+  },
+
+  "home.hero.eyebrow": { "id": "Denpasar, Bali", "en": "Denpasar, Bali" },
+  "home.hero.title": {
+    "id": "Foto dan video pernikahan, acara, dan brand di Bali.",
+    "en": "Wedding, event and brand shoots in Bali."
+  },
+  "home.hero.copy": {
+    "id": "Tim kecil, produksi lengkap, dari obrolan pertama sampai file terakhir. Kirim tanggalnya, kami langsung kabari kosong atau tidak.",
+    "en": "Small crew, full production, from the first call to the final file. Send us a date and we will tell you straight away whether it is open."
+  },
+  "home.hero.cta.primary": { "id": "Cek tanggal", "en": "Check a date" },
+  "home.hero.cta.secondary": { "id": "Lihat hasil kerja", "en": "See past work" },
+  "home.hero.meta.location": { "id": "Denpasar, Bali", "en": "Denpasar, Bali" },
+  "home.hero.meta.service": { "id": "Foto dan video", "en": "Photo and video" },
+  "home.hero.meta.availability": { "id": "Menerima proyek luar Bali", "en": "We travel outside Bali" },
+  "home.hero.image.alt": {
+    "id": "Prosesi pernikahan adat yang kami dokumentasikan di Bali",
+    "en": "A traditional wedding procession we covered in Bali"
+  },
+  "home.hero.stamp": { "id": "Foto<br>&amp; video<br>Denpasar", "en": "Photo<br>&amp; video<br>Denpasar" },
+  "home.hero.caption.label": { "id": "Dari arsip", "en": "From the archive" },
+  "home.hero.caption.text": { "id": "Dokumentasi pernikahan, Bali", "en": "Wedding coverage, Bali" },
+
+  "home.works.eyebrow": { "id": "Portofolio", "en": "Portfolio" },
+  "home.works.title": { "id": "Proyek 2022 sampai 2024", "en": "Projects from 2022 to 2024" },
+  "home.works.note": {
+    "id": "Sepuluh proyek: pernikahan, prewedding, acara, korporat, dan promosi destinasi.",
+    "en": "Ten projects: weddings, prewedding, events, corporate and destination promos."
+  },
+  "home.works.viewall": { "id": "Lihat sepuluh proyek", "en": "See all ten projects" },
+
+  "home.stages.eyebrow": { "id": "Cara kerja", "en": "How we work" },
+  "home.stages.title": { "id": "Tiga tahap", "en": "Three stages" },
+  "home.stages.before.title": { "id": "Sebelum syuting", "en": "Before the shoot" },
+  "home.stages.before.copy": {
+    "id": "Lingkup kerja, referensi, timeline, dan cek lokasi kalau memungkinkan.",
+    "en": "Scope, references, timeline, and a location check where it is possible."
+  },
+  "home.stages.during.title": { "id": "Hari H", "en": "On the day" },
+  "home.stages.during.copy": {
+    "id": "Kru yang sudah hafal rundown, jadi kamu tidak perlu mengatur kami.",
+    "en": "A crew that already knows the run-down, so you are not managing us."
+  },
+  "home.stages.after.title": { "id": "Setelah", "en": "After" },
+  "home.stages.after.copy": {
+    "id": "Seleksi, edit, colour. Dikirim sesuai tanggal yang disepakati, lewat Google Drive.",
+    "en": "Selection, edit and colour. Delivered on the agreed date, via Google Drive."
+  },
+
+  "home.about.eyebrow": { "id": "Studio", "en": "Studio" },
+  "home.about.title": { "id": "Tim foto dan video di Denpasar", "en": "A photo and video team in Denpasar" },
+  "home.about.copy": {
+    "id": "MellogangVisuals adalah tim foto dan video yang berbasis di Denpasar. Sebagian besar kerjaan kami pernikahan dan acara di sekitar Bali, ditambah proyek korporat dan destinasi kalau briefnya cocok.",
+    "en": "MellogangVisuals is a photo and video team based in Denpasar. Most of our work is weddings and events around Bali, plus corporate and destination projects when the brief fits."
+  },
+  "home.about.link": { "id": "Baca selengkapnya tentang kami", "en": "Read more about us" },
+  "home.about.image.alt": {
+    "id": "Peserta acara budaya di ruang terbuka, Bali",
+    "en": "Participants at an outdoor cultural event in Bali"
+  },
+
+  "home.cta.eyebrow": { "id": "Tanggal", "en": "Dates" },
+  "home.cta.title": { "id": "Sudah ada tanggalnya?", "en": "Have a date in mind?" },
+  "home.cta.copy": {
+    "id": "Kirim ke kami sekalian gambaran acaranya. Biasanya kami balas dalam sehari.",
+    "en": "Send it over with a rough idea of the day. We usually reply within a day."
+  },
+  "home.cta.btn": { "id": "Cek tanggal", "en": "Check a date" },
+
+  "about.hero.eyebrow": { "id": "Tentang kami", "en": "About us" },
+  "about.hero.title": { "id": "Kerja kami dan cara kami mengerjakannya", "en": "What we do, and how we do it" },
+  "about.hero.copy": {
+    "id": "MellogangVisuals berbasis di Denpasar. Kami mengerjakan pernikahan, prewedding, acara, video korporat, dan promosi destinasi. Kru kami kecil, dan untuk acara besar kami menambah orang.",
+    "en": "MellogangVisuals is based in Denpasar. We shoot weddings, prewedding sessions, events, corporate video and destination promos. The crew is small, and we add people when the event is big."
+  },
+
+  "about.work.eyebrow": { "id": "Cakupan", "en": "What we cover" },
+  "about.work.title": { "id": "Yang biasa kami kerjakan", "en": "The work we usually take" },
+  "about.work.copy1": {
+    "id": "Paling sering pernikahan dan acara di Bali. Sisanya video korporat, profil perusahaan, dan promosi hotel atau destinasi. Proyek di luar Bali tetap kami terima, biaya perjalanan dihitung terpisah.",
+    "en": "Most of it is weddings and events in Bali. The rest is corporate video, company profiles, and hotel or destination promos. We take work outside Bali too; travel is quoted separately."
+  },
+  "about.work.copy2": {
+    "id": "Kalau tanggal kamu bentrok dengan booking lain, kami bilang dari awal. Kami tidak menahan tanggal tanpa kepastian.",
+    "en": "If your date clashes with another booking, we say so at the start. We do not hold a date without confirming it."
+  },
+  "about.work.image.alt": {
+    "id": "Peserta acara budaya di ruang terbuka, Bali",
+    "en": "Participants at an outdoor cultural event in Bali"
+  },
+
+  "about.stages.eyebrow": { "id": "Alur", "en": "The process" },
+  "about.stages.title": { "id": "Dari brief sampai file dikirim", "en": "From brief to delivered files" },
+  "about.stages.before.title": { "id": "Pra-produksi", "en": "Pre-production" },
+  "about.stages.before.copy": {
+    "id": "Kami bahas lingkup kerja, referensi, dan timeline. Kalau lokasinya memungkinkan, kami survei dulu sebelum hari H.",
+    "en": "We agree the scope, the references and the timeline. If the location allows it, we survey it before the day."
+  },
+  "about.stages.during.title": { "id": "Hari H", "en": "Shoot day" },
+  "about.stages.during.copy": {
+    "id": "Kru datang sudah hafal rundown. Kami menyesuaikan diri dengan jalannya acara, bukan sebaliknya.",
+    "en": "The crew arrives knowing the run-down. We work around the event, not the other way round."
+  },
+  "about.stages.after.title": { "id": "Pasca-produksi", "en": "Post-production" },
+  "about.stages.after.copy": {
+    "id": "Seleksi, editing, dan colour. File akhir dikirim lewat Google Drive pada tanggal yang sudah disepakati.",
+    "en": "Selection, editing and colour. The final files go out on the agreed date, via Google Drive."
+  },
+
+  "about.cta.eyebrow": { "id": "Langkah berikutnya", "en": "Next step" },
+  "about.cta.title": { "id": "Kirim tanggal dan gambaran acaranya", "en": "Send us a date and a rough outline" },
+  "about.cta.copy": {
+    "id": "Kami balas dengan status tanggalnya dan perkiraan biaya.",
+    "en": "We reply with the status of that date and a price estimate."
+  },
+  "about.cta.btn": { "id": "Cek tanggal", "en": "Check a date" },
+
+  "portfolio.hero.eyebrow": { "id": "Portofolio", "en": "Portfolio" },
+  "portfolio.hero.title": { "id": "Sepuluh proyek", "en": "Ten projects" },
+  "portfolio.hero.copy": {
+    "id": "Film promosi, prewedding, dokumentasi acara, dan video korporat dari 2022 sampai 2024. Buka satu proyek untuk menonton filmnya.",
+    "en": "Promotional films, prewedding sessions, event coverage and corporate video from 2022 to 2024. Open a project to watch the film."
+  },
+  "portfolio.filter.all": { "id": "Semua", "en": "All" },
+  "portfolio.filter.wedding": { "id": "Pernikahan", "en": "Wedding" },
+  "portfolio.filter.event": { "id": "Acara", "en": "Event" },
+  "portfolio.filter.commercial": { "id": "Komersial", "en": "Commercial" },
+  "portfolio.filter.destination": { "id": "Destinasi", "en": "Destination" },
+  "portfolio.empty": { "id": "Belum ada proyek di kategori ini.", "en": "No projects in this category yet." },
+  "portfolio.cta.eyebrow": { "id": "Tanggal", "en": "Dates" },
+  "portfolio.cta.title": { "id": "Mau tanya tanggal?", "en": "Want to check a date?" },
+  "portfolio.cta.copy": {
+    "id": "Kirim tanggal dan lokasinya, kami balas dengan status ketersediaan.",
+    "en": "Send the date and the location and we will reply with availability."
+  },
+  "portfolio.cta.btn": { "id": "Cek tanggal", "en": "Check a date" },
+
+  "work.format.film": { "id": "Film", "en": "Film" },
+  "work.format.photo": { "id": "Foto", "en": "Photo" },
+
+  "project.meta.year": { "id": "Tahun", "en": "Year" },
+  "project.meta.format": { "id": "Format", "en": "Format" },
+  "project.notes.title": { "id": "Catatan proyek", "en": "Project notes" },
+  "project.book": { "id": "Cek tanggal", "en": "Check a date" },
+  "project.backToAll": { "id": "Semua proyek", "en": "All projects" },
+  "project.nav.prev": { "id": "Sebelumnya", "en": "Previous" },
+  "project.nav.next": { "id": "Berikutnya", "en": "Next" },
+  "project.source.youtube": { "id": "Tonton di YouTube", "en": "Watch on YouTube" },
+  "project.source.instagram": { "id": "Lihat di Instagram", "en": "View on Instagram" },
+
+  "book.hero.eyebrow": { "id": "Pesan", "en": "Booking" },
+  "book.hero.title": { "id": "Cek tanggal kamu", "en": "Check your date" },
+  "book.hero.copy": {
+    "id": "Isi formnya, WhatsApp langsung terbuka dengan detail yang kamu tulis. Tidak ada data yang disimpan di halaman ini.",
+    "en": "Fill this in and WhatsApp opens with your details already written out. Nothing is stored on this page."
+  },
+  "book.intro.eyebrow": { "id": "Sebelum mengisi", "en": "Before you start" },
+  "book.intro.title": { "id": "Yang perlu kami tahu", "en": "What we need to know" },
+  "book.intro.copy": {
+    "id": "Jenis proyek, tanggal, dan lokasi sudah cukup buat kami cek ketersediaan. Sisanya bisa dibahas di WhatsApp.",
+    "en": "Project type, date and location are enough for us to check availability. The rest can be sorted out on WhatsApp."
+  },
+  "book.intro.image.alt": {
+    "id": "Pasangan berbusana adat pada sesi prewedding di Bali",
+    "en": "Couple in traditional dress during a prewedding session in Bali"
+  },
+  "book.intro.aside.title": { "id": "Balasan biasanya dalam sehari", "en": "We usually reply within a day" },
+  "book.intro.aside.copy": { "id": "Kalau mendesak, langsung chat WhatsApp saja.", "en": "If it is urgent, message us on WhatsApp." },
+
+  "book.form.title": { "id": "Ceritakan rencana syutingnya", "en": "Tell us about the shoot" },
+  "book.form.type.label": { "id": "Jenis proyek", "en": "Project type" },
+  "book.form.name.label": { "id": "Nama", "en": "Your name" },
+  "book.form.name.placeholder": { "id": "Nama kamu", "en": "Your name" },
+  "book.form.date.label": { "id": "Tanggal, atau perkiraan bulannya", "en": "Date, or the rough month" },
+  "book.form.date.hint": { "id": "Belum pasti juga tidak apa-apa. Tulis perkiraan terdekat.", "en": "It does not have to be final. Put the closest estimate." },
+  "book.form.location.label": { "id": "Lokasi", "en": "Location" },
+  "book.form.location.placeholder": { "id": "Kota atau nama venue", "en": "City or venue name" },
+  "book.form.notes.label": { "id": "Hal lain yang perlu kami tahu", "en": "Anything we should know" },
+  "book.form.notes.placeholder": {
+    "id": "Perkiraan jumlah tamu, rundown, atau referensi yang kamu suka.",
+    "en": "Rough guest count, run-down, or references you like."
+  },
+  "book.form.optional": { "id": "(opsional)", "en": "(optional)" },
+  "book.form.note": {
+    "id": "Halaman ini tidak menyimpan apa pun. Isian kamu langsung jadi pesan WhatsApp.",
+    "en": "This page stores nothing. What you type becomes a WhatsApp message."
+  },
+  "book.form.submit": { "id": "Buka WhatsApp", "en": "Open WhatsApp" },
+
+  "book.type.wedding": { "id": "Pernikahan, foto dan video", "en": "Wedding, photo and video" },
+  "book.type.prewedding": { "id": "Prewedding", "en": "Prewedding session" },
+  "book.type.event": { "id": "Dokumentasi acara", "en": "Event coverage" },
+  "book.type.corporate": { "id": "Video korporat atau brand", "en": "Corporate or brand video" },
+  "book.type.destination": { "id": "Promosi destinasi atau properti", "en": "Destination or property promo" },
+  "book.type.other": { "id": "Lainnya", "en": "Something else" },
+
+  "book.wa.template": {
+    "id": "Halo MellogangVisuals, saya {name}. Saya mau cek ketersediaan untuk {type} pada {date}, lokasinya di {location}.{notes}",
+    "en": "Hello MellogangVisuals, this is {name}. I would like to check availability for {type} on {date}, at {location}.{notes}"
+  },
+  "book.wa.notes": { "id": " Catatan: {notes}", "en": " Notes: {notes}" },
+  "book.wa.placeholder.name": { "id": "[nama]", "en": "[name]" },
+  "book.wa.placeholder.date": { "id": "[tanggal]", "en": "[date]" },
+  "book.wa.placeholder.location": { "id": "[lokasi]", "en": "[location]" },
+
+  "footer.tagline": {
+    "id": "Foto dan video untuk pernikahan, acara, dan brand. Berbasis di Denpasar, Bali.",
+    "en": "Photo and video for weddings, events and brands. Based in Denpasar, Bali."
+  },
+  "footer.nav": { "id": "Halaman", "en": "Pages" },
+  "footer.contact": { "id": "Kontak", "en": "Contact" },
+  "footer.whatsapp": { "id": "Chat lewat WhatsApp", "en": "Message us on WhatsApp" },
+  "footer.location": { "id": "Denpasar, Bali", "en": "Denpasar, Bali" },
+
+  "nf.pageTitle": { "id": "Halaman tidak ada — MellogangVisuals", "en": "Page not found — MellogangVisuals" },
+  "nf.title": { "id": "Halaman ini tidak ada", "en": "This page does not exist" },
+  "nf.copy": { "id": "Coba buka portofolio, atau kembali ke beranda.", "en": "Try the portfolio, or go back to the home page." },
+  "nf.cta.portfolio": { "id": "Buka portofolio", "en": "Open the portfolio" },
+  "nf.cta.home": { "id": "Ke beranda", "en": "Go to the home page" }
+}
