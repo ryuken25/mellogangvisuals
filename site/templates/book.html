@@ -1,0 +1,55 @@
+<main id="main">
+<section class="container page-hero reveal">
+<div class="eyebrow">{{book.hero.eyebrow}}</div>
+<h1 class="display">{{book.hero.title}}</h1>
+<p>{{book.hero.copy}}</p>
+</section>
+
+<section class="section">
+<div class="container book-layout">
+<div class="book-intro reveal">
+<div class="eyebrow">{{book.intro.eyebrow}}</div>
+<h2 class="display">{{book.intro.title}}</h2>
+<p>{{book.intro.copy}}</p>
+<div class="book-preview">
+<img src="/assets/brand/instagram/ig-05.jpg" alt="{{book.intro.image.alt}}" loading="lazy" width="1280" height="960">
+<div><strong>{{book.intro.aside.title}}</strong><span>{{book.intro.aside.copy}}</span></div>
+</div>
+</div>
+
+<form class="book-form reveal" id="bookForm" data-wa-number="{{site.whatsapp}}" data-wa-template="{{book.waTemplate}}" data-wa-name="{{book.waPlaceholderName}}" data-wa-date="{{book.waPlaceholderDate}}" data-wa-location="{{book.waPlaceholderLocation}}" data-wa-notes="{{book.waNotes}}" data-date-locale="{{book.dateLocale}}">
+<h2>{{book.form.title}}</h2>
+
+<div class="field">
+<label for="bookPackage">{{book.form.type.label}}</label>
+<select id="bookPackage" name="type" required>{{{book.options}}}</select>
+</div>
+
+<div class="field">
+<label for="bookName">{{book.form.name.label}}</label>
+<input id="bookName" name="name" type="text" placeholder="{{book.form.name.placeholder}}" autocomplete="name" required>
+</div>
+
+<div class="field">
+<label for="bookDate">{{book.form.date.label}}</label>
+<input id="bookDate" name="date" type="date" required>
+<small class="field-hint">{{book.form.date.hint}}</small>
+</div>
+
+<div class="field">
+<label for="bookLocation">{{book.form.location.label}}</label>
+<input id="bookLocation" name="location" type="text" placeholder="{{book.form.location.placeholder}}" required>
+</div>
+
+<div class="field">
+<label for="bookNotes">{{book.form.notes.label}} <span class="field-optional">{{book.form.optional}}</span></label>
+<textarea id="bookNotes" name="notes" rows="4" placeholder="{{book.form.notes.placeholder}}"></textarea>
+</div>
+
+<p class="book-note">{{book.form.note}}</p>
+<button class="btn btn-primary" type="submit">{{book.form.submit}}</button>
+<a id="waLink" href="https://wa.me/{{site.whatsapp}}" target="_blank" rel="noopener noreferrer" hidden>{{book.form.submit}}</a>
+</form>
+</div>
+</section>
+</main>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="{{page.lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>{{page.title}}</title>
+<meta name="description" content="{{page.description}}">
+<link rel="canonical" href="{{page.canonical}}">
+{{{page.alternates}}}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{site.brand}}">
+<meta property="og:locale" content="{{og.locale}}">
+<meta property="og:url" content="{{page.canonical}}">
+<meta property="og:title" content="{{page.title}}">
+<meta property="og:description" content="{{page.description}}">
+<meta property="og:image" content="{{page.ogImage}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{page.title}}">
+<meta name="twitter:description" content="{{page.description}}">
+<meta name="twitter:image" content="{{page.ogImage}}">
+<meta name="theme-color" content="#f6efe3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f0d0b" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/brand/mellogang-logo.png">
+<link rel="stylesheet" href="/styles.css">
+<script>try{var t=localStorage.getItem('mellogang-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"{{site.brand}}","url":"{{page.canonical}}","image":"{{page.ogImage}}","email":"{{site.email}}","address":{"@type":"PostalAddress","addressLocality":"Denpasar","addressRegion":"Bali","addressCountry":"ID"},"areaServed":"Bali, Indonesia","sameAs":["{{site.instagram}}","{{site.youtube}}"]}</script>
+</head>
+<body>
+<div class="site-shell">
+<a class="skip" href="#main">{{a11y.skip}}</a>
+<header class="site-header">
+<div class="container navbar">
+<div class="nav-lead">
+<a class="brand" href="{{page.homeUrl}}"><img src="/assets/brand/mellogang-monogram.svg" alt="{{a11y.logo.alt}}" width="34" height="34"><span class="brand-wordmark">{{site.brand}}</span></a>
+<div class="nav-controls">
+<div class="lang-switch" role="group" aria-label="{{a11y.lang.group}}">{{{page.langSwitch}}}</div>
+<button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="{{a11y.theme.toLight}}" data-label-light="{{a11y.theme.toLight}}" data-label-dark="{{a11y.theme.toDark}}"><span aria-hidden="true" data-theme-icon>☾</span></button>
+</div>
+</div>
+<nav class="nav-links" aria-label="{{a11y.nav.primary}}">{{{page.nav}}}</nav>
+<div class="nav-tools">{{{page.bookCta}}}<button class="menu-button" id="menuButton" type="button" aria-label="{{a11y.menu.open}}" aria-controls="mobileMenu" aria-expanded="false"><span aria-hidden="true">☰</span></button></div>
+</div>
+<nav class="mobile-menu" id="mobileMenu" aria-label="{{a11y.nav.mobile}}" hidden>{{{page.nav}}}</nav>
+</header>
+{{{page.body}}}
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<div class="footer-title">{{site.brand}}</div>
+<p>{{footer.tagline}}</p>
+<div class="socials">
+<a class="social-icon" href="{{site.instagram}}" target="_blank" rel="noopener noreferrer" aria-label="{{a11y.social.instagram}}"><img src="/assets/brand/social/instagram.png" alt="" width="24" height="24"></a>
+<a class="social-icon" href="{{site.youtube}}" target="_blank" rel="noopener noreferrer" aria-label="{{a11y.social.youtube}}"><img src="/assets/brand/social/youtube.png" alt="" width="24" height="24"></a>
+</div>
+</div>
+<div>
+<div class="footer-title">{{footer.nav}}</div>
+<nav class="footer-nav" aria-label="{{footer.nav}}">{{{page.nav}}}</nav>
+</div>
+<div>
+<div class="footer-title">{{footer.contact}}</div>
+<a href="mailto:{{site.email}}">{{site.email}}</a><br>
+<a href="https://wa.me/{{site.whatsapp}}" target="_blank" rel="noopener noreferrer">{{footer.whatsapp}}</a>
+</div>
+</div>
+<div class="container footer-bottom"><span>© {{site.year}} {{site.brand}}</span><span>{{footer.location}}</span></div>
+</footer>
+</div>
+<script src="/script.js" defer></script>
+</body>
+</html>

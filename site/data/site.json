@@ -1,0 +1,35 @@
+{
+  "brand": "MellogangVisuals",
+  "origin": "https://mellogang.wyna.dev",
+  "defaultLocale": "id",
+  "ogLocale": {
+    "id": "id_ID",
+    "en": "en_GB"
+  },
+  "year": 2026,
+  "ogImage": "/assets/brand/mellogang-og.jpg",
+  "whatsapp": "6282236004917",
+  "email": "mellogang@wyna.dev",
+  "instagram": "https://www.instagram.com/mellogangvisuals/",
+  "youtube": "https://www.youtube.com/@mellogangvisuals",
+  "filters": [
+    "all",
+    "wedding",
+    "event",
+    "commercial",
+    "destination"
+  ],
+  "projectTypes": [
+    "book.type.wedding",
+    "book.type.prewedding",
+    "book.type.event",
+    "book.type.corporate",
+    "book.type.destination",
+    "book.type.other"
+  ],
+  "legacyRedirects": {
+    "/packages": "/book/",
+    "/workflow": "/book/",
+    "/contact": "/about/"
+  }
+}

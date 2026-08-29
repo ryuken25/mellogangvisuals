@@ -1,0 +1,28 @@
+<main id="main">
+<section class="container page-hero reveal">
+<div class="eyebrow">{{portfolio.hero.eyebrow}}</div>
+<h1 class="display">{{portfolio.hero.title}}</h1>
+<p>{{portfolio.hero.copy}}</p>
+<div class="works-filter" role="group" aria-label="{{a11y.filter.group}}">{{{portfolio.filters}}}</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="works-grid" id="worksGrid">{{{portfolio.cards}}}</div>
+<p class="works-empty" id="worksEmpty" hidden>{{portfolio.empty}}</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="cta reveal">
+<div>
+<div class="eyebrow">{{portfolio.cta.eyebrow}}</div>
+<h2 class="display">{{portfolio.cta.title}}</h2>
+<p>{{portfolio.cta.copy}}</p>
+</div>
+<a class="btn btn-primary" href="{{page.bookUrl}}">{{portfolio.cta.btn}}</a>
+</div>
+</div>
+</section>
+</main>

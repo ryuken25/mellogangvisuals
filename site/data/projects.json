@@ -1,0 +1,245 @@
+[
+  {
+    "slug": "indra-suci-2024",
+    "oldSlug": "indra-suci",
+    "year": "2024",
+    "featured": true,
+    "tags": ["all", "wedding"],
+    "video": "7RwTWRgLmHY",
+    "source": "https://www.youtube.com/watch?v=7RwTWRgLmHY",
+    "cover": "/assets/video/frames/indra-suci-88.jpg",
+    "gallery": [
+      "/assets/video/frames/indra-suci-12.jpg",
+      "/assets/video/frames/indra-suci-38.jpg",
+      "/assets/video/frames/indra-suci-62.jpg",
+      "/assets/video/frames/indra-suci-88.jpg"
+    ],
+    "title": { "id": "Indra & Suci", "en": "Indra & Suci" },
+    "category": { "id": "Prewedding", "en": "Prewedding" },
+    "description": {
+      "id": "Film prewedding Indra dan Suci. Busana adat Bali, diambil di beberapa lokasi terbuka dalam satu hari.",
+      "en": "Prewedding film for Indra and Suci. Traditional Balinese dress, shot across several outdoor locations in one day."
+    },
+    "alt": {
+      "id": "Pasangan berbusana adat Bali di lokasi terbuka",
+      "en": "Couple in traditional Balinese dress at an outdoor location"
+    }
+  },
+  {
+    "slug": "eka-nanda-2024",
+    "oldSlug": "eka-nanda",
+    "year": "2024",
+    "featured": true,
+    "tags": ["all", "wedding"],
+    "video": "8kSnL2fBCTU",
+    "source": "https://www.youtube.com/watch?v=8kSnL2fBCTU",
+    "cover": "/assets/video/eka-nanda.jpg",
+    "gallery": ["/assets/brand/instagram/ig-05.jpg", "/assets/brand/instagram/ig-01.jpg"],
+    "title": { "id": "Eka & Nanda", "en": "Eka & Nanda" },
+    "category": { "id": "Prewedding", "en": "Prewedding" },
+    "description": {
+      "id": "Film prewedding Eka dan Nanda. Sesi senja dengan busana adat dan properti lampion.",
+      "en": "Prewedding film for Eka and Nanda. A dusk session with traditional dress and lanterns."
+    },
+    "alt": {
+      "id": "Pasangan berbusana adat membawa lampion saat senja",
+      "en": "Couple in traditional dress holding lanterns at dusk"
+    }
+  },
+  {
+    "slug": "puncak-bukit-lestari-2023",
+    "oldSlug": "bukit-lestari",
+    "year": "2023",
+    "featured": true,
+    "tags": ["all", "destination", "commercial"],
+    "video": "t4hcCZhzOdo",
+    "source": "https://www.youtube.com/watch?v=t4hcCZhzOdo",
+    "cover": "/assets/video/frames/bukit-lestari-12.jpg",
+    "gallery": [
+      "/assets/video/frames/bukit-lestari-12.jpg",
+      "/assets/video/frames/bukit-lestari-38.jpg",
+      "/assets/video/frames/bukit-lestari-62.jpg",
+      "/assets/video/frames/bukit-lestari-88.jpg"
+    ],
+    "title": { "id": "Puncak Bukit Lestari", "en": "Puncak Bukit Lestari" },
+    "category": { "id": "Destinasi", "en": "Destination" },
+    "description": {
+      "id": "Video promosi Puncak Lestari Camp di Bedugul. Isinya pemandangan, area menginap, dan aktivitas tamu.",
+      "en": "Promotional video for Puncak Lestari Camp in Bedugul, covering the views, the lodging and what guests do there."
+    },
+    "alt": {
+      "id": "Pemandangan perbukitan dan area menginap di Bedugul",
+      "en": "Hillside view and lodging area in Bedugul"
+    }
+  },
+  {
+    "slug": "pohen-hill-camp-2023",
+    "oldSlug": "pohen-camp",
+    "year": "2023",
+    "featured": false,
+    "tags": ["all", "destination", "commercial"],
+    "video": "4WgJEnnQvHM",
+    "source": "https://www.youtube.com/watch?v=4WgJEnnQvHM",
+    "cover": "/assets/video/frames/pohen-camp-20.jpg",
+    "gallery": [
+      "/assets/video/frames/pohen-camp-20.jpg",
+      "/assets/video/frames/pohen-camp-50.jpg",
+      "/assets/video/frames/pohen-camp-80.jpg"
+    ],
+    "title": { "id": "Pohen Hill Camp", "en": "Pohen Hill Camp" },
+    "category": { "id": "Destinasi", "en": "Destination" },
+    "description": {
+      "id": "Video promosi Pohen Hill Camp di Bedugul. Menampilkan area perkemahan, tenda glamping, dan fasilitasnya.",
+      "en": "Promotional video for Pohen Hill Camp in Bedugul, showing the grounds, the glamping tents and the facilities."
+    },
+    "alt": {
+      "id": "Tenda glamping di area perkemahan Pohen Hill",
+      "en": "Glamping tents at Pohen Hill Camp"
+    }
+  },
+  {
+    "slug": "blooms-garden-2023-promo",
+    "oldSlug": "blooms-promo",
+    "year": "2023",
+    "featured": false,
+    "tags": ["all", "destination", "commercial"],
+    "video": "h6Q0_5upkk4",
+    "source": "https://www.youtube.com/watch?v=h6Q0_5upkk4",
+    "cover": "/assets/video/frames/blooms-promo-12.jpg",
+    "gallery": [
+      "/assets/video/frames/blooms-promo-12.jpg",
+      "/assets/video/frames/blooms-promo-38.jpg",
+      "/assets/video/frames/blooms-promo-62.jpg",
+      "/assets/video/frames/blooms-promo-88.jpg"
+    ],
+    "title": { "id": "The Blooms Garden (promo)", "en": "The Blooms Garden (promo)" },
+    "category": { "id": "Destinasi", "en": "Destination" },
+    "description": {
+      "id": "Video promosi The Blooms Garden. Meliputi area taman, tempat makan, dan aktivitas luar ruang.",
+      "en": "Promotional video for The Blooms Garden, covering the grounds, the dining area and the outdoor activities."
+    },
+    "alt": {
+      "id": "Area taman dan tempat makan di The Blooms Garden",
+      "en": "Garden and dining area at The Blooms Garden"
+    }
+  },
+  {
+    "slug": "blooms-garden-2023-teaser",
+    "oldSlug": "blooms-short",
+    "year": "2023",
+    "featured": false,
+    "tags": ["all", "destination", "commercial"],
+    "video": "bIOMXfEdCEc",
+    "source": "https://www.youtube.com/watch?v=bIOMXfEdCEc",
+    "cover": "/assets/video/frames/blooms-short-62.jpg",
+    "gallery": [
+      "/assets/video/frames/blooms-short-12.jpg",
+      "/assets/video/frames/blooms-short-38.jpg",
+      "/assets/video/frames/blooms-short-62.jpg",
+      "/assets/video/frames/blooms-short-88.jpg"
+    ],
+    "title": { "id": "The Blooms Garden (versi pendek)", "en": "The Blooms Garden (short cut)" },
+    "category": { "id": "Destinasi", "en": "Destination" },
+    "description": {
+      "id": "Versi pendek vertikal untuk The Blooms Garden. Fokus ke area luar dan suasana menjelang malam.",
+      "en": "Short vertical cut for The Blooms Garden, focused on the outdoor space and the evening atmosphere."
+    },
+    "alt": {
+      "id": "Area taman The Blooms Garden menjelang malam",
+      "en": "The Blooms Garden grounds in the evening"
+    }
+  },
+  {
+    "slug": "bank-mandiri-taspen-2023",
+    "oldSlug": "mandiri-taspen",
+    "year": "2023",
+    "featured": true,
+    "tags": ["all", "commercial"],
+    "video": "Gi4BH7nQQXo",
+    "source": "https://www.youtube.com/watch?v=Gi4BH7nQQXo",
+    "cover": "/assets/video/frames/mandiri-taspen-38.jpg",
+    "gallery": [
+      "/assets/video/frames/mandiri-taspen-12.jpg",
+      "/assets/video/frames/mandiri-taspen-38.jpg",
+      "/assets/video/frames/mandiri-taspen-62.jpg",
+      "/assets/video/frames/mandiri-taspen-88.jpg"
+    ],
+    "title": { "id": "PT Bank Mandiri Taspen", "en": "PT Bank Mandiri Taspen" },
+    "category": { "id": "Korporat", "en": "Corporate" },
+    "description": {
+      "id": "Video fasilitas Mantap Learning Center milik PT Bank Mandiri Taspen. Ruang pelatihan, fasilitas pendukung, dan lobi.",
+      "en": "Facility video for the Mantap Learning Center of PT Bank Mandiri Taspen: training rooms, supporting facilities and the lobby."
+    },
+    "alt": {
+      "id": "Lobi dan ruang pelatihan Mantap Learning Center",
+      "en": "Lobby and training room at Mantap Learning Center"
+    }
+  },
+  {
+    "slug": "coinfest-asia-2022",
+    "oldSlug": "coinvest-asia",
+    "year": "2022",
+    "featured": true,
+    "tags": ["all", "event"],
+    "video": "MakxWe9ev0w",
+    "source": "https://www.youtube.com/watch?v=MakxWe9ev0w",
+    "cover": "/assets/video/frames/coinvest-asia-20.jpg",
+    "gallery": [
+      "/assets/video/frames/coinvest-asia-20.jpg",
+      "/assets/video/frames/coinvest-asia-50.jpg",
+      "/assets/video/frames/coinvest-asia-80.jpg"
+    ],
+    "title": { "id": "CoinFest Asia 2022", "en": "CoinFest Asia 2022" },
+    "category": { "id": "Acara", "en": "Event" },
+    "description": {
+      "id": "Dokumentasi CoinFest Asia 2022. Sesi panggung, booth peserta, dan suasana pengunjung.",
+      "en": "Coverage of CoinFest Asia 2022: stage sessions, exhibitor booths and the crowd."
+    },
+    "alt": {
+      "id": "Panggung dan pengunjung di CoinFest Asia 2022",
+      "en": "Stage and crowd at CoinFest Asia 2022"
+    }
+  },
+  {
+    "slug": "wedding-ceremony",
+    "oldSlug": null,
+    "year": null,
+    "featured": false,
+    "tags": ["all", "wedding"],
+    "video": "",
+    "source": "https://www.instagram.com/mellogangvisuals/",
+    "cover": "/assets/brand/instagram/ig-05.jpg",
+    "gallery": ["/assets/brand/instagram/ig-01.jpg"],
+    "title": { "id": "Prosesi pernikahan", "en": "Wedding ceremonies" },
+    "category": { "id": "Pernikahan", "en": "Wedding" },
+    "description": {
+      "id": "Kumpulan foto prosesi pernikahan dari arsip Instagram kami. Pendekatan dokumenter ke orang, detail, dan suasana.",
+      "en": "A set of ceremony photographs from our Instagram archive. A documentary approach to people, details and atmosphere."
+    },
+    "alt": {
+      "id": "Prosesi pernikahan adat",
+      "en": "Traditional wedding procession"
+    }
+  },
+  {
+    "slug": "cultural-event",
+    "oldSlug": null,
+    "year": null,
+    "featured": false,
+    "tags": ["all", "event"],
+    "video": "",
+    "source": "https://www.instagram.com/mellogangvisuals/",
+    "cover": "/assets/brand/instagram/ig-02.jpg",
+    "gallery": ["/assets/brand/instagram/ig-06.jpg"],
+    "title": { "id": "Acara budaya", "en": "Cultural events" },
+    "category": { "id": "Acara", "en": "Event" },
+    "description": {
+      "id": "Kumpulan foto acara budaya dan perayaan publik dari arsip Instagram kami.",
+      "en": "A set of photographs from cultural events and public celebrations, taken from our Instagram archive."
+    },
+    "alt": {
+      "id": "Peserta acara budaya di ruang terbuka",
+      "en": "Participants at an outdoor cultural event"
+    }
+  }
+]
